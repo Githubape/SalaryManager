@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    /// <summary>
+    /// 个人职位信息
+    /// </summary>
     class Position
     {
         /// <summary>
