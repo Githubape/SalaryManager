@@ -1,4 +1,4 @@
-﻿namespace SalaryManager
+﻿namespace Service
 {
     partial class Form1
     {

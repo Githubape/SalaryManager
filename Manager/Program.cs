@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalaryManager
+namespace Manager
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace SalaryManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-       
+           
         }
     }
 }

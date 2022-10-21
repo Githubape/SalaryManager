@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SalaryManager
+namespace Service
 {
     public partial class Form1 : Form
     {
