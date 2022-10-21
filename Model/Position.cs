@@ -44,6 +44,10 @@ namespace Model
         /// </summary>
         public string OnlyChild { get; set; }
         /// <summary>
+        /// 独生子女费
+        /// </summary>
+        public string OnlychildAllowance { get; set; }
+        /// <summary>
         /// 是否艰苦岗位[一，二，三，四，否]
         /// </summary>
         public string IsHard { get; set; }
@@ -51,6 +55,14 @@ namespace Model
         /// 艰难岗位津贴
         /// </summary>
         public double HardshipAllowance { get; set; }
+        /// <summary>
+        /// 是否艰苦边远地区[是，否]                                                       ！！！！！！！！！！！待解决！！！！！！！！！！
+        /// </summary>
+        public string IsEdge { get; set; }
+        /// <summary>
+        /// 边远地区津贴
+        /// </summary>
+        public double EdgeAllowance { get; set; }
         /// <summary>
         /// 餐饮补助
         /// </summary>
