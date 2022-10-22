@@ -9,7 +9,7 @@ namespace Model
     /// <summary>
     /// 个人职位信息
     /// </summary>
-    class Position
+    public class Position
     {
         /// <summary>
         /// 工种[操作，服务，管理，专业技术]

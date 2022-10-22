@@ -21,7 +21,7 @@ namespace Model
     /// <summary>
     /// Emplopee imformation
     /// </summary>
-    class Employee
+    public class Employee
     {
         /// <summary>
         /// Emplopee id
