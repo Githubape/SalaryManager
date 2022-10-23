@@ -23,6 +23,7 @@ namespace Model
     /// </summary>
     public class Employee
     {
+        public int Id { get; set; }
         /// <summary>
         /// Emplopee id
         /// </summary>

@@ -18,7 +18,7 @@ namespace Model
         /// <summary>
         /// 职位
         /// </summary>
-        public string post { get; set; }
+        public string Post { get; set; }
         /// <summary>
         /// 岗序
         /// </summary>

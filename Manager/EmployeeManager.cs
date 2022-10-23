@@ -23,5 +23,10 @@ namespace Manager
         {
             return objService.QueryEmployeeListInfo();
         }
+
+        public int SetEmployeeInformation(Employee objEmployeeNew,Employee objEmployeeOld)
+        {
+            return objService.UpdateEmployeeInformation(objEmployeeNew,objEmployeeOld);
+        }
     }
 }

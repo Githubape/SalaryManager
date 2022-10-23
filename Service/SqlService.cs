@@ -19,7 +19,7 @@ namespace Service
         /// <summary>
         /// 数据库连接字符串    !!!!!!!!!!!!!!!!!!!!这个字符串后续要改，连接用的!!!!!!!!!!!!!!!!!!!!!!!!!!!
         /// </summary>
-        private static string connString = ConfigurationManager.ConnectionStrings["connString"].ToString();
+        private static string connString = ConfigurationManager.ConnectionStrings["server=数据名;uid=用户名;pwd=密码;database=数据库名;Trusted_Connection=no"].ToString();
         #region 执行格式化SQL语句
         /// <summary>
         /// 增删改操作
