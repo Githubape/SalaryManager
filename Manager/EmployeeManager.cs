@@ -23,7 +23,12 @@ namespace Manager
         {
             return objService.QueryEmployeeListInfo();
         }
-
+        /// <summary>
+        /// 修改员工信息
+        /// </summary>
+        /// <param name="objEmployeeNew"></param>
+        /// <param name="objEmployeeOld"></param>
+        /// <returns></returns>
         public int SetEmployeeInformation(Employee objEmployeeNew,Employee objEmployeeOld)
         {
             return objService.UpdateEmployeeInformation(objEmployeeNew,objEmployeeOld);
