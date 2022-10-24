@@ -33,5 +33,17 @@ namespace Manager
         {
             return objService.UpdateEmployeeInformation(objEmployeeNew,objEmployeeOld);
         }
+
+        /// <summary>
+        /// 晋档回调
+        /// </summary>
+        /// <returns></returns>
+        public int Promotion()
+        {
+            ///Position
+            return 0;
+        }
     }
+
+
 }
