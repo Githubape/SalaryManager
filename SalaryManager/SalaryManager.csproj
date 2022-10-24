@@ -161,6 +161,10 @@
       <Project>{ecfe2620-f79f-4f18-b354-45cd2be49211}</Project>
       <Name>Manager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MaterialSkin\MaterialSkin.csproj">
+      <Project>{8eb7611b-68cd-4b8b-987a-11717e2b250c}</Project>
+      <Name>MaterialSkin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{17248ad2-c1a9-4e82-a2a4-ec7399849958}</Project>
       <Name>Model</Name>
