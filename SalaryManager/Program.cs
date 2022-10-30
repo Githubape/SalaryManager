@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< HEAD
+=======
+using NetDimension.NanUI;
+using MaterialSkin;
+>>>>>>> e0663af87cf0245f0a29833fcce37e52d4ae65de
 
 namespace SalaryManager
 {
