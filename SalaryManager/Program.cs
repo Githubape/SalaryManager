@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NetDimension.NanUI;
 
 namespace SalaryManager
 {
@@ -17,26 +16,28 @@ namespace SalaryManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            Application.Run(new LoginForm());
             // 初始化窗体
-            WinFormium.CreateRuntimeBuilder(env =>
-            {
-                env.CustomCefSettings(settings =>
-                {
-                    // 在此设置CEF的相关参数
-                });
+            //WinFormium.CreateRuntimeBuilder(env =>
+            //{
+            //    env.CustomCefSettings(settings =>
+            //    {
+            //        // 在此设置CEF的相关参数
+            //    });
 
-                env.CustomCefCommandLineArguments(commandLine =>
-                {
-                    // 在此处指定CEF命令参数
-                });
-            }, app =>
-            {
-                // 指定启动窗体
-                app.UseMainWindow(context => new TestWindow());
-            })
-            .Build()
-            .Run();
+            //    env.CustomCefCommandLineArguments(commandLine =>
+            //    {
+            //        // 在此处指定CEF命令参数
+            //    });
+            //}, app =>
+            //{
+            //    // 指定启动窗体
+            //    // 测试界面改成TestWindow()即可
+            //    app.UseMainWindow(context => new SaMLoginUI());
+               
+            //})
+            //.Build()
+            //.Run();
        
         }
     }

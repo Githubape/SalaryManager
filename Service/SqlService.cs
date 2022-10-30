@@ -19,14 +19,14 @@ namespace Service
         /// <summary>
         /// 数据库连接字符串    !!!!!!!!!!!!!!!!!!!!这个字符串后续要改，连接用的!!!!!!!!!!!!!!!!!!!!!!!!!!!
         /// </summary>
-        private static string connString = ConfigurationManager.ConnectionStrings["server=数据名;uid=用户名;pwd=密码;database=数据库名;Trusted_Connection=no"].ToString();
+        private string connString = "Server=localhost;uid=root;pwd=bd1234;database=test;Trusted_Connection=no"; //ConfigurationManager.ConnectionStrings["server=127.0.0.1:3306;uid=root;pwd=bd1234;database=test;Trusted_Connection=no"].ToString();
         #region 执行格式化SQL语句
         /// <summary>
         /// 增删改操作
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static int Update(string sql)
+        public   int Update(string sql)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -51,7 +51,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static object GetSingleResult(string sql)
+        public   object GetSingleResult(string sql)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -76,8 +76,9 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static SqlDataReader GetReader(string sql)
+        public   SqlDataReader GetReader(string sql)
         {
+            Console.WriteLine("fuck");
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(sql, conn);
             try
@@ -97,7 +98,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static DataSet GetDataSet(string sql)
+        public   DataSet GetDataSet(string sql)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -125,7 +126,7 @@ namespace Service
         /// </summary>
         /// <param name="sql">使用HashTable类型的泛型集合封装对应的SQL语句和数据表名称</param>
         /// <returns>返回包含若干个数据表的数据集</returns>
-        public static DataSet GetDataSet(Dictionary<string, string> sqlDic)
+        public   DataSet GetDataSet(Dictionary<string, string> sqlDic)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand();
@@ -160,7 +161,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns>返回是否执行成功</returns>
-        public static bool UpdateByTransaction(List<string> sqlList)
+        public   bool UpdateByTransaction(List<string> sqlList)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand();
@@ -207,7 +208,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static int Update(string sql, SqlParameter[] param)
+        public   int Update(string sql, SqlParameter[] param)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -233,7 +234,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static object GetSingleResult(string sql, SqlParameter[] param)
+        public   object GetSingleResult(string sql, SqlParameter[] param)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -259,7 +260,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static SqlDataReader GetReader(string sql, SqlParameter[] param)
+        public   SqlDataReader GetReader(string sql, SqlParameter[] param)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -281,7 +282,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static DataSet GetDataSet(string sql, SqlParameter[] param)
+        public   DataSet GetDataSet(string sql, SqlParameter[] param)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -310,7 +311,7 @@ namespace Service
         ///// </summary>
         ///// <param name="sql">使用HashTable类型的泛型集合封装对应的SQL语句和数据表名称</param>
         ///// <returns>返回包含若干个数据表的数据集</returns>
-        //public static DataSet GetDataSet(List<ArrayList> sqlNameSqlParamDic)
+        //public   DataSet GetDataSet(List<ArrayList> sqlNameSqlParamDic)
         //{
         //    SqlConnection conn = new SqlConnection(connString);
         //    SqlCommand cmd = new SqlCommand();
@@ -346,7 +347,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns>返回是否执行成功</returns>
-        public static bool UpdateByTransaction(Dictionary<string, SqlParameter[]> sqlParamList)
+        public   bool UpdateByTransaction(Dictionary<string, SqlParameter[]> sqlParamList)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand();
@@ -393,7 +394,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns>返回受影响的行数</returns>
-        public static int UpdateByProcedure(string storeProcedureName, SqlParameter[] param = null)
+        public   int UpdateByProcedure(string storeProcedureName, SqlParameter[] param = null)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand();
@@ -425,7 +426,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static object GetSingleResultByProcedure(string storeProcedureName, SqlParameter[] param = null)
+        public   object GetSingleResultByProcedure(string storeProcedureName, SqlParameter[] param = null)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand();
@@ -457,7 +458,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static SqlDataReader GetReaderByProcedure(string storeProcedureName, SqlParameter[] param = null)
+        public   SqlDataReader GetReaderByProcedure(string storeProcedureName, SqlParameter[] param = null)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand();
@@ -485,7 +486,7 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public static DataSet GetDataSetByProcedure(string storeProcedureName, SqlParameter[] param = null)
+        public   DataSet GetDataSetByProcedure(string storeProcedureName, SqlParameter[] param = null)
         {
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand cmd = new SqlCommand();
@@ -522,7 +523,7 @@ namespace Service
         /// 获取数据库服务器时间
         /// </summary>
         /// <returns></returns>
-        public static DateTime GetServerTime()
+        public   DateTime GetServerTime()
         {
             string sql = "select getdate()";
             return Convert.ToDateTime(GetSingleResult(sql));

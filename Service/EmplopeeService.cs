@@ -15,6 +15,7 @@ namespace Service
     /// </summary>
     public class EmplopeeService
     {
+        private SqlService Sservice = new SqlService();
         /// <summary>
         /// Service查询员工列表       !!!!!!!!!!!!!!!!!!!!!!!!!!!这里没写完只做样例!!!!!!!!!!!!!!!!!!!!!!!
         /// </summary>
@@ -22,7 +23,7 @@ namespace Service
         public List<Employee> QueryEmployeeListInfo()
         {
             string sql = "select A,B,C form Employee&&Position";
-            SqlDataReader objReader=SqlService.GetReader(sql);
+            SqlDataReader objReader=Sservice.GetReader(sql);
             List<Employee> EList = new List<Employee>();
             while (objReader.Read())
             {
@@ -61,7 +62,7 @@ namespace Service
 
            };
 
-         return SqlService.UpdateByProcedure("update 表名 set 字段1=@var [where E_id=@EId]", param);
+         return new SqlService().UpdateByProcedure("update 表名 set 字段1=@var [where E_id=@EId]", param);
         }
     }
 

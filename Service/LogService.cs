@@ -41,7 +41,7 @@ namespace Service
         {
             get
             {
-                return SqlService.GetServerTime();
+                return new SqlService().GetServerTime();
             }
         }
 

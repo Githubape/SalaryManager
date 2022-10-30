@@ -9,7 +9,7 @@ using Service;
 
 namespace Manager
 {
-    class EmployeeManager
+    public class EmployeeManager
     {
         /// <summary>
         /// Employee工具包直接被UI使用
