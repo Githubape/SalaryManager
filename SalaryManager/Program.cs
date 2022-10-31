@@ -43,6 +43,10 @@ namespace SalaryManager
             
             ///登录窗体
             Application.Run(new LoginForm());
+
+            ///功能界面
+            ///Application.Run(new MainForm());
+
             // 初始化窗体
             //WinFormium.CreateRuntimeBuilder(env =>
             //{
