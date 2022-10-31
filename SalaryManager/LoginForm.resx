@@ -196,7 +196,7 @@
     <value>4, 6, 4, 6</value>
   </data>
   <data name="materialButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 36</value>
+    <value>64, 36</value>
   </data>
   <data name="materialButton1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

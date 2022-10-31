@@ -20,7 +20,7 @@ namespace Manager
         /// <param name="msg"></param>
         public static void Logtest(string msg)
         {
-            LogService.WriteLog(msg);
+            LogService.WriteErrorLog(msg);
         }
 
         public void Sqltest()
