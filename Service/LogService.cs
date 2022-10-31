@@ -10,29 +10,14 @@ using System.Reflection;
 
 namespace Service
 {
-    class LogService
+    public class LogService
     {
         /// <summary>
         /// 日志文件全名
         /// </summary>
         private static string logFileFullName = string.Empty;
-        private static string LogFileFullName
-        {
-            get
-            {
-                return logFileFullName;
-            }
-            set
-            {
-                string fullPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + @"\" + System.Diagnostics.Process.GetCurrentProcess().ProcessName + @"\";
-                string strPath = Path.GetDirectoryName(fullPath);
-                if (!Directory.Exists(strPath))
-                {
-                    Directory.CreateDirectory(strPath);
-                }
-                logFileFullName = fullPath + value;
-            }
-        }
+        private static string LogFileFullName;
+
 
         /// <summary>
         /// 获取数据库服务器时间
@@ -51,9 +36,9 @@ namespace Service
         /// <param name="msg"></param>
         public static void WriteLog(string msg)
         {
-            LogFileFullName = System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".log";
-
-            FileStream fs = new FileStream(logFileFullName, FileMode.OpenOrCreate | FileMode.Append);
+            LogFileFullName = System.Environment.CurrentDirectory + "\\Log\\"+DateTime.Now.ToString("yyyy-MM-dd") + ".log";//System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".log";
+            //Console.WriteLine("LogPath::"+LogFileFullName);
+            FileStream fs = new FileStream(LogFileFullName, FileMode.OpenOrCreate | FileMode.Append);
             StreamWriter sw = new StreamWriter(fs);
             string strMethodName = string.Empty;
             //获取调用栈对象
@@ -64,9 +49,12 @@ namespace Service
             strMethodName += mb.DeclaringType.FullName + ".";
             //取得父方法名
             strMethodName += mb.Name;
-            sw.WriteLine(string.Format("[{0}] 调用{1}时出错：{2}", ServerTime.ToString(), strMethodName, msg));
+            sw.WriteLine(string.Format("调用{0}时出错：{1}", strMethodName, msg));
+           
+            //sw.WriteLine(string.Format("[{0}] 调用{1}时出错：{2}", ServerTime.ToString(), strMethodName, msg));
             sw.Close();
             fs.Close();
+            Console.WriteLine(string.Format("调用{0}时出错：{1}", strMethodName, msg));
         }
     }
 }

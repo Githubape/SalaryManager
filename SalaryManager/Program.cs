@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
-=======
-using NetDimension.NanUI;
+
+
 using MaterialSkin;
->>>>>>> e0663af87cf0245f0a29833fcce37e52d4ae65de
+using System.Diagnostics;
+
+using Manager;//删除标志
 
 namespace SalaryManager
 {
@@ -19,8 +20,28 @@ namespace SalaryManager
         [STAThread]
         static void Main()
         {
+       
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            ///禁止重复启动
+            Process[] ProcessArray = Process.GetProcesses();
+            int currentCount = 0;
+            foreach(var item in ProcessArray)
+            {
+                if(item.ProcessName==Process.GetCurrentProcess().ProcessName)
+                {
+                    currentCount += 1;
+                    if (currentCount > 1)
+                        return;
+                }
+            }
+
+            //////////////////////////测试模块//////////////////////////////
+            //TEMPEREATE.Logtest("tst");//Log 测试 测试完毕
+            ///new TEMPEREATE().Sqltest();//Sql测试 测试完毕
+            //////////////////////////////////////////////////////////////
+            
+            ///登录窗体
             Application.Run(new LoginForm());
             // 初始化窗体
             //WinFormium.CreateRuntimeBuilder(env =>

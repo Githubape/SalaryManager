@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Collections;
 
 namespace Service
@@ -19,7 +20,7 @@ namespace Service
         /// <summary>
         /// 数据库连接字符串    !!!!!!!!!!!!!!!!!!!!这个字符串后续要改，连接用的!!!!!!!!!!!!!!!!!!!!!!!!!!!
         /// </summary>
-        private string connString = "Server=localhost;uid=root;pwd=bd1234;database=test;Trusted_Connection=no"; //ConfigurationManager.ConnectionStrings["server=127.0.0.1:3306;uid=root;pwd=bd1234;database=test;Trusted_Connection=no"].ToString();
+        private string connString = "server=127.0.0.1;port=3306;user=root;pwd=root;database=Salary;"; //ConfigurationManager.ConnectionStrings["server=127.0.0.1:3306;uid=root;pwd=bd1234;database=test;Trusted_Connection=no"].ToString();
         #region 执行格式化SQL语句
         /// <summary>
         /// 增删改操作
@@ -28,8 +29,8 @@ namespace Service
         /// <returns></returns>
         public   int Update(string sql)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
             try
             {
                 conn.Open();
@@ -53,8 +54,8 @@ namespace Service
         /// <returns></returns>
         public   object GetSingleResult(string sql)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
             try
             {
                 conn.Open();
@@ -76,11 +77,11 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public   SqlDataReader GetReader(string sql)
+        public   MySqlDataReader GetReader(string sql)
         {
             Console.WriteLine("fuck");
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
             try
             {
                 conn.Open();
@@ -90,6 +91,7 @@ namespace Service
             {
                 //将错误信息写入日志文件
                 LogService.WriteLog(ex.Message);
+                Console.WriteLine("conn 妹打开啊");
                 throw ex;
             }
         }
@@ -100,9 +102,9 @@ namespace Service
         /// <returns></returns>
         public   DataSet GetDataSet(string sql)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             try
             {
@@ -128,10 +130,10 @@ namespace Service
         /// <returns>返回包含若干个数据表的数据集</returns>
         public   DataSet GetDataSet(Dictionary<string, string> sqlDic)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand();
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             try
             {
@@ -163,8 +165,8 @@ namespace Service
         /// <returns>返回是否执行成功</returns>
         public   bool UpdateByTransaction(List<string> sqlList)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand();
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
             try
             {
@@ -208,10 +210,10 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public   int Update(string sql, SqlParameter[] param)
+        public   int Update(string sql, MySqlParameter[] param)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddRange(param);
             try
             {
@@ -234,10 +236,10 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public   object GetSingleResult(string sql, SqlParameter[] param)
+        public   object GetSingleResult(string sql, MySqlParameter[] param)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddRange(param);
             try
             {
@@ -260,10 +262,10 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public   SqlDataReader GetReader(string sql, SqlParameter[] param)
+        public   MySqlDataReader GetReader(string sql, MySqlParameter[] param)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddRange(param);
             try
             {
@@ -282,11 +284,11 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public   DataSet GetDataSet(string sql, SqlParameter[] param)
+        public   DataSet GetDataSet(string sql, MySqlParameter[] param)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             cmd.Parameters.AddRange(param);
             DataSet ds = new DataSet();
             try
@@ -313,10 +315,10 @@ namespace Service
         ///// <returns>返回包含若干个数据表的数据集</returns>
         //public   DataSet GetDataSet(List<ArrayList> sqlNameSqlParamDic)
         //{
-        //    SqlConnection conn = new SqlConnection(connString);
-        //    SqlCommand cmd = new SqlCommand();
+        //    MySqlConnection conn = new MySqlConnection(connString);
+        //    MySqlCommand cmd = new MySqlCommand();
         //    cmd.Connection = conn;
-        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
         //    DataSet ds = new DataSet();
         //    try
         //    {
@@ -324,7 +326,7 @@ namespace Service
         //        foreach(var item in sqlNameSqlParamDic)
         //        {
         //            cmd.CommandText = (string)item[1];
-        //            cmd.Parameters.AddRange((SqlParameter[])item[2]);
+        //            cmd.Parameters.AddRange((MySqlParameter[])item[2]);
         //            da.Fill(ds, (string)item[0]);//tableName
         //        }
         //        return ds;
@@ -347,10 +349,10 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns>返回是否执行成功</returns>
-        public   bool UpdateByTransaction(Dictionary<string, SqlParameter[]> sqlParamList)
+        public   bool UpdateByTransaction(Dictionary<string, MySqlParameter[]> sqlParamList)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand();
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
             try
             {
@@ -394,10 +396,10 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns>返回受影响的行数</returns>
-        public   int UpdateByProcedure(string storeProcedureName, SqlParameter[] param = null)
+        public   int UpdateByProcedure(string storeProcedureName, MySqlParameter[] param = null)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand();
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.StoredProcedure;//告诉Commmand对象，当前的操作时执行存储过程
             cmd.CommandText = storeProcedureName;
@@ -426,10 +428,10 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public   object GetSingleResultByProcedure(string storeProcedureName, SqlParameter[] param = null)
+        public   object GetSingleResultByProcedure(string storeProcedureName, MySqlParameter[] param = null)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand();
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.StoredProcedure;//告诉Commmand对象，当前的操作时执行存储过程
             cmd.CommandText = storeProcedureName;
@@ -458,10 +460,10 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public   SqlDataReader GetReaderByProcedure(string storeProcedureName, SqlParameter[] param = null)
+        public   MySqlDataReader GetReaderByProcedure(string storeProcedureName, MySqlParameter[] param = null)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand();
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.StoredProcedure;//告诉Commmand对象，当前的操作时执行存储过程
             cmd.CommandText = storeProcedureName;
@@ -486,10 +488,10 @@ namespace Service
         /// </summary>
         /// <param name="sql"></param>
         /// <returns></returns>
-        public   DataSet GetDataSetByProcedure(string storeProcedureName, SqlParameter[] param = null)
+        public   DataSet GetDataSetByProcedure(string storeProcedureName, MySqlParameter[] param = null)
         {
-            SqlConnection conn = new SqlConnection(connString);
-            SqlCommand cmd = new SqlCommand();
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.StoredProcedure;//告诉Commmand对象，当前的操作时执行存储过程
             cmd.CommandText = storeProcedureName;
@@ -497,7 +499,7 @@ namespace Service
             {
                 cmd.Parameters.AddRange(param);
             }
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             try
             {

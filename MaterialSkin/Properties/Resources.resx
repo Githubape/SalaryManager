@@ -118,10 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Roboto_Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roboto-Medium.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="SourceHanSansCN_Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SourceHanSansCN-Bold.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Roboto_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roboto-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="SourceHanSansCN_Light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SourceHanSansCN-Light.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SourceHanSansCN_Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SourceHanSansCN-Medium.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SourceHanSansCN_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SourceHanSansCN-Normal.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SourceHanSansCN_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SourceHanSansCN-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

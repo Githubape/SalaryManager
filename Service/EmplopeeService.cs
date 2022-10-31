@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 using Model;
 using System.Data;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Service
 {
@@ -23,7 +24,7 @@ namespace Service
         public List<Employee> QueryEmployeeListInfo()
         {
             string sql = "select A,B,C form Employee&&Position";
-            SqlDataReader objReader=Sservice.GetReader(sql);
+            MySqlDataReader objReader=Sservice.GetReader(sql);
             List<Employee> EList = new List<Employee>();
             while (objReader.Read())
             {
@@ -55,9 +56,9 @@ namespace Service
         /// <returns></returns>
         public int UpdateEmployeeInformation(Employee objEmployeeNew, Employee objEmployeeOld)
         {
-            SqlParameter[] param = new SqlParameter[]
+            MySqlParameter[] param = new MySqlParameter[]
            {
-                new SqlParameter("@EId",objEmployeeOld.E_id),
+                new MySqlParameter("@EId",objEmployeeOld.E_id),
 
 
            };
