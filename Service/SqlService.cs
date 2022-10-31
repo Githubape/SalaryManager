@@ -39,7 +39,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -64,7 +64,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -90,7 +90,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 Console.WriteLine("conn 妹打开啊");
                 throw ex;
             }
@@ -115,7 +115,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -148,7 +148,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -187,7 +187,7 @@ namespace Service
                     cmd.Transaction.Rollback();//回滚事务
                 }
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -223,7 +223,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -249,7 +249,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -275,7 +275,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
         }
@@ -300,7 +300,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -374,7 +374,7 @@ namespace Service
                     cmd.Transaction.Rollback();//回滚事务
                 }
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -415,7 +415,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -447,7 +447,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally
@@ -479,7 +479,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
         }
@@ -510,7 +510,7 @@ namespace Service
             catch (System.Exception ex)
             {
                 //将错误信息写入日志文件
-                LogService.WriteLog(ex.Message);
+                LogService.WriteErrorLog(ex.Message);
                 throw ex;
             }
             finally

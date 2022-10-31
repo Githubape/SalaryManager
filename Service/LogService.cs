@@ -34,9 +34,9 @@ namespace Service
         /// 写日志
         /// </summary>
         /// <param name="msg"></param>
-        public static void WriteLog(string msg)
+        public static void WriteErrorLog(string msg)
         {
-            LogFileFullName = System.Environment.CurrentDirectory + "\\Log\\"+DateTime.Now.ToString("yyyy-MM-dd") + ".log";//System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".log";
+            LogFileFullName = System.Environment.CurrentDirectory + "\\ErrorLog\\"+DateTime.Now.ToString("yyyy-MM-dd") + ".log";//System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".log";
             //Console.WriteLine("LogPath::"+LogFileFullName);
             FileStream fs = new FileStream(LogFileFullName, FileMode.OpenOrCreate | FileMode.Append);
             StreamWriter sw = new StreamWriter(fs);
@@ -55,6 +55,18 @@ namespace Service
             sw.Close();
             fs.Close();
             Console.WriteLine(string.Format("调用{0}时出错：{1}", strMethodName, msg));
+        }
+
+        public static void WriteLog(string msg)
+        {
+            LogFileFullName = System.Environment.CurrentDirectory + "\\Log\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";//System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".log";
+            //Console.WriteLine("LogPath::"+LogFileFullName);
+            FileStream fs = new FileStream(LogFileFullName, FileMode.OpenOrCreate | FileMode.Append);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine(msg);
+            sw.Close();
+            fs.Close();
+            Console.WriteLine(msg);
         }
     }
 }

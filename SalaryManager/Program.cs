@@ -42,32 +42,21 @@ namespace SalaryManager
             //////////////////////////////////////////////////////////////
             
             ///登录窗体
-            Application.Run(new LoginForm());
 
-            ///功能界面
-            ///Application.Run(new MainForm());
 
-            // 初始化窗体
-            //WinFormium.CreateRuntimeBuilder(env =>
-            //{
-            //    env.CustomCefSettings(settings =>
-            //    {
-            //        // 在此设置CEF的相关参数
-            //    });
+          
 
-            //    env.CustomCefCommandLineArguments(commandLine =>
-            //    {
-            //        // 在此处指定CEF命令参数
-            //    });
-            //}, app =>
-            //{
-            //    // 指定启动窗体
-            //    // 测试界面改成TestWindow()即可
-            //    app.UseMainWindow(context => new SaMLoginUI());
-               
-            //})
-            //.Build()
-            //.Run();
+
+            //Application.Run(new LoginForm());
+            LoginForm LogF = new LoginForm();
+            if(DialogResult.OK==LogF.ShowDialog())
+            {
+                ///功能界面
+                Application.Run(new MainForm());
+            }
+
+
+
        
         }
     }
