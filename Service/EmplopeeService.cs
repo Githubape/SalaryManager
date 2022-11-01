@@ -24,7 +24,7 @@ namespace Service
         /// <returns></returns>
         public List<Employee> QueryEmployeeListInfo()
         {
-            string sql = "SELECT * FROM salary.employee Left Join salary.position on salary.employee.Id=salary.position.Eid";
+            string sql = "SELECT *  FROM salary.employee Left Join salary.position on salary.employee.Id=salary.position.Eid where salary.position.Abolish=0";
             MySqlDataReader objReader = Sservice.GetReader(sql);
             List<Employee> EList = new List<Employee>();
             Type Etype = typeof(Employee);
