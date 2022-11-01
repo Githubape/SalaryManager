@@ -31,6 +31,17 @@ namespace SalaryManager
         {
             List<Employee> Elist = new List<Employee>();
             Elist = Emanager.GetEmployeeInformation();
+            List<string[]> Lists = ElTranSl(Elist);
+            foreach (string[] item in Lists)
+            {
+                var Li = new ListViewItem(item);
+                materialListView1.Items.Add(Li);
+            }
+            //throw new NotImplementedException();
+        }
+        List<string[]> ElTranSl(List<Employee> Elist)
+        {
+            List<string[]> Lists = new List<string[]>();
             string[] ldata = new string[7];
             foreach (Employee item in Elist)
             {
@@ -41,12 +52,10 @@ namespace SalaryManager
                 ldata[4] = item.E_group;
                 ldata[5] = item.E_type;
                 ldata[6] = item.EntryTime;
-                var Li= new ListViewItem(ldata);
-                materialListView1.Items.Add(Li);
+                Lists.Add(ldata);
             }
-            //throw new NotImplementedException();
+            return Lists;
         }
-        
         private void tabPage3_Click(object sender, EventArgs e)
         {
 
