@@ -31,17 +31,18 @@
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.rsgl = new System.Windows.Forms.TabPage();
             this.materialTabControl2 = new MaterialSkin.Controls.MaterialTabControl();
-            this.gzgl = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
             this.rsgl.SuspendLayout();
+            this.materialTabControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.rsgl);
-            this.materialTabControl1.Controls.Add(this.gzgl);
             this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -65,30 +66,43 @@
             this.rsgl.TabIndex = 0;
             this.rsgl.Text = "人事管理";
             this.rsgl.UseVisualStyleBackColor = true;
+            this.rsgl.Click += new System.EventHandler(this.rsgl_Click);
             // 
             // materialTabControl2
             // 
+            this.materialTabControl2.Alignment = System.Windows.Forms.TabAlignment.Right;
+            this.materialTabControl2.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+            this.materialTabControl2.Controls.Add(this.tabPage2);
+            this.materialTabControl2.Controls.Add(this.tabPage4);
             this.materialTabControl2.Depth = 0;
             this.materialTabControl2.Location = new System.Drawing.Point(0, 3);
             this.materialTabControl2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl2.Multiline = true;
             this.materialTabControl2.Name = "materialTabControl2";
             this.materialTabControl2.SelectedIndex = 0;
-            this.materialTabControl2.Size = new System.Drawing.Size(787, 348);
+            this.materialTabControl2.Size = new System.Drawing.Size(784, 351);
             this.materialTabControl2.TabIndex = 0;
-            this.materialTabControl2.SelectedIndexChanged += new System.EventHandler(this.materialTabControl2_SelectedIndexChanged);
             // 
-            // gzgl
+            // tabPage2
             // 
-            this.gzgl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gzgl.Location = new System.Drawing.Point(4, 26);
-            this.gzgl.Name = "gzgl";
-            this.gzgl.Padding = new System.Windows.Forms.Padding(3);
-            this.gzgl.Size = new System.Drawing.Size(790, 357);
-            this.gzgl.TabIndex = 1;
-            this.gzgl.Text = "工资管理";
-            this.gzgl.UseVisualStyleBackColor = true;
-            this.gzgl.Click += new System.EventHandler(this.tabPage2_Click);
+            this.tabPage2.BackColor = System.Drawing.Color.Black;
+            this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tabPage2.Size = new System.Drawing.Size(637, 343);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click_1);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(637, 343);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "tabPage4";
             // 
             // tabPage3
             // 
@@ -125,16 +139,18 @@
             this.Text = "MainForm";
             this.materialTabControl1.ResumeLayout(false);
             this.rsgl.ResumeLayout(false);
+            this.materialTabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.TabPage rsgl;
-        private System.Windows.Forms.TabPage gzgl;
         private System.Windows.Forms.TabPage tabPage3;
-        private MaterialSkin.Controls.MaterialTabControl materialTabControl2;
         private System.Windows.Forms.TabPage tabPage1;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
+        private MaterialSkin.Controls.MaterialTabControl materialTabControl2;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }

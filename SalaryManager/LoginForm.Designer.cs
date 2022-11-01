@@ -53,6 +53,8 @@
             this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox2.Name = "materialTextBox2";
             this.materialTextBox2.TrailingIcon = null;
+            this.materialTextBox2.TextChanged += new System.EventHandler(this.materialTextBox2_TextChanged);
+            this.materialTextBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.materialTextBox2_KeyDown);
             // 
             // materialButton1
             // 
@@ -70,7 +72,6 @@
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
-            
             // 
             // LoginForm
             // 

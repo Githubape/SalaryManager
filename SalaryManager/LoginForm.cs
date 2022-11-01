@@ -77,5 +77,16 @@ namespace SalaryManager
                 this.DialogResult = DialogResult.OK;
             }
         }
+        private void materialTextBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                this.materialButton1.PerformClick();
+            }
+        }
+        private void materialTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -50,5 +50,20 @@ namespace SalaryManager
         {
 
         }
+
+        private void rsgl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTabSelector1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
