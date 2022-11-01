@@ -79,7 +79,7 @@ namespace Service
         /// <returns></returns>
         public   MySqlDataReader GetReader(string sql)
         {
-            Console.WriteLine("fuck");
+            Console.WriteLine(sql);
             MySqlConnection conn = new MySqlConnection(connString);
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             try

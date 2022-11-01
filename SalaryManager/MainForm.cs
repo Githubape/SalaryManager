@@ -16,11 +16,37 @@ namespace SalaryManager
 {
     public partial class MainForm : MaterialForm
     {
+        EmployeeManager Emanager = new EmployeeManager();
+        
+
         public MainForm()
         {
             InitializeComponent();
+            LoadData();
         }
-
+        /// <summary>
+        /// 加载列表数据
+        /// </summary>
+        private void LoadData()
+        {
+            List<Employee> Elist = new List<Employee>();
+            Elist = Emanager.GetEmployeeInformation();
+            string[] ldata = new string[7];
+            foreach (Employee item in Elist)
+            {
+                ldata[0] = item.E_id.ToString();
+                ldata[1] = item.Name;
+                ldata[2] = item.Sex;
+                ldata[3] = item.BankAccount.ToString();
+                ldata[4] = item.E_group;
+                ldata[5] = item.E_type;
+                ldata[6] = item.EntryTime;
+                var Li= new ListViewItem(ldata);
+                materialListView1.Items.Add(Li);
+            }
+            //throw new NotImplementedException();
+        }
+        
         private void tabPage3_Click(object sender, EventArgs e)
         {
 
@@ -67,6 +93,11 @@ namespace SalaryManager
         }
 
         private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

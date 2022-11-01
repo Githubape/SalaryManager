@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,27 +24,63 @@ namespace Service
         /// <returns></returns>
         public List<Employee> QueryEmployeeListInfo()
         {
-            string sql = "select A,B,C form Employee&&Position";
-            MySqlDataReader objReader=Sservice.GetReader(sql);
+            string sql = "SELECT * FROM salary.employee Left Join salary.position on salary.employee.Id=salary.position.Eid";
+            MySqlDataReader objReader = Sservice.GetReader(sql);
             List<Employee> EList = new List<Employee>();
+            Type Etype = typeof(Employee);
+            Type Ptype = typeof(Position);
+            PropertyInfo[] Epros= Etype.GetProperties();
+            PropertyInfo[] Ppros = Ptype.GetProperties();
+            //foreach(PropertyInfo item in Ppros)
+            //{
+            //    Console.WriteLine(item.Name+" "+item.PropertyType);
+            //}
+            
+            
             while (objReader.Read())
-            {
-                EList.Add(new Employee()
-                {
-                    E_id=Convert.ToInt32(objReader["E_id"]),
-                    Name = objReader["Name"].ToString(),
-                    BankAccount = Convert.ToInt32(objReader["BankAccount"]),
-                    E_group = objReader["E_group"].ToString(),
-                    E_type = objReader[""].ToString(),
-                    EnttyTime = objReader[""].ToString(),
+            {               
+                Employee etem = new Employee();
+                Position epos = new Position();
 
-                    position=new Position()
+                foreach (PropertyInfo item in Epros)
+                {
+                    if (item.PropertyType.ToString() == "System.Int32")
                     {
-                        WorkType=objReader[""].ToString(),
-                        Post=objReader[""].ToString(),
-                        
+                        Etype.GetProperty(item.Name).SetValue(etem, Convert.ToInt32(objReader[item.Name]));
                     }
-                });
+                    if (item.PropertyType.ToString() == "System.String")
+                    {
+                        Etype.GetProperty(item.Name).SetValue(etem, objReader[item.Name].ToString());
+                    }
+                    if (item.PropertyType.ToString() == "System.Double")
+                    {
+                        Etype.GetProperty(item.Name).SetValue(etem, Convert.ToDouble(objReader[item.Name]));
+                    }
+                }
+                foreach (PropertyInfo item in Ppros)
+                {
+                    if (item.PropertyType.ToString() == "System.Int32")
+                    {
+                        Ptype.GetProperty(item.Name).SetValue(epos,Convert.ToInt32(objReader[item.Name]));
+                    }
+                    if (item.PropertyType.ToString() == "System.String")
+                    {
+                        Ptype.GetProperty(item.Name).SetValue(epos, objReader[item.Name].ToString());
+                    }
+                    if (item.PropertyType.ToString() == "System.Double")
+                    {
+                        Ptype.GetProperty(item.Name).SetValue(epos, Convert.ToDouble(objReader[item.Name]));
+                    }
+                }
+                etem.position = epos;
+                //foreach (PropertyInfo item in Epros)
+                //{
+
+                //        Console.WriteLine( Etype.GetProperty(item.Name).GetValue(etem));
+   
+                //}
+                EList.Add(etem);
+                
             }
             objReader.Close();
             return EList;

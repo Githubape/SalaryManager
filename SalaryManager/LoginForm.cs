@@ -77,6 +77,11 @@ namespace SalaryManager
                 this.DialogResult = DialogResult.OK;
             }
         }
+        /// <summary>
+        /// 回车登录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void materialTextBox2_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode==Keys.Enter)
@@ -85,6 +90,11 @@ namespace SalaryManager
             }
         }
         private void materialTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

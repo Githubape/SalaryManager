@@ -82,10 +82,10 @@ namespace Model
         /// <summary>
         /// 住房补贴
         /// </summary>
-        public string HousingAllowance { get; set; }
+        public double HousingAllowance { get; set; }
         /// <summary>
         /// 取暖补贴
         /// </summary>
-        public string HeatingAllowance { get; set; }
+        public double HeatingAllowance { get; set; }
     }
 }

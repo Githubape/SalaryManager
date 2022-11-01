@@ -23,7 +23,7 @@ namespace Model
     /// </summary>
     public class Employee
     {
-        public int Id { get; set; }
+
         /// <summary>
         /// Emplopee id
         /// </summary>
@@ -32,6 +32,10 @@ namespace Model
         /// Employee name
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// 性别
+        /// </summary>
+        public string Sex { get; set; }
         /// <summary>
         /// Employee bankaccount
         /// </summary>
@@ -47,7 +51,7 @@ namespace Model
         /// <summary>
         /// 入职时间
         /// </summary>
-        public string EnttyTime { get; set; }
+        public string EntryTime { get; set; }
         /// <summary>
         /// 职位
         /// </summary>
