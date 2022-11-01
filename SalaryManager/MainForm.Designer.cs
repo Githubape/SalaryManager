@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.TabControl_Top = new MaterialSkin.Controls.MaterialTabControl();
             this.rsgl = new System.Windows.Forms.TabPage();
-            this.gzgl = new System.Windows.Forms.TabPage();
-            this.cgsz = new System.Windows.Forms.TabPage();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.rsgl_Tab = new MaterialSkin.Controls.MaterialTabControl();
             this.jsjdgl = new System.Windows.Forms.TabPage();
             this.bdls = new System.Windows.Forms.TabPage();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.gzgl = new System.Windows.Forms.TabPage();
+            this.cgsz = new System.Windows.Forms.TabPage();
             this.TabControl_Top.SuspendLayout();
             this.rsgl.SuspendLayout();
             this.rsgl_Tab.SuspendLayout();
@@ -73,26 +73,17 @@
             this.rsgl.UseVisualStyleBackColor = true;
             this.rsgl.Click += new System.EventHandler(this.rsgl_Click);
             // 
-            // gzgl
+            // materialTabSelector1
             // 
-            this.gzgl.Location = new System.Drawing.Point(4, 26);
-            this.gzgl.Name = "gzgl";
-            this.gzgl.Padding = new System.Windows.Forms.Padding(3);
-            this.gzgl.Size = new System.Drawing.Size(1122, 531);
-            this.gzgl.TabIndex = 2;
-            this.gzgl.Text = "工资管理";
-            this.gzgl.UseVisualStyleBackColor = true;
-            this.gzgl.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // cgsz
-            // 
-            this.cgsz.Location = new System.Drawing.Point(4, 26);
-            this.cgsz.Name = "cgsz";
-            this.cgsz.Padding = new System.Windows.Forms.Padding(3);
-            this.cgsz.Size = new System.Drawing.Size(1122, 531);
-            this.cgsz.TabIndex = 3;
-            this.cgsz.Text = "常规设置";
-            this.cgsz.UseVisualStyleBackColor = true;
+            this.materialTabSelector1.BaseTabControl = this.rsgl_Tab;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Font = new System.Drawing.Font("思源黑体 CN Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(1122, 32);
+            this.materialTabSelector1.TabIndex = 1;
+            this.materialTabSelector1.Text = "materialTabSelector1";
             // 
             // rsgl_Tab
             // 
@@ -128,18 +119,6 @@
             this.bdls.Text = "变动历史";
             this.bdls.UseVisualStyleBackColor = true;
             // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.BaseTabControl = this.rsgl_Tab;
-            this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Font = new System.Drawing.Font("思源黑体 CN Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1122, 47);
-            this.materialTabSelector1.TabIndex = 1;
-            this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
             // materialTextBox1
             // 
             this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -155,6 +134,27 @@
             this.materialTextBox1.TabIndex = 0;
             this.materialTextBox1.Text = "";
             this.materialTextBox1.TrailingIcon = null;
+            // 
+            // gzgl
+            // 
+            this.gzgl.Location = new System.Drawing.Point(4, 26);
+            this.gzgl.Name = "gzgl";
+            this.gzgl.Padding = new System.Windows.Forms.Padding(3);
+            this.gzgl.Size = new System.Drawing.Size(1122, 531);
+            this.gzgl.TabIndex = 2;
+            this.gzgl.Text = "工资管理";
+            this.gzgl.UseVisualStyleBackColor = true;
+            this.gzgl.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // cgsz
+            // 
+            this.cgsz.Location = new System.Drawing.Point(4, 26);
+            this.cgsz.Name = "cgsz";
+            this.cgsz.Padding = new System.Windows.Forms.Padding(3);
+            this.cgsz.Size = new System.Drawing.Size(1122, 531);
+            this.cgsz.TabIndex = 3;
+            this.cgsz.Text = "常规设置";
+            this.cgsz.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
