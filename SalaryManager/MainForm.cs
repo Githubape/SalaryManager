@@ -101,5 +101,20 @@ namespace SalaryManager
         {
 
         }
+
+        private void materialTabSelector1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
