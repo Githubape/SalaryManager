@@ -131,20 +131,22 @@
             // materialTextBox2
             // 
             this.materialTextBox2.BackColor = System.Drawing.SystemColors.Window;
+           // this.materialTextBox2.Size = new System.Drawing.Size(100, 30);
             this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialTextBox2.Depth = 0;
             this.materialTextBox2.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(139, 12);
+            this.materialTextBox2.Location = new System.Drawing.Point(360, 22);
             this.materialTextBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTextBox2.MaxLength = 50;
+            this.materialTextBox2.MaxLength = 100;
             this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox2.Multiline = false;
             this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(400, 50);
+            this.materialTextBox2.Size = new System.Drawing.Size(189, 20);
             this.materialTextBox2.TabIndex = 3;
             this.materialTextBox2.Text = "";
             this.materialTextBox2.TrailingIcon = null;
+            this.materialTextBox2.UseTallSize = false;
             this.materialTextBox2.TextChanged += new System.EventHandler(this.materialTextBox2_TextChanged);
             // 
             // materialButton2

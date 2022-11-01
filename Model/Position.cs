@@ -12,6 +12,10 @@ namespace Model
     public class Position
     {
         /// <summary>
+        ///主键  位置第一个不得更改
+        /// </summary>
+        public int PId { get; set; }
+        /// <summary>
         /// 工种[操作，服务，管理，专业技术]
         /// </summary>
         public string WorkType { get; set; }

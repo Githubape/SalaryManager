@@ -11,6 +11,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using Manager;
 using Model;
+using System.Reflection;
 
 namespace SalaryManager
 {
@@ -39,19 +40,40 @@ namespace SalaryManager
             }
             //throw new NotImplementedException();
         }
+
         List<string[]> ElTranSl(List<Employee> Elist)
         {
+            Type Etype = typeof(Employee);
+            Type Ptype = typeof(Position);
+            PropertyInfo[] Epros = Etype.GetProperties();
+            PropertyInfo[] Ppros = Ptype.GetProperties();
+            //Console.WriteLine(Epros.GetLength(0));
+            //Console.WriteLine(Ppros.GetLength(0));
             List<string[]> Lists = new List<string[]>();
-            string[] ldata = new string[7];
+            string[] ldata = new string[Epros.GetLength(0)-2+Ppros.GetLength(0)-1];
             foreach (Employee item in Elist)
             {
-                ldata[0] = item.E_id.ToString();
-                ldata[1] = item.Name;
-                ldata[2] = item.Sex;
-                ldata[3] = item.BankAccount.ToString();
-                ldata[4] = item.E_group;
-                ldata[5] = item.E_type;
-                ldata[6] = item.EntryTime;
+                //Emplopee 第一项最后一项不用
+                for(int i=1;i<Epros.GetLength(0)-1;i++)
+                {
+                    ldata[i - 1] = Etype.GetProperty(Epros[i].Name).GetValue(item).ToString();
+                }
+                //Position第一项不用
+                for (int i = Epros.GetLength(0) - 1; i <= ldata.GetLength(0); i++)
+                {
+     
+                    ldata[i - 1] = Ptype.GetProperty(Ppros[i- Epros.GetLength(0)+2].Name).GetValue(item.position).ToString();
+                    //Console.WriteLine((i - 1).ToString() + "      " + ldata[i - 1]);
+                }
+                //ldata[0] = item.E_id.ToString();
+                //ldata[1] = item.Name;
+                //ldata[2] = item.Sex;
+                //ldata[3] = item.BankAccount.ToString();
+                //ldata[4] = item.E_group;
+                //ldata[5] = item.E_type;
+                //ldata[6] = item.EntryTime;
+                //foreach(string it in ldata)
+                // Console.WriteLine(it);
                 Lists.Add(ldata);
             }
             return Lists;

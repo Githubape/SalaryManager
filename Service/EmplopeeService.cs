@@ -19,7 +19,7 @@ namespace Service
     {
         private SqlService Sservice = new SqlService();
         /// <summary>
-        /// Service查询员工列表       !!!!!!!!!!!!!!!!!!!!!!!!!!!这里没写完只做样例!!!!!!!!!!!!!!!!!!!!!!!
+        /// Service查询员工列表   
         /// </summary>
         /// <returns></returns>
         public List<Employee> QueryEmployeeListInfo()
@@ -93,6 +93,11 @@ namespace Service
         /// <returns></returns>
         public int UpdateEmployeeInformation(Employee objEmployeeNew, Employee objEmployeeOld)
         {
+            Type Etype = typeof(Employee);
+            Type Ptype = typeof(Position);
+            PropertyInfo[] Epros = Etype.GetProperties();
+            PropertyInfo[] Ppros = Ptype.GetProperties();
+
             MySqlParameter[] param = new MySqlParameter[]
            {
                 new MySqlParameter("@EId",objEmployeeOld.E_id),

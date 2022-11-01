@@ -23,7 +23,10 @@ namespace Model
     /// </summary>
     public class Employee
     {
-
+        /// <summary>
+        /// 数据库主键  位置第一个不得更改
+        /// </summary>
+        public int Id { get; set; }
         /// <summary>
         /// Emplopee id
         /// </summary>
@@ -53,7 +56,7 @@ namespace Model
         /// </summary>
         public string EntryTime { get; set; }
         /// <summary>
-        /// 职位
+        /// 职位  位置最后一个不得更改
         /// </summary>
         public Position position { get; set; }
     }
