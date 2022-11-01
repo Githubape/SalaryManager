@@ -140,7 +140,7 @@ namespace SalaryManager
 
         private void materialTextBox2_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
