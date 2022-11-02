@@ -364,7 +364,7 @@
             // 
             // List1Header_DutyTime
             // 
-            this.List1Header_DutyTime.Text = "入职时间";
+            this.List1Header_DutyTime.Text = "入岗时间";
             // 
             // List1Header_ServiceLength
             // 

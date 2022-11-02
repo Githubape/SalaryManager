@@ -61,7 +61,7 @@ namespace SalaryManager
             InitializeComponent();
             Eedit = Emp;
             this.itemID_TextBox.Text = "ww";
-            Console.WriteLine(Eedit.Name);
+            //Console.WriteLine(Eedit.Name);
         }
 
         /// <summary>
@@ -82,6 +82,7 @@ namespace SalaryManager
         private void EditEF_Save_Button_Click(object sender, EventArgs e)
         {
             MessageBox.Show("员工ID" + itemID);
+
         }
 
         private void EditEF_Cancel_Button_Click(object sender, EventArgs e)
