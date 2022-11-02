@@ -89,28 +89,62 @@ namespace Service
         /// 更新员工信息 ！！！！！！！！！！！！！！！！！！！！！芝士举例，内具体容代填！！！！！！！！！！！！！！！！！！！！！！！
         /// </summary>
         /// <param name="objEmployeeNew"></param>
-        /// <param name="objEmployeeOld"></param>
         /// <returns></returns>
-        public int UpdateEmployeeInformation(Employee objEmployeeNew, Employee objEmployeeOld)
+        public int UpdateEmployeeInformation(Employee objEmployeeNew)
         {
+            
             Type Etype = typeof(Employee);
             Type Ptype = typeof(Position);
             PropertyInfo[] Epros = Etype.GetProperties();
             PropertyInfo[] Ppros = Ptype.GetProperties();
-            MySqlParameter[] eparam = new MySqlParameter[Epros.GetLength(0)];
+
+            MySqlParameter[] eparam = new MySqlParameter[Epros.GetLength(0)-1];
             MySqlParameter[] pparam = new MySqlParameter[Ppros.GetLength(0)];
 
+            string eqlw = "";
+            string pqlw = "";
 
-            MySqlParameter[] param = new MySqlParameter[]
-           {
-                new MySqlParameter("@EId",objEmployeeOld.Eid),
-           };
-            string sql1 = "update";
-            string sql2 = "set";
-            string sql3 = "[where";
-            string sql4 = "]";
-            string sql = sql1 + "salary.employee" + sql2 + sql3 + sql4;
-         return new SqlService().UpdateByProcedure("update salary.employee set 字段1=@var [where E_id=@EId]", param);
+            string eql = "";
+            string pql = "";
+
+            Dictionary<String, Object> Edic = GetProDic(objEmployeeNew);
+            int num = 0;
+            foreach (PropertyInfo item in Epros)
+            {
+                if (item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32" || item.PropertyType.ToString() == "System.String")
+                {
+                    eparam[num] = new MySqlParameter("@" + item.Name.ToString(), Etype.GetProperty(item.Name).GetValue(objEmployeeNew));
+                }
+                if (num == 0)
+                    eqlw += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
+                if (num == pparam.Length - 1)
+                    eql += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
+                else
+                    eql += item.Name.ToString() + "=" + "@" + item.Name.ToString()+","; 
+                num++;
+            }
+            num = 0;
+            foreach (PropertyInfo item in Ppros)
+            {
+                if (item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32" || item.PropertyType.ToString() == "System.String")
+                {
+                    pparam[num] = new MySqlParameter("@" + item.Name.ToString(), Ptype.GetProperty(item.Name).GetValue(objEmployeeNew.position));
+                }
+                if (num == 0)
+                    pqlw += item.Name.ToString() + "=" + "@" + item.Name.ToString()+" ";
+                if(num==pparam.Length-1)
+                    pql += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
+                else
+                    pql += item.Name.ToString() + "=" + "@" + item.Name.ToString()+",";
+                num++;
+            }
+            
+
+            string sql1 = "Update salary.employee set "+eql+" where "+eqlw;
+            string sql2 = "Update salary.position set "+ pql + " where " + pqlw;
+            //Sservice.UpdateByProcedure(sql1,eparam);
+            //Sservice.UpdateByProcedure(sql1, eparam);
+            return Sservice.UpdateByProcedure(sql1, eparam)+ Sservice.UpdateByProcedure(sql1, eparam);
         }
         /// <summary>
         /// 获取Employee 属性字典

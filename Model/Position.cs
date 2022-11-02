@@ -91,5 +91,9 @@ namespace Model
         /// 取暖补贴
         /// </summary>
         public double HeatingAllowance { get; set; }
+        /// <summary>
+        /// 抛弃
+        /// </summary>
+        public int Abolish { get; set; }
     }
 }

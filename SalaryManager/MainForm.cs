@@ -55,8 +55,6 @@ namespace SalaryManager
                     Fprolst.Add(item.Name.Split('_')[1]);
                 }
             }
-
-
             foreach(Employee Emp in Elist)
             {
                 Dictionary<String, object> edic = Emanager.GetProDic(Emp);

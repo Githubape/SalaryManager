@@ -29,9 +29,9 @@ namespace Manager
         /// <param name="objEmployeeNew"></param>
         /// <param name="objEmployeeOld"></param>
         /// <returns></returns>
-        public int SetEmployeeInformation(Employee objEmployeeNew,Employee objEmployeeOld)
+        public int SetEmployeeInformation(Employee objEmployeeNew)
         {
-            return objService.UpdateEmployeeInformation(objEmployeeNew,objEmployeeOld);
+            return objService.UpdateEmployeeInformation(objEmployeeNew);
         }
 
         /// <summary>
@@ -43,7 +43,11 @@ namespace Manager
             ///Position
             return 0;
         }
-
+        /// <summary>
+        /// Get属性键值对
+        /// </summary>
+        /// <param name="Emp"></param>
+        /// <returns></returns>
         public Dictionary<String,Object> GetProDic(Employee Emp)
         {
             Dictionary<String, Object> dic = objService.GetProDic(Emp);
