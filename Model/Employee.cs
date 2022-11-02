@@ -42,7 +42,7 @@ namespace Model
         /// <summary>
         /// Employee bankaccount
         /// </summary>
-        public int BankAccount { get; set; }
+        public string BankAccount { get; set; }
         /// <summary>
         /// 员工组
         /// </summary>

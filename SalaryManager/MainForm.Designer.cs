@@ -34,13 +34,13 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.rsgl_Tab = new MaterialSkin.Controls.MaterialTabControl();
             this.jsjdgl = new System.Windows.Forms.TabPage();
+            this.Edit_Button = new MaterialSkin.Controls.MaterialButton();
             this.gzss = new MaterialSkin.Controls.MaterialTextBox();
             this.Search_Btn = new MaterialSkin.Controls.MaterialButton();
             this.xmss = new MaterialSkin.Controls.MaterialTextBox();
             this.bhss = new MaterialSkin.Controls.MaterialTextBox();
             this.Add_Btn = new MaterialSkin.Controls.MaterialButton();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
-
             this.List1Header_Eid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_Sex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -72,9 +72,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gzgl = new System.Windows.Forms.TabPage();
             this.cgsz = new System.Windows.Forms.TabPage();
-
-            this.Edit_Button = new MaterialSkin.Controls.MaterialButton();
-
             this.TabControl_Top.SuspendLayout();
             this.rsgl.SuspendLayout();
             this.rsgl_Tab.SuspendLayout();
@@ -154,6 +151,28 @@
             this.jsjdgl.Size = new System.Drawing.Size(1199, 547);
             this.jsjdgl.TabIndex = 0;
             this.jsjdgl.Text = "人员信息";
+            // 
+            // Edit_Button
+            // 
+            this.Edit_Button.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
+            this.Edit_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Edit_Button.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
+            this.Edit_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Edit_Button.Depth = 0;
+            this.Edit_Button.HighEmphasis = true;
+            this.Edit_Button.Icon = null;
+            this.Edit_Button.Location = new System.Drawing.Point(939, 492);
+            this.Edit_Button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Edit_Button.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Edit_Button.Name = "Edit_Button";
+            this.Edit_Button.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Edit_Button.Size = new System.Drawing.Size(64, 36);
+            this.Edit_Button.TabIndex = 7;
+            this.Edit_Button.Text = "编辑";
+            this.Edit_Button.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Edit_Button.UseAccentColor = false;
+            this.Edit_Button.UseVisualStyleBackColor = true;
+            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
             // 
             // gzss
             // 
@@ -293,8 +312,7 @@
             this.materialListView1.Depth = 0;
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(6, 85);
-
+            this.materialListView1.Location = new System.Drawing.Point(19, 87);
             this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
@@ -306,7 +324,7 @@
             this.materialListView1.View = System.Windows.Forms.View.Details;
             this.materialListView1.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged);
             // 
-            // List1Header_Name
+            // List1Header_Eid
             // 
             this.List1Header_Eid.Text = "编号";
             this.List1Header_Eid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -325,6 +343,7 @@
             // 
             this.List1Header_BankAccount.Text = "银行卡号";
             this.List1Header_BankAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.List1Header_BankAccount.Width = 120;
             // 
             // List1Header_Egroup
             // 
@@ -361,10 +380,12 @@
             // List1Header_QualificationLevel
             // 
             this.List1Header_QualificationLevel.Text = "资格等级";
+            this.List1Header_QualificationLevel.Width = 120;
             // 
             // List1Header_DutyTime
             // 
             this.List1Header_DutyTime.Text = "入岗时间";
+            this.List1Header_DutyTime.Width = 120;
             // 
             // List1Header_ServiceLength
             // 
@@ -373,50 +394,62 @@
             // List1Header_OnlyChild
             // 
             this.List1Header_OnlyChild.Text = "独生子女";
+            this.List1Header_OnlyChild.Width = 120;
             // 
             // List1Header_OnlychildAllowance
             // 
             this.List1Header_OnlychildAllowance.Text = "独生子女津贴";
+            this.List1Header_OnlychildAllowance.Width = 120;
             // 
             // List1Header_IsHard
             // 
             this.List1Header_IsHard.Text = "艰难岗位";
+            this.List1Header_IsHard.Width = 120;
             // 
             // List1Header_HardshipAllowance
             // 
             this.List1Header_HardshipAllowance.Text = "艰难岗位津贴";
+            this.List1Header_HardshipAllowance.Width = 120;
             // 
             // List1Header_IsEdge
             // 
             this.List1Header_IsEdge.Text = "边缘地区";
+            this.List1Header_IsEdge.Width = 120;
             // 
             // List1Header_EdgeAllowance
             // 
             this.List1Header_EdgeAllowance.Text = "边缘地区津贴";
+            this.List1Header_EdgeAllowance.Width = 120;
             // 
             // List1Header_MealAllowance
             // 
             this.List1Header_MealAllowance.Text = "餐饮补助";
+            this.List1Header_MealAllowance.Width = 120;
             // 
             // List1Header_PostWage
             // 
             this.List1Header_PostWage.Text = "基础工资";
+            this.List1Header_PostWage.Width = 120;
             // 
             // List1Header_PostBonus
             // 
             this.List1Header_PostBonus.Text = "职位奖金";
+            this.List1Header_PostBonus.Width = 120;
             // 
             // List1Header_PostTransportation
             // 
             this.List1Header_PostTransportation.Text = "交通费";
+            this.List1Header_PostTransportation.Width = 120;
             // 
             // List1Header_HousingAllowance
             // 
             this.List1Header_HousingAllowance.Text = "住房补贴";
+            this.List1Header_HousingAllowance.Width = 120;
             // 
             // List1Header_HeatingAllowance
             // 
             this.List1Header_HeatingAllowance.Text = "取暖补贴";
+            this.List1Header_HeatingAllowance.Width = 120;
             // 
             // bdls
             // 
@@ -475,29 +508,6 @@
             this.cgsz.TabIndex = 3;
             this.cgsz.Text = "常规设置";
             this.cgsz.UseVisualStyleBackColor = true;
-            // 
-            // Edit_Button
-            // 
-            this.Edit_Button.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
-            this.Edit_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Edit_Button.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
-            this.Edit_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.Edit_Button.Depth = 0;
-            this.Edit_Button.HighEmphasis = true;
-            this.Edit_Button.Icon = null;
-            this.Edit_Button.Location = new System.Drawing.Point(939, 492);
-            this.Edit_Button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Edit_Button.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Edit_Button.Name = "Edit_Button";
-            this.Edit_Button.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.Edit_Button.Size = new System.Drawing.Size(64, 36);
-            this.Edit_Button.TabIndex = 7;
-            this.Edit_Button.Text = "编辑";
-            this.Edit_Button.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.Edit_Button.UseAccentColor = false;
-            this.Edit_Button.UseVisualStyleBackColor = true;
-            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
-
             // 
             // MainForm
             // 
