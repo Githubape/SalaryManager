@@ -34,10 +34,13 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.rsgl_Tab = new MaterialSkin.Controls.MaterialTabControl();
             this.jsjdgl = new System.Windows.Forms.TabPage();
-
+            this.gzss = new MaterialSkin.Controls.MaterialTextBox();
+            this.Search_Btn = new MaterialSkin.Controls.MaterialButton();
+            this.xmss = new MaterialSkin.Controls.MaterialTextBox();
             this.bhss = new MaterialSkin.Controls.MaterialTextBox();
             this.Add_Btn = new MaterialSkin.Controls.MaterialButton();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
+
             this.List1Header_Eid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_Sex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,11 +48,6 @@
             this.List1Header_Egroup = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_Etype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_EntryTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.bdls = new System.Windows.Forms.TabPage();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.gzgl = new System.Windows.Forms.TabPage();
-            this.cgsz = new System.Windows.Forms.TabPage();
             this.List1Header_WorkType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_Post = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_PostOrder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -69,9 +67,11 @@
             this.List1Header_PostTransportation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_HousingAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_HeatingAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.xmss = new MaterialSkin.Controls.MaterialTextBox();
-            this.Search_Btn = new MaterialSkin.Controls.MaterialButton();
-            this.gzss = new MaterialSkin.Controls.MaterialTextBox();
+            this.bdls = new System.Windows.Forms.TabPage();
+            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.gzgl = new System.Windows.Forms.TabPage();
+            this.cgsz = new System.Windows.Forms.TabPage();
             this.TabControl_Top.SuspendLayout();
             this.rsgl.SuspendLayout();
             this.rsgl_Tab.SuspendLayout();
@@ -150,6 +150,68 @@
             this.jsjdgl.Size = new System.Drawing.Size(1199, 547);
             this.jsjdgl.TabIndex = 0;
             this.jsjdgl.Text = "人员信息";
+            // 
+            // gzss
+            // 
+            this.gzss.BackColor = System.Drawing.SystemColors.Window;
+            this.gzss.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gzss.Depth = 0;
+            this.gzss.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.gzss.ForeColor = System.Drawing.SystemColors.Window;
+            this.gzss.LeadingIcon = null;
+            this.gzss.Location = new System.Drawing.Point(419, 26);
+            this.gzss.Margin = new System.Windows.Forms.Padding(0);
+            this.gzss.MaxLength = 100;
+            this.gzss.MouseState = MaterialSkin.MouseState.OUT;
+            this.gzss.Multiline = false;
+            this.gzss.Name = "gzss";
+            this.gzss.Size = new System.Drawing.Size(203, 36);
+            this.gzss.TabIndex = 6;
+            this.gzss.Text = "";
+            this.gzss.TrailingIcon = null;
+            this.gzss.UseTallSize = false;
+            // 
+            // Search_Btn
+            // 
+            this.Search_Btn.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
+            this.Search_Btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Search_Btn.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
+            this.Search_Btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Search_Btn.Depth = 0;
+            this.Search_Btn.HighEmphasis = true;
+            this.Search_Btn.Icon = null;
+            this.Search_Btn.Location = new System.Drawing.Point(848, 26);
+            this.Search_Btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Search_Btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Search_Btn.Name = "Search_Btn";
+            this.Search_Btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Search_Btn.Size = new System.Drawing.Size(64, 36);
+            this.Search_Btn.TabIndex = 5;
+            this.Search_Btn.Text = "搜索";
+            this.Search_Btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Search_Btn.UseAccentColor = false;
+            this.Search_Btn.UseVisualStyleBackColor = true;
+            // 
+            // xmss
+            // 
+            this.xmss.BackColor = System.Drawing.SystemColors.Window;
+            this.xmss.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.xmss.Depth = 0;
+            this.xmss.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.xmss.ForeColor = System.Drawing.SystemColors.Window;
+            this.xmss.LeadingIcon = null;
+            this.xmss.Location = new System.Drawing.Point(651, 27);
+            this.xmss.Margin = new System.Windows.Forms.Padding(0);
+            this.xmss.MaxLength = 100;
+            this.xmss.MouseState = MaterialSkin.MouseState.OUT;
+            this.xmss.Multiline = false;
+            this.xmss.Name = "xmss";
+            this.xmss.Size = new System.Drawing.Size(164, 36);
+            this.xmss.TabIndex = 4;
+            this.xmss.Text = "";
+            this.xmss.TrailingIcon = null;
+            this.xmss.UseTallSize = false;
+            // 
             // bhss
             // 
             this.bhss.BackColor = System.Drawing.SystemColors.Window;
@@ -227,7 +289,7 @@
             this.materialListView1.Depth = 0;
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(6, 138);
+            this.materialListView1.Location = new System.Drawing.Point(0, 140);
             this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
@@ -239,9 +301,10 @@
             this.materialListView1.View = System.Windows.Forms.View.Details;
             this.materialListView1.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged);
             // 
-            // List1Header_Eid
+            // List1Header_Name
             // 
             this.List1Header_Eid.Text = "编号";
+            this.List1Header_Eid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // List1Header_Name
             // 
@@ -273,64 +336,6 @@
             this.List1Header_EntryTime.Text = "入职时间";
             this.List1Header_EntryTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.List1Header_EntryTime.Width = 120;
-            // 
-            // bdls
-            // 
-            this.bdls.Controls.Add(this.materialTextBox1);
-            this.bdls.Location = new System.Drawing.Point(4, 26);
-            this.bdls.Name = "bdls";
-            this.bdls.Padding = new System.Windows.Forms.Padding(3);
-            this.bdls.Size = new System.Drawing.Size(1199, 547);
-            this.bdls.TabIndex = 1;
-            this.bdls.Text = "变动历史";
-            this.bdls.UseVisualStyleBackColor = true;
-            // 
-            // materialTextBox1
-            // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(127, 131);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(615, 50);
-            this.materialTextBox1.TabIndex = 0;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1199, 547);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "晋档管理";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // gzgl
-            // 
-            this.gzgl.Location = new System.Drawing.Point(4, 4);
-            this.gzgl.Name = "gzgl";
-            this.gzgl.Padding = new System.Windows.Forms.Padding(3);
-            this.gzgl.Size = new System.Drawing.Size(1206, 607);
-            this.gzgl.TabIndex = 2;
-            this.gzgl.Text = "工资管理";
-            this.gzgl.UseVisualStyleBackColor = true;
-            this.gzgl.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // cgsz
-            // 
-            this.cgsz.Location = new System.Drawing.Point(4, 4);
-            this.cgsz.Name = "cgsz";
-            this.cgsz.Padding = new System.Windows.Forms.Padding(3);
-            this.cgsz.Size = new System.Drawing.Size(1206, 607);
-            this.cgsz.TabIndex = 3;
-            this.cgsz.Text = "常规设置";
-            this.cgsz.UseVisualStyleBackColor = true;
             // 
             // List1Header_WorkType
             // 
@@ -407,66 +412,64 @@
             // List1Header_HeatingAllowance
             // 
             this.List1Header_HeatingAllowance.Text = "取暖补贴";
-            // xmss
             // 
-            this.xmss.BackColor = System.Drawing.SystemColors.Window;
-            this.xmss.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.xmss.Depth = 0;
-            this.xmss.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.xmss.ForeColor = System.Drawing.SystemColors.Window;
-            this.xmss.LeadingIcon = null;
-            this.xmss.Location = new System.Drawing.Point(651, 27);
-            this.xmss.Margin = new System.Windows.Forms.Padding(0);
-            this.xmss.MaxLength = 100;
-            this.xmss.MouseState = MaterialSkin.MouseState.OUT;
-            this.xmss.Multiline = false;
-            this.xmss.Name = "xmss";
-            this.xmss.Size = new System.Drawing.Size(164, 36);
-            this.xmss.TabIndex = 4;
-            this.xmss.Text = "";
-            this.xmss.TrailingIcon = null;
-            this.xmss.UseTallSize = false;
+            // bdls
             // 
-            // Search_Btn
+            this.bdls.Controls.Add(this.materialTextBox1);
+            this.bdls.Location = new System.Drawing.Point(4, 26);
+            this.bdls.Name = "bdls";
+            this.bdls.Padding = new System.Windows.Forms.Padding(3);
+            this.bdls.Size = new System.Drawing.Size(1199, 547);
+            this.bdls.TabIndex = 1;
+            this.bdls.Text = "变动历史";
+            this.bdls.UseVisualStyleBackColor = true;
             // 
-            this.Search_Btn.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
-            this.Search_Btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Search_Btn.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
-            this.Search_Btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.Search_Btn.Depth = 0;
-            this.Search_Btn.HighEmphasis = true;
-            this.Search_Btn.Icon = null;
-            this.Search_Btn.Location = new System.Drawing.Point(848, 26);
-            this.Search_Btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Search_Btn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Search_Btn.Name = "Search_Btn";
-            this.Search_Btn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.Search_Btn.Size = new System.Drawing.Size(64, 36);
-            this.Search_Btn.TabIndex = 5;
-            this.Search_Btn.Text = "搜索";
-            this.Search_Btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.Search_Btn.UseAccentColor = false;
-            this.Search_Btn.UseVisualStyleBackColor = true;
+            // materialTextBox1
             // 
-            // gzss
+            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox1.Depth = 0;
+            this.materialTextBox1.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.LeadingIcon = null;
+            this.materialTextBox1.Location = new System.Drawing.Point(127, 131);
+            this.materialTextBox1.MaxLength = 50;
+            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox1.Multiline = false;
+            this.materialTextBox1.Name = "materialTextBox1";
+            this.materialTextBox1.Size = new System.Drawing.Size(615, 50);
+            this.materialTextBox1.TabIndex = 0;
+            this.materialTextBox1.Text = "";
+            this.materialTextBox1.TrailingIcon = null;
             // 
-            this.gzss.BackColor = System.Drawing.SystemColors.Window;
-            this.gzss.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gzss.Depth = 0;
-            this.gzss.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.gzss.ForeColor = System.Drawing.SystemColors.Window;
-            this.gzss.LeadingIcon = null;
-            this.gzss.Location = new System.Drawing.Point(419, 26);
-            this.gzss.Margin = new System.Windows.Forms.Padding(0);
-            this.gzss.MaxLength = 100;
-            this.gzss.MouseState = MaterialSkin.MouseState.OUT;
-            this.gzss.Multiline = false;
-            this.gzss.Name = "gzss";
-            this.gzss.Size = new System.Drawing.Size(203, 36);
-            this.gzss.TabIndex = 6;
-            this.gzss.Text = "";
-            this.gzss.TrailingIcon = null;
-            this.gzss.UseTallSize = false;
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1199, 547);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "晋档管理";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // gzgl
+            // 
+            this.gzgl.Location = new System.Drawing.Point(4, 4);
+            this.gzgl.Name = "gzgl";
+            this.gzgl.Padding = new System.Windows.Forms.Padding(3);
+            this.gzgl.Size = new System.Drawing.Size(1206, 607);
+            this.gzgl.TabIndex = 2;
+            this.gzgl.Text = "工资管理";
+            this.gzgl.UseVisualStyleBackColor = true;
+            this.gzgl.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // cgsz
+            // 
+            this.cgsz.Location = new System.Drawing.Point(4, 4);
+            this.cgsz.Name = "cgsz";
+            this.cgsz.Padding = new System.Windows.Forms.Padding(3);
+            this.cgsz.Size = new System.Drawing.Size(1206, 607);
+            this.cgsz.TabIndex = 3;
+            this.cgsz.Text = "常规设置";
+            this.cgsz.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -504,42 +507,43 @@
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private System.Windows.Forms.TabPage tabPage1;
         private MaterialSkin.Controls.MaterialListView materialListView1;
-        private System.Windows.Forms.ColumnHeader List1Header_Eid;
-        private System.Windows.Forms.ColumnHeader List1Header_Name;
-        private System.Windows.Forms.ColumnHeader List1Header_Sex;
-        private System.Windows.Forms.ColumnHeader List1Header_BankAccount;
-        private System.Windows.Forms.ColumnHeader List1Header_Egroup;
-        private System.Windows.Forms.ColumnHeader List1Header_Etype;
-        private System.Windows.Forms.ColumnHeader List1Header_EntryTime;
+        
         private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ColumnHeader List1Header_WorkType;
-        private System.Windows.Forms.ColumnHeader List1Header_Post;
-        private System.Windows.Forms.ColumnHeader List1Header_PostOrder;
-        private System.Windows.Forms.ColumnHeader List1Header_PostLevel;
-        private System.Windows.Forms.ColumnHeader List1Header_QualificationLevel;
-        private System.Windows.Forms.ColumnHeader List1Header_DutyTime;
-        private System.Windows.Forms.ColumnHeader List1Header_ServiceLength;
-        private System.Windows.Forms.ColumnHeader List1Header_OnlyChild;
-        private System.Windows.Forms.ColumnHeader List1Header_OnlychildAllowance;
-        private System.Windows.Forms.ColumnHeader List1Header_IsHard;
-        private System.Windows.Forms.ColumnHeader List1Header_HardshipAllowance;
-        private System.Windows.Forms.ColumnHeader List1Header_IsEdge;
-        private System.Windows.Forms.ColumnHeader List1Header_EdgeAllowance;
-        private System.Windows.Forms.ColumnHeader List1Header_MealAllowance;
-        private System.Windows.Forms.ColumnHeader List1Header_PostWage;
-        private System.Windows.Forms.ColumnHeader List1Header_PostBonus;
-        private System.Windows.Forms.ColumnHeader List1Header_PostTransportation;
-        private System.Windows.Forms.ColumnHeader List1Header_HousingAllowance;
-        private System.Windows.Forms.ColumnHeader List1Header_HeatingAllowance;
         private MaterialSkin.Controls.MaterialTextBox bhss;
         private MaterialSkin.Controls.MaterialButton Add_Btn;
         private MaterialSkin.Controls.MaterialTextBox xmss;
         private MaterialSkin.Controls.MaterialButton Search_Btn;
         private MaterialSkin.Controls.MaterialTextBox gzss;
+        public System.Windows.Forms.ColumnHeader List1Header_Eid { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Name { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Sex { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_BankAccount { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Egroup { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Etype { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_EntryTime { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_WorkType { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Post { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostOrder { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostLevel { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_QualificationLevel { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_DutyTime { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_ServiceLength { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_OnlyChild { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_OnlychildAllowance { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_IsHard { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_HardshipAllowance { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_IsEdge { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_EdgeAllowance { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_MealAllowance { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostWage { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostBonus { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostTransportation { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_HousingAllowance { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_HeatingAllowance { get; set; }
     }
 }
