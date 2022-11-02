@@ -56,7 +56,7 @@ namespace SalaryManager
         public EditEmpyeeForm()
         {
             InitializeComponent();
-            this.EditEF_Eid_TextBox.Text = EditEF_Eid;
+            this.itemID_TextBox.Text = "ww";
         }
 
         /// <summary>

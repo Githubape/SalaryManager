@@ -108,17 +108,17 @@
             this.EditEF_Eid_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_Eid_TextBox.Depth = 0;
             this.EditEF_Eid_TextBox.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_Eid_TextBox.Hint = "编号";
             this.EditEF_Eid_TextBox.LeadingIcon = null;
             this.EditEF_Eid_TextBox.Location = new System.Drawing.Point(210, 92);
             this.EditEF_Eid_TextBox.MaxLength = 50;
             this.EditEF_Eid_TextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.EditEF_Eid_TextBox.Multiline = false;
             this.EditEF_Eid_TextBox.Name = "EditEF_Eid_TextBox";
-            this.EditEF_Eid_TextBox.Size = new System.Drawing.Size(108, 36);
+            this.EditEF_Eid_TextBox.Size = new System.Drawing.Size(108, 50);
             this.EditEF_Eid_TextBox.TabIndex = 2;
             this.EditEF_Eid_TextBox.Text = "";
             this.EditEF_Eid_TextBox.TrailingIcon = null;
-            this.EditEF_Eid_TextBox.UseTallSize = false;
             // 
             // EditEF_HousingAllowance_TextBox
             // 
@@ -142,6 +142,7 @@
             this.EditEF_PostTransportation_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_PostTransportation_TextBox.Depth = 0;
             this.EditEF_PostTransportation_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_PostTransportation_TextBox.Hint = "职位";
             this.EditEF_PostTransportation_TextBox.LeadingIcon = null;
             this.EditEF_PostTransportation_TextBox.Location = new System.Drawing.Point(56, 597);
             this.EditEF_PostTransportation_TextBox.MaxLength = 50;
@@ -159,6 +160,7 @@
             this.EditEF_PostBomus_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_PostBomus_TextBox.Depth = 0;
             this.EditEF_PostBomus_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_PostBomus_TextBox.Hint = "基础";
             this.EditEF_PostBomus_TextBox.LeadingIcon = null;
             this.EditEF_PostBomus_TextBox.Location = new System.Drawing.Point(384, 535);
             this.EditEF_PostBomus_TextBox.MaxLength = 50;
@@ -176,6 +178,7 @@
             this.EditEF_PostWage_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_PostWage_TextBox.Depth = 0;
             this.EditEF_PostWage_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_PostWage_TextBox.Hint = "餐饮";
             this.EditEF_PostWage_TextBox.LeadingIcon = null;
             this.EditEF_PostWage_TextBox.Location = new System.Drawing.Point(210, 535);
             this.EditEF_PostWage_TextBox.MaxLength = 50;
@@ -193,6 +196,7 @@
             this.EditEF_MealAllowance_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_MealAllowance_TextBox.Depth = 0;
             this.EditEF_MealAllowance_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_MealAllowance_TextBox.Hint = "边缘";
             this.EditEF_MealAllowance_TextBox.LeadingIcon = null;
             this.EditEF_MealAllowance_TextBox.Location = new System.Drawing.Point(56, 535);
             this.EditEF_MealAllowance_TextBox.MaxLength = 50;
@@ -210,6 +214,7 @@
             this.EditEF_EdgeAllowance_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_EdgeAllowance_TextBox.Depth = 0;
             this.EditEF_EdgeAllowance_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_EdgeAllowance_TextBox.Hint = "边缘";
             this.EditEF_EdgeAllowance_TextBox.LeadingIcon = null;
             this.EditEF_EdgeAllowance_TextBox.Location = new System.Drawing.Point(384, 474);
             this.EditEF_EdgeAllowance_TextBox.MaxLength = 50;
@@ -227,6 +232,7 @@
             this.EditEF_IsEdge_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_IsEdge_TextBox.Depth = 0;
             this.EditEF_IsEdge_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_IsEdge_TextBox.Hint = "艰难";
             this.EditEF_IsEdge_TextBox.LeadingIcon = null;
             this.EditEF_IsEdge_TextBox.Location = new System.Drawing.Point(210, 474);
             this.EditEF_IsEdge_TextBox.MaxLength = 50;
@@ -244,6 +250,7 @@
             this.EditEF_HardshipAllowance_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_HardshipAllowance_TextBox.Depth = 0;
             this.EditEF_HardshipAllowance_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_HardshipAllowance_TextBox.Hint = "独生";
             this.EditEF_HardshipAllowance_TextBox.LeadingIcon = null;
             this.EditEF_HardshipAllowance_TextBox.Location = new System.Drawing.Point(56, 474);
             this.EditEF_HardshipAllowance_TextBox.MaxLength = 50;
@@ -261,6 +268,7 @@
             this.EditEF_IsHard_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_IsHard_TextBox.Depth = 0;
             this.EditEF_IsHard_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_IsHard_TextBox.Hint = "艰难";
             this.EditEF_IsHard_TextBox.LeadingIcon = null;
             this.EditEF_IsHard_TextBox.Location = new System.Drawing.Point(384, 407);
             this.EditEF_IsHard_TextBox.MaxLength = 50;
@@ -278,6 +286,7 @@
             this.EditEF_OnlychildAllowance_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_OnlychildAllowance_TextBox.Depth = 0;
             this.EditEF_OnlychildAllowance_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_OnlychildAllowance_TextBox.Hint = "艰难";
             this.EditEF_OnlychildAllowance_TextBox.LeadingIcon = null;
             this.EditEF_OnlychildAllowance_TextBox.Location = new System.Drawing.Point(210, 407);
             this.EditEF_OnlychildAllowance_TextBox.MaxLength = 50;
@@ -295,6 +304,7 @@
             this.EditEF_OnlyChild_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_OnlyChild_TextBox.Depth = 0;
             this.EditEF_OnlyChild_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_OnlyChild_TextBox.Hint = "独生";
             this.EditEF_OnlyChild_TextBox.LeadingIcon = null;
             this.EditEF_OnlyChild_TextBox.Location = new System.Drawing.Point(56, 407);
             this.EditEF_OnlyChild_TextBox.MaxLength = 50;
@@ -312,6 +322,7 @@
             this.EditEF_ServiceLength_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_ServiceLength_TextBox.Depth = 0;
             this.EditEF_ServiceLength_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_ServiceLength_TextBox.Hint = "独生";
             this.EditEF_ServiceLength_TextBox.LeadingIcon = null;
             this.EditEF_ServiceLength_TextBox.Location = new System.Drawing.Point(384, 350);
             this.EditEF_ServiceLength_TextBox.MaxLength = 50;
@@ -329,6 +340,7 @@
             this.EditEF_DutyTime_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_DutyTime_TextBox.Depth = 0;
             this.EditEF_DutyTime_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_DutyTime_TextBox.Hint = "工龄";
             this.EditEF_DutyTime_TextBox.LeadingIcon = null;
             this.EditEF_DutyTime_TextBox.Location = new System.Drawing.Point(210, 350);
             this.EditEF_DutyTime_TextBox.MaxLength = 50;
@@ -346,6 +358,7 @@
             this.EditEF_QualificationLevel_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_QualificationLevel_TextBox.Depth = 0;
             this.EditEF_QualificationLevel_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_QualificationLevel_TextBox.Hint = "资格";
             this.EditEF_QualificationLevel_TextBox.LeadingIcon = null;
             this.EditEF_QualificationLevel_TextBox.Location = new System.Drawing.Point(56, 350);
             this.EditEF_QualificationLevel_TextBox.MaxLength = 50;
@@ -363,6 +376,7 @@
             this.EditEF_PostLevel_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_PostLevel_TextBox.Depth = 0;
             this.EditEF_PostLevel_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_PostLevel_TextBox.Hint = "岗级";
             this.EditEF_PostLevel_TextBox.LeadingIcon = null;
             this.EditEF_PostLevel_TextBox.Location = new System.Drawing.Point(384, 291);
             this.EditEF_PostLevel_TextBox.MaxLength = 50;
@@ -380,6 +394,7 @@
             this.EditEF_PostOrder_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_PostOrder_TextBox.Depth = 0;
             this.EditEF_PostOrder_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_PostOrder_TextBox.Hint = "岗序";
             this.EditEF_PostOrder_TextBox.LeadingIcon = null;
             this.EditEF_PostOrder_TextBox.Location = new System.Drawing.Point(210, 291);
             this.EditEF_PostOrder_TextBox.MaxLength = 50;
@@ -397,6 +412,7 @@
             this.EditEF_Post_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_Post_TextBox.Depth = 0;
             this.EditEF_Post_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_Post_TextBox.Hint = "职位";
             this.EditEF_Post_TextBox.LeadingIcon = null;
             this.EditEF_Post_TextBox.Location = new System.Drawing.Point(56, 291);
             this.EditEF_Post_TextBox.MaxLength = 50;
@@ -414,6 +430,7 @@
             this.EditEF_WorkType_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_WorkType_TextBox.Depth = 0;
             this.EditEF_WorkType_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_WorkType_TextBox.Hint = "工种";
             this.EditEF_WorkType_TextBox.LeadingIcon = null;
             this.EditEF_WorkType_TextBox.Location = new System.Drawing.Point(384, 230);
             this.EditEF_WorkType_TextBox.MaxLength = 50;
@@ -431,6 +448,7 @@
             this.EditEF_EntryTime_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_EntryTime_TextBox.Depth = 0;
             this.EditEF_EntryTime_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_EntryTime_TextBox.Hint = "入职时间";
             this.EditEF_EntryTime_TextBox.LeadingIcon = null;
             this.EditEF_EntryTime_TextBox.Location = new System.Drawing.Point(210, 230);
             this.EditEF_EntryTime_TextBox.MaxLength = 50;
@@ -448,6 +466,7 @@
             this.EditEF_Etype_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_Etype_TextBox.Depth = 0;
             this.EditEF_Etype_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_Etype_TextBox.Hint = "工种";
             this.EditEF_Etype_TextBox.LeadingIcon = null;
             this.EditEF_Etype_TextBox.Location = new System.Drawing.Point(56, 230);
             this.EditEF_Etype_TextBox.MaxLength = 50;
@@ -465,6 +484,7 @@
             this.EditEF_Egroup_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_Egroup_TextBox.Depth = 0;
             this.EditEF_Egroup_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_Egroup_TextBox.Hint = "组";
             this.EditEF_Egroup_TextBox.LeadingIcon = null;
             this.EditEF_Egroup_TextBox.Location = new System.Drawing.Point(384, 172);
             this.EditEF_Egroup_TextBox.MaxLength = 50;
@@ -482,6 +502,7 @@
             this.EditEF_BankAccount_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_BankAccount_TextBox.Depth = 0;
             this.EditEF_BankAccount_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_BankAccount_TextBox.Hint = "银行卡号";
             this.EditEF_BankAccount_TextBox.LeadingIcon = null;
             this.EditEF_BankAccount_TextBox.Location = new System.Drawing.Point(210, 172);
             this.EditEF_BankAccount_TextBox.MaxLength = 50;
@@ -499,6 +520,7 @@
             this.EditEF_Sex_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_Sex_TextBox.Depth = 0;
             this.EditEF_Sex_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_Sex_TextBox.Hint = "性别";
             this.EditEF_Sex_TextBox.LeadingIcon = null;
             this.EditEF_Sex_TextBox.Location = new System.Drawing.Point(56, 172);
             this.EditEF_Sex_TextBox.MaxLength = 50;
@@ -516,34 +538,34 @@
             this.EditEF_Name_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_Name_TextBox.Depth = 0;
             this.EditEF_Name_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_Name_TextBox.Hint = "姓名";
             this.EditEF_Name_TextBox.LeadingIcon = null;
             this.EditEF_Name_TextBox.Location = new System.Drawing.Point(384, 92);
             this.EditEF_Name_TextBox.MaxLength = 50;
             this.EditEF_Name_TextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.EditEF_Name_TextBox.Multiline = false;
             this.EditEF_Name_TextBox.Name = "EditEF_Name_TextBox";
-            this.EditEF_Name_TextBox.Size = new System.Drawing.Size(108, 36);
+            this.EditEF_Name_TextBox.Size = new System.Drawing.Size(108, 50);
             this.EditEF_Name_TextBox.TabIndex = 26;
             this.EditEF_Name_TextBox.Text = "";
             this.EditEF_Name_TextBox.TrailingIcon = null;
-            this.EditEF_Name_TextBox.UseTallSize = false;
             // 
             // itemID_TextBox
             // 
             this.itemID_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.itemID_TextBox.Depth = 0;
             this.itemID_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.itemID_TextBox.Hint = "Item ID";
             this.itemID_TextBox.LeadingIcon = null;
             this.itemID_TextBox.Location = new System.Drawing.Point(56, 92);
             this.itemID_TextBox.MaxLength = 50;
             this.itemID_TextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.itemID_TextBox.Multiline = false;
             this.itemID_TextBox.Name = "itemID_TextBox";
-            this.itemID_TextBox.Size = new System.Drawing.Size(108, 36);
+            this.itemID_TextBox.Size = new System.Drawing.Size(108, 50);
             this.itemID_TextBox.TabIndex = 27;
             this.itemID_TextBox.Text = "";
             this.itemID_TextBox.TrailingIcon = null;
-            this.itemID_TextBox.UseTallSize = false;
             // 
             // EditEF_HeatingAllowance_TextBox
             // 
