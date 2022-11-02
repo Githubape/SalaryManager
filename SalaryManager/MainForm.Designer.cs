@@ -343,7 +343,7 @@
             // 
             this.List1Header_BankAccount.Text = "银行卡号";
             this.List1Header_BankAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.List1Header_BankAccount.Width = 120;
+            this.List1Header_BankAccount.Width = 190;
             // 
             // List1Header_Egroup
             // 
