@@ -72,24 +72,42 @@ namespace SalaryManager
             FieldInfo[] Fpros = FormType.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
             Type Etype = typeof(Employee);
             PropertyInfo[] Epros = Etype.GetProperties();
-
-            foreach (FieldInfo item in Fpros)
+            Type Ptype = typeof(Position);
+            PropertyInfo[] Ppros = Ptype.GetProperties();
+            try
             {
-                if (item.Name.Split('_').Length == 3 && item.Name.Split('_')[0] == "EditEF" && item.Name.Split('_')[2] == "TextBox")
+                foreach (FieldInfo item in Fpros)
                 {
-                    //Console.WriteLine(item.Name);
-                    //Console.WriteLine(item.Name.Split('_')[1]);
-                    Object obj = item.GetValue(this);
-                    MaterialSkin.Controls.MaterialTextBox obj2 = (MaterialSkin.Controls.MaterialTextBox)obj;
-                    foreach(PropertyInfo eitem in Epros)
+
+                    if (item.Name.Split('_').Length == 3 && item.Name.Split('_')[0] == "EditEF" && item.Name.Split('_')[2] == "TextBox")
                     {
-                        if (eitem.Name == item.Name.Split('_')[1])
+                        //Console.WriteLine(item.Name);
+                        //Console.WriteLine(item.Name.Split('_')[1]);
+                        Object obj = item.GetValue(this);
+                        MaterialSkin.Controls.MaterialTextBox obj2 = (MaterialSkin.Controls.MaterialTextBox)obj;
+                        foreach (PropertyInfo eitem in Epros)
                         {
-                            eitem.SetValue(Eedit,Convert.ChangeType(obj2.Text,eitem.PropertyType));
+                            if (eitem.Name == item.Name.Split('_')[1])
+                            {
+                                eitem.SetValue(Eedit, Convert.ChangeType(obj2.Text, eitem.PropertyType));
+                            }
+
                         }
-                            
+                        foreach (PropertyInfo eitem in Ppros)
+                        {
+                            if (eitem.Name == item.Name.Split('_')[1])
+                            {
+                                eitem.SetValue(Eedit.position, Convert.ChangeType(obj2.Text, eitem.PropertyType));
+                            }
+                        }
                     }
                 }
+            }
+            catch(System.FormatException)
+            {
+                MaterialSnackBar SnackBarMessage = new MaterialSnackBar("输入格式不正确", "OK", true);
+                SnackBarMessage.Show(this);
+                return;
             }
             Console.WriteLine( Emanager.SetEmployeeInformation(Eedit));
             this.DialogResult = DialogResult.OK;

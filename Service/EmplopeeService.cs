@@ -145,7 +145,7 @@ namespace Service
             //Sservice.UpdateByProcedure(sql1,eparam);
             //Sservice.UpdateByProcedure(sql1, pparam);
             //Console.WriteLine(sql1);
-            //Console.WriteLine(sql2);
+            Console.WriteLine(sql2);
             return Sservice.Update(sql1, eparam)+ Sservice.Update(sql2, pparam);
         }
         /// <summary>
