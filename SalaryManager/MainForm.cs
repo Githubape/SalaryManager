@@ -37,6 +37,10 @@ namespace SalaryManager
             {
                 var Li = new ListViewItem(item);
                 materialListView1.Items.Add(Li);
+                Button button = new Button();
+                button.Text = "编辑";
+                
+
             }
             //throw new NotImplementedException();
         }
