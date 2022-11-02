@@ -59,6 +59,12 @@ namespace SalaryManager
         public EditEmpyeeForm(Employee Emp)
         {
             InitializeComponent();
+            Dusheng_ComboBox.Items.AddRange(new object[]
+            {
+                "11",
+                "22"
+            });
+            Dusheng_ComboBox.Text = "11";
             Eedit = Emp;
             this.itemID_TextBox.Text = "ww";
             //Console.WriteLine(Eedit.Name);
@@ -88,6 +94,18 @@ namespace SalaryManager
         private void EditEF_Cancel_Button_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void EditEF_HousingAllowance_TextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void itemID_TextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+            //string tmp = sender.Text;
+            //Console.WriteLine(tmp); 
         }
     }
 }

@@ -41,14 +41,14 @@ namespace SalaryManager
         {
             //List<string[]> Lists = ElTranSl(Elist);
             Type FormType =typeof(MainForm);
-            PropertyInfo[] Fpros = FormType.GetProperties();
-           // FieldInfo[] Ffiel = GetDeclaredFields();
+            //PropertyInfo[] Fpros = FormType.GetProperties();
+            FieldInfo[] Fpros = FormType.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
             //foreach (FieldInfo item in Ffiel)
             //{
             //    Console.WriteLine(item.Name);
             //}
             List<String> Fprolst = new List<String>();
-            foreach(PropertyInfo item in Fpros)
+            foreach(FieldInfo item in Fpros)
             {
                 if (item.Name.Split('_')[0]== list)
                 {

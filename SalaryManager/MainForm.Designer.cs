@@ -548,31 +548,31 @@
         private MaterialSkin.Controls.MaterialButton Search_Btn;
         private MaterialSkin.Controls.MaterialTextBox gzss;
         private MaterialSkin.Controls.MaterialButton Edit_Button;
-        public System.Windows.Forms.ColumnHeader List1Header_Eid { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_Name { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_Sex { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_BankAccount { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_Egroup { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_Etype { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_EntryTime { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_WorkType { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_Post { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_PostOrder { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_PostLevel { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_QualificationLevel { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_DutyTime { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_ServiceLength { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_OnlyChild { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_OnlychildAllowance { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_IsHard { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_HardshipAllowance { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_IsEdge { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_EdgeAllowance { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_MealAllowance { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_PostWage { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_PostBonus { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_PostTransportation { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_HousingAllowance { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_HeatingAllowance { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Eid;//{ get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Name;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Sex;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_BankAccount;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Egroup;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Etype;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_EntryTime;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_WorkType;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Post;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostOrder;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostLevel;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_QualificationLevel;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_DutyTime;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_ServiceLength;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_OnlyChild;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_OnlychildAllowance;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_IsHard;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_HardshipAllowance;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_IsEdge;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_EdgeAllowance;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_MealAllowance;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostWage;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostBonus;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostTransportation;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_HousingAllowance;// { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_HeatingAllowance;// { get; set; }
     }
 }
