@@ -19,7 +19,7 @@ namespace SalaryManager
     public partial class MainForm : MaterialForm
     {
         EmployeeManager Emanager = new EmployeeManager();
-
+        List<Employee> Elist = new List<Employee>();
         /// <summary>
         /// 定义变量
         /// </summary>
@@ -30,7 +30,7 @@ namespace SalaryManager
         public MainForm()
         {
             InitializeComponent();
-            List<Employee> Elist = new List<Employee>();
+            //List<Employee> Elist = new List<Employee>();
             Elist = Emanager.GetEmployeeInformation();
             LoadData("List1Header", Elist);
         }
@@ -75,7 +75,11 @@ namespace SalaryManager
 
             //throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// Elist -》List string 已弃用
+        /// </summary>
+        /// <param name="Elist"></param>
+        /// <returns></returns>
         List<string[]> ElTranSl(List<Employee> Elist)
         {
             Type Etype = typeof(Employee);
@@ -198,9 +202,9 @@ namespace SalaryManager
         {
             if(ItemID != null)
             {
-                Console.WriteLine("创建" + ItemID + "的编辑界面");
-                EditEmpyeeForm editEmFrom = new EditEmpyeeForm();
-                editEmFrom.GetItemID(ItemID);
+                //Console.WriteLine("创建" + ItemID + "的编辑界面");
+                EditEmpyeeForm editEmFrom = new EditEmpyeeForm(GetEmpFromList(ItemID));
+                //editEmFrom.GetItemID(ItemID);
                 editEmFrom.ShowDialog();
             }
             else
@@ -208,6 +212,15 @@ namespace SalaryManager
                 MaterialSnackBar SnackBarMessage = new MaterialSnackBar("请选择一名员工", "OK", true);
                 SnackBarMessage.Show(this);
             }
+        }
+        private Employee GetEmpFromList(string Eid)
+        {
+            foreach(Employee item in Elist)
+            {
+                if (item.Eid.ToString() == Eid)
+                    return item;
+            }
+            return null; 
         }
     }
 }

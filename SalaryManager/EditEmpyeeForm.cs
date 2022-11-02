@@ -13,6 +13,8 @@ using Manager;
 using Model;
 using System.Reflection;
 
+using Model;
+
 namespace SalaryManager
 {
     public partial class EditEmpyeeForm : MaterialForm
@@ -22,6 +24,7 @@ namespace SalaryManager
         /// <summary>
         /// 接收员工编号
         /// </summary>
+        public Employee Eedit;
         private string itemID;
         private string EditEF_Eid;
         private string EditEF_Name;
@@ -53,10 +56,12 @@ namespace SalaryManager
         #endregion
 
 
-        public EditEmpyeeForm()
+        public EditEmpyeeForm(Employee Emp)
         {
             InitializeComponent();
+            Eedit = Emp;
             this.itemID_TextBox.Text = "ww";
+            Console.WriteLine(Eedit.Name);
         }
 
         /// <summary>
@@ -69,10 +74,10 @@ namespace SalaryManager
         }
 
 
-        public void GetItemID(string item)
-        {
-            this.itemID = item;
-        }
+        //public void GetItemID(string item)
+        //{
+        //    this.itemID = item;
+        //}
 
         private void EditEF_Save_Button_Click(object sender, EventArgs e)
         {
