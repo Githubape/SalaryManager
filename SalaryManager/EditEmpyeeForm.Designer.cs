@@ -331,7 +331,7 @@
             this.EditEF_DutyTime_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_DutyTime_TextBox.Depth = 0;
             this.EditEF_DutyTime_TextBox.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.EditEF_DutyTime_TextBox.Hint = "入职时间";
+            this.EditEF_DutyTime_TextBox.Hint = "入岗时间";
             this.EditEF_DutyTime_TextBox.LeadingIcon = null;
             this.EditEF_DutyTime_TextBox.Location = new System.Drawing.Point(295, 291);
             this.EditEF_DutyTime_TextBox.MaxLength = 50;
@@ -348,6 +348,7 @@
             this.EditEF_QualificationLevel_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_QualificationLevel_TextBox.Depth = 0;
             this.EditEF_QualificationLevel_TextBox.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+
             this.EditEF_QualificationLevel_TextBox.Hint = "资格等级";
             this.EditEF_QualificationLevel_TextBox.LeadingIcon = null;
             this.EditEF_QualificationLevel_TextBox.Location = new System.Drawing.Point(413, 221);
@@ -532,6 +533,7 @@
             // 
             // itemID_TextBox
             // 
+            this.itemID_TextBox.AccessibleName = "";
             this.itemID_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.itemID_TextBox.Depth = 0;
             this.itemID_TextBox.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -664,5 +666,6 @@
         private MaterialSkin.Controls.MaterialTextBox itemID_TextBox;
         private MaterialSkin.Controls.MaterialTextBox EditEF_HeatingAllowance_TextBox;
         private MaterialSkin.Controls.MaterialComboBox Dusheng_ComboBox;
+
     }
 }
