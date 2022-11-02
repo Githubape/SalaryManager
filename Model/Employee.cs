@@ -30,7 +30,7 @@ namespace Model
         /// <summary>
         /// Emplopee id
         /// </summary>
-        public int E_id { get; set; }
+        public int Eid { get; set; }
         /// <summary>
         /// Employee name
         /// </summary>
@@ -46,11 +46,11 @@ namespace Model
         /// <summary>
         /// 员工组
         /// </summary>
-        public string E_group { get; set; }
+        public string Egroup { get; set; }
         /// <summary>
         /// 工种
         /// </summary>
-        public string E_type { get; set; }
+        public string Etype { get; set; }
         /// <summary>
         /// 入职时间
         /// </summary>

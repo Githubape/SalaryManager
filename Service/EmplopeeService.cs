@@ -103,7 +103,7 @@ namespace Service
 
             MySqlParameter[] param = new MySqlParameter[]
            {
-                new MySqlParameter("@EId",objEmployeeOld.E_id),
+                new MySqlParameter("@EId",objEmployeeOld.Eid),
            };
             string sql1 = "update";
             string sql2 = "set";
@@ -111,6 +111,16 @@ namespace Service
             string sql4 = "]";
             string sql = sql1 + "salary.employee" + sql2 + sql3 + sql4;
          return new SqlService().UpdateByProcedure("update salary.employee set 字段1=@var [where E_id=@EId]", param);
+        }
+        /// <summary>
+        /// 获取Employee 属性字典
+        /// </summary>
+        /// <param name="Emp"></param>
+        /// <returns></returns>
+        public Dictionary<String,Object> GetProDic(Employee Emp)
+        {
+            Dictionary<String, Object> dic = ClassTools.GetProDic(Emp);
+            return dic;
         }
     }
 

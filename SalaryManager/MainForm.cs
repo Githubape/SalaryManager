@@ -23,15 +23,15 @@ namespace SalaryManager
         public MainForm()
         {
             InitializeComponent();
-            LoadData();
+            List<Employee> Elist = new List<Employee>();
+            Elist = Emanager.GetEmployeeInformation();
+            LoadData(Elist);
         }
         /// <summary>
         /// 加载列表数据
         /// </summary>
-        private void LoadData()
+        private void LoadData(List<Employee> Elist)
         {
-            List<Employee> Elist = new List<Employee>();
-            Elist = Emanager.GetEmployeeInformation();
             List<string[]> Lists = ElTranSl(Elist);
             foreach (string[] item in Lists)
             {

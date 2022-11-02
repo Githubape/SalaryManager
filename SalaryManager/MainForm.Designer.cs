@@ -34,25 +34,44 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.rsgl_Tab = new MaterialSkin.Controls.MaterialTabControl();
             this.jsjdgl = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_Eid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_Sex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_BankAccount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_Egroup = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_Etype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_EntryTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bdls = new System.Windows.Forms.TabPage();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gzgl = new System.Windows.Forms.TabPage();
             this.cgsz = new System.Windows.Forms.TabPage();
-            this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.List1Header_WorkType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_Post = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_PostOrder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_PostLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_QualificationLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_DutyTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_ServiceLength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_OnlyChild = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_OnlychildAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_IsHard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_HardshipAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_IsEdge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_EdgeAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_MealAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_PostWage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_PostBonus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_PostTransportation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_HousingAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.List1Header_HeatingAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TabControl_Top.SuspendLayout();
             this.rsgl.SuspendLayout();
             this.rsgl_Tab.SuspendLayout();
@@ -134,10 +153,38 @@
             this.jsjdgl.Text = "人员信息";
             this.jsjdgl.UseVisualStyleBackColor = true;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(681, 215);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(275, 39);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(743, 314);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(127, 23);
+            this.textBox1.TabIndex = 5;
+            // 
+            // materialMultiLineTextBox1
+            // 
+            this.materialMultiLineTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialMultiLineTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.materialMultiLineTextBox1.Depth = 0;
+            this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(477, 273);
+            this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
+            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(130, 44);
+            this.materialMultiLineTextBox1.TabIndex = 4;
+            this.materialMultiLineTextBox1.Text = "";
+            // 
             // materialTextBox2
             // 
             this.materialTextBox2.BackColor = System.Drawing.SystemColors.Window;
-           // this.materialTextBox2.Size = new System.Drawing.Size(100, 30);
             this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialTextBox2.Depth = 0;
             this.materialTextBox2.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -149,7 +196,7 @@
             this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox2.Multiline = false;
             this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(164, 50);
+            this.materialTextBox2.Size = new System.Drawing.Size(164, 36);
             this.materialTextBox2.TabIndex = 3;
             this.materialTextBox2.Text = "";
             this.materialTextBox2.TrailingIcon = null;
@@ -205,13 +252,32 @@
             this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
+            this.List1Header_Eid,
+            this.List1Header_Name,
+            this.List1Header_Sex,
+            this.List1Header_BankAccount,
+            this.List1Header_Egroup,
+            this.List1Header_Etype,
+            this.List1Header_EntryTime,
+            this.List1Header_WorkType,
+            this.List1Header_Post,
+            this.List1Header_PostOrder,
+            this.List1Header_PostLevel,
+            this.List1Header_QualificationLevel,
+            this.List1Header_DutyTime,
+            this.List1Header_ServiceLength,
+            this.List1Header_OnlyChild,
+            this.List1Header_OnlychildAllowance,
+            this.List1Header_IsHard,
+            this.List1Header_HardshipAllowance,
+            this.List1Header_IsEdge,
+            this.List1Header_EdgeAllowance,
+            this.List1Header_MealAllowance,
+            this.List1Header_PostWage,
+            this.List1Header_PostBonus,
+            this.List1Header_PostTransportation,
+            this.List1Header_HousingAllowance,
+            this.List1Header_HeatingAllowance});
             this.materialListView1.Depth = 0;
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HideSelection = false;
@@ -221,46 +287,46 @@
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(1178, 100);
+            this.materialListView1.Size = new System.Drawing.Size(1181, 100);
             this.materialListView1.TabIndex = 0;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
             this.materialListView1.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged);
             // 
-            // columnHeader1
+            // List1Header_Eid
             // 
-            this.columnHeader1.Text = "编号";
+            this.List1Header_Eid.Text = "编号";
             // 
-            // columnHeader2
+            // List1Header_Name
             // 
-            this.columnHeader2.Text = "姓名";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.List1Header_Name.Text = "姓名";
+            this.List1Header_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // columnHeader3
+            // List1Header_Sex
             // 
-            this.columnHeader3.Text = "性别";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.List1Header_Sex.Text = "性别";
+            this.List1Header_Sex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // columnHeader4
+            // List1Header_BankAccount
             // 
-            this.columnHeader4.Text = "银行卡号";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.List1Header_BankAccount.Text = "银行卡号";
+            this.List1Header_BankAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // columnHeader5
+            // List1Header_Egroup
             // 
-            this.columnHeader5.Text = "组";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.List1Header_Egroup.Text = "组";
+            this.List1Header_Egroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // columnHeader6
+            // List1Header_Etype
             // 
-            this.columnHeader6.Text = "工种";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.List1Header_Etype.Text = "工种";
+            this.List1Header_Etype.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // columnHeader7
+            // List1Header_EntryTime
             // 
-            this.columnHeader7.Text = "入职时间";
-            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader7.Width = 120;
+            this.List1Header_EntryTime.Text = "入职时间";
+            this.List1Header_EntryTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.List1Header_EntryTime.Width = 120;
             // 
             // bdls
             // 
@@ -320,34 +386,81 @@
             this.cgsz.Text = "常规设置";
             this.cgsz.UseVisualStyleBackColor = true;
             // 
-            // materialMultiLineTextBox1
+            // List1Header_WorkType
             // 
-            this.materialMultiLineTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialMultiLineTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.materialMultiLineTextBox1.Depth = 0;
-            this.materialMultiLineTextBox1.Font = new System.Drawing.Font("思源黑体 CN Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(477, 273);
-            this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
-            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(130, 44);
-            this.materialMultiLineTextBox1.TabIndex = 4;
-            this.materialMultiLineTextBox1.Text = "";
+            this.List1Header_WorkType.Text = "工种";
             // 
-            // textBox1
+            // List1Header_Post
             // 
-            this.textBox1.Location = new System.Drawing.Point(743, 314);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 23);
-            this.textBox1.TabIndex = 5;
+            this.List1Header_Post.Text = "职位";
             // 
-            // richTextBox1
+            // List1Header_PostOrder
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(681, 215);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(275, 39);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.List1Header_PostOrder.Text = "岗序";
+            // 
+            // List1Header_PostLevel
+            // 
+            this.List1Header_PostLevel.Text = "岗级";
+            // 
+            // List1Header_QualificationLevel
+            // 
+            this.List1Header_QualificationLevel.Text = "资格等级";
+            // 
+            // List1Header_DutyTime
+            // 
+            this.List1Header_DutyTime.Text = "入职时间";
+            // 
+            // List1Header_ServiceLength
+            // 
+            this.List1Header_ServiceLength.Text = "工龄";
+            // 
+            // List1Header_OnlyChild
+            // 
+            this.List1Header_OnlyChild.Text = "独生子女";
+            // 
+            // List1Header_OnlychildAllowance
+            // 
+            this.List1Header_OnlychildAllowance.Text = "独生子女津贴";
+            // 
+            // List1Header_IsHard
+            // 
+            this.List1Header_IsHard.Text = "艰难岗位";
+            // 
+            // List1Header_HardshipAllowance
+            // 
+            this.List1Header_HardshipAllowance.Text = "艰难岗位津贴";
+            // 
+            // List1Header_IsEdge
+            // 
+            this.List1Header_IsEdge.Text = "边缘地区";
+            // 
+            // List1Header_EdgeAllowance
+            // 
+            this.List1Header_EdgeAllowance.Text = "边缘地区津贴";
+            // 
+            // List1Header_MealAllowance
+            // 
+            this.List1Header_MealAllowance.Text = "餐饮补助";
+            // 
+            // List1Header_PostWage
+            // 
+            this.List1Header_PostWage.Text = "基础工资";
+            // 
+            // List1Header_PostBonus
+            // 
+            this.List1Header_PostBonus.Text = "职位奖金";
+            // 
+            // List1Header_PostTransportation
+            // 
+            this.List1Header_PostTransportation.Text = "交通费";
+            // 
+            // List1Header_HousingAllowance
+            // 
+            this.List1Header_HousingAllowance.Text = "住房补贴";
+            // 
+            // List1Header_HeatingAllowance
+            // 
+            this.List1Header_HeatingAllowance.Text = "取暖补贴";
             // 
             // MainForm
             // 
@@ -385,18 +498,37 @@
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private System.Windows.Forms.TabPage tabPage1;
         private MaterialSkin.Controls.MaterialListView materialListView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader List1Header_Eid;
+        private System.Windows.Forms.ColumnHeader List1Header_Name;
+        private System.Windows.Forms.ColumnHeader List1Header_Sex;
+        private System.Windows.Forms.ColumnHeader List1Header_BankAccount;
+        private System.Windows.Forms.ColumnHeader List1Header_Egroup;
+        private System.Windows.Forms.ColumnHeader List1Header_Etype;
+        private System.Windows.Forms.ColumnHeader List1Header_EntryTime;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ColumnHeader List1Header_WorkType;
+        private System.Windows.Forms.ColumnHeader List1Header_Post;
+        private System.Windows.Forms.ColumnHeader List1Header_PostOrder;
+        private System.Windows.Forms.ColumnHeader List1Header_PostLevel;
+        private System.Windows.Forms.ColumnHeader List1Header_QualificationLevel;
+        private System.Windows.Forms.ColumnHeader List1Header_DutyTime;
+        private System.Windows.Forms.ColumnHeader List1Header_ServiceLength;
+        private System.Windows.Forms.ColumnHeader List1Header_OnlyChild;
+        private System.Windows.Forms.ColumnHeader List1Header_OnlychildAllowance;
+        private System.Windows.Forms.ColumnHeader List1Header_IsHard;
+        private System.Windows.Forms.ColumnHeader List1Header_HardshipAllowance;
+        private System.Windows.Forms.ColumnHeader List1Header_IsEdge;
+        private System.Windows.Forms.ColumnHeader List1Header_EdgeAllowance;
+        private System.Windows.Forms.ColumnHeader List1Header_MealAllowance;
+        private System.Windows.Forms.ColumnHeader List1Header_PostWage;
+        private System.Windows.Forms.ColumnHeader List1Header_PostBonus;
+        private System.Windows.Forms.ColumnHeader List1Header_PostTransportation;
+        private System.Windows.Forms.ColumnHeader List1Header_HousingAllowance;
+        private System.Windows.Forms.ColumnHeader List1Header_HeatingAllowance;
     }
 }

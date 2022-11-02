@@ -43,6 +43,11 @@ namespace Manager
             ///Position
             return 0;
         }
+
+        public Dictionary<String,Object> GetProDic()
+        {
+            return null;
+        }
     }
 
 
