@@ -18,7 +18,13 @@ namespace SalaryManager
     public partial class MainForm : MaterialForm
     {
         EmployeeManager Emanager = new EmployeeManager();
-        
+
+        /// <summary>
+        /// 定义变量
+        /// </summary>
+        /// ItemID 是拿到员工编号
+        string ItemID;
+ 
 
         public MainForm()
         {
@@ -135,10 +141,20 @@ namespace SalaryManager
 
         private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Console.WriteLine(sender);
+            //Console.WriteLine(e);
+            //Console.WriteLine(materialListView1.SelectedItems[0].SubItems[0].Text);
 
+            ListView list = sender as ListView;
+            if (list.SelectedItems.Count > 0)
+            {
+                ItemID = list.SelectedItems[0].SubItems[0].Text;
+                Console.WriteLine("当前员工编号" + ItemID);
+
+            }
         }
 
-        private void materialTabSelector1_Click_2(object sender, EventArgs e)
+            private void materialTabSelector1_Click_2(object sender, EventArgs e)
         {
 
         }
@@ -151,6 +167,21 @@ namespace SalaryManager
         private void materialButton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Edit_Button_Click(object sender, EventArgs e)
+        {
+            if(ItemID != null)
+            {
+                Console.WriteLine("创建" + ItemID + "的编辑界面");
+                EditEmpyeeForm editEmFrom = new EditEmpyeeForm();
+                editEmFrom.GetItemID(ItemID);
+                editEmFrom.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("请选择其中一位员工");
+            }
         }
     }
 }
