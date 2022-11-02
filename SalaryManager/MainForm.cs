@@ -37,10 +37,10 @@ namespace SalaryManager
             {
                 var Li = new ListViewItem(item);
                 materialListView1.Items.Add(Li);
-                Button button = new Button();
-                button.Text = "编辑";
-                
 
+                //Button button = new Button();
+                //button.Text = "编辑";
+               
             }
             //throw new NotImplementedException();
         }
@@ -54,11 +54,12 @@ namespace SalaryManager
             //Console.WriteLine(Epros.GetLength(0));
             //Console.WriteLine(Ppros.GetLength(0));
             List<string[]> Lists = new List<string[]>();
-            string[] ldata = new string[Epros.GetLength(0)-2+Ppros.GetLength(0)-1];
+            
             foreach (Employee item in Elist)
             {
+                string[] ldata = new string[Epros.GetLength(0) - 2 + Ppros.GetLength(0) - 1];
                 //Emplopee 第一项最后一项不用
-                for(int i=1;i<Epros.GetLength(0)-1;i++)
+                for (int i=1;i<Epros.GetLength(0)-1;i++)
                 {
                     ldata[i - 1] = Etype.GetProperty(Epros[i].Name).GetValue(item).ToString();
                 }

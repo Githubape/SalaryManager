@@ -44,9 +44,10 @@ namespace Manager
             return 0;
         }
 
-        public Dictionary<String,Object> GetProDic()
+        public Dictionary<String,Object> GetProDic(Employee Emp)
         {
-            return null;
+            Dictionary<String, Object> dic = objService.GetProDic(Emp);
+            return dic;
         }
     }
 
