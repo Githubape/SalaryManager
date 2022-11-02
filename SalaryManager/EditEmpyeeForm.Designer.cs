@@ -629,7 +629,6 @@
             this.ShowInTaskbar = false;
             this.Text = "EditEmpyeeForm";
             this.Load += new System.EventHandler(this.EditEmpyeeForm_Load);
-            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

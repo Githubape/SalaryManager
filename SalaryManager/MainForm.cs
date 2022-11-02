@@ -19,7 +19,7 @@ namespace SalaryManager
     public partial class MainForm : MaterialForm
     {
         EmployeeManager Emanager = new EmployeeManager();
-        List<Employee> Elist = new List<Employee>();
+        List<Employee> Elist;// = new List<Employee>();
         /// <summary>
         /// 定义变量
         /// </summary>
@@ -31,14 +31,15 @@ namespace SalaryManager
         {
             InitializeComponent();
             //List<Employee> Elist = new List<Employee>();
-            Elist = Emanager.GetEmployeeInformation();
-            LoadData("List1Header", Elist);
+            Elist = Elist = Emanager.GetEmployeeInformation();
+            LoadData("List1Header",Elist);
         }
         /// <summary>
         /// 加载列表数据
         /// </summary>
         private void LoadData(String list,List<Employee> Elist)
         {
+            materialListView1.Items.Clear();
             //List<string[]> Lists = ElTranSl(Elist);
             Type FormType =typeof(MainForm);
             //PropertyInfo[] Fpros = FormType.GetProperties();
@@ -205,7 +206,13 @@ namespace SalaryManager
                 //Console.WriteLine("创建" + ItemID + "的编辑界面");
                 EditEmpyeeForm editEmFrom = new EditEmpyeeForm(GetEmpFromList(ItemID));
                 //editEmFrom.GetItemID(ItemID);
-                editEmFrom.ShowDialog();
+                
+                if (DialogResult.OK == editEmFrom.ShowDialog())
+                {
+                    MaterialSnackBar SnackBarMessage = new MaterialSnackBar("保存成功", "OK", true);
+                    SnackBarMessage.Show(this);
+                    LoadData("List1Header",Elist);
+                }
             }
             else
             {

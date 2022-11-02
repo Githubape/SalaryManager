@@ -20,7 +20,7 @@ namespace Service
         /// <summary>
         /// 数据库连接字符串    !!!!!!!!!!!!!!!!!!!!这个字符串后续要改，连接用的!!!!!!!!!!!!!!!!!!!!!!!!!!!
         /// </summary>
-        private string connString = "server=127.0.0.1;port=3306;user=root;pwd=root;database=Salary;"; //ConfigurationManager.ConnectionStrings["server=127.0.0.1:3306;uid=root;pwd=bd1234;database=test;Trusted_Connection=no"].ToString();
+        private string connString = "server=localhost;port=3306;user=Salarymanager;pwd=root;database=Salary;"; //ConfigurationManager.ConnectionStrings["server=127.0.0.1:3306;uid=root;pwd=bd1234;database=test;Trusted_Connection=no"].ToString();
         #region 执行格式化SQL语句
         /// <summary>
         /// 增删改操作
@@ -91,7 +91,7 @@ namespace Service
             {
                 //将错误信息写入日志文件
                 LogService.WriteErrorLog(ex.Message);
-                Console.WriteLine("conn 妹打开啊");
+                Console.WriteLine("数据库连接失败");
                 throw ex;
             }
         }

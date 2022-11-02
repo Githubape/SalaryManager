@@ -34,5 +34,19 @@ namespace Manager
                 Console.WriteLine(Convert.ToInt32(objReader["Id"]));
             }
         }
+
+        public void Sqlupdatetest()
+        {
+            MySqlParameter[] eparam = new MySqlParameter[]
+            {
+                 new MySqlParameter("@Id","0"),
+                new MySqlParameter("@Sex","不会吧"),
+                new MySqlParameter("@BankAccount","34d4")
+               
+            };
+            
+            string sql= "update salary.employee set Sex=@Sex, BankAccount = @BankAccount where Id =@Id";
+            Console.WriteLine( Sservice.Update(sql,eparam));
+        }
     }
 }

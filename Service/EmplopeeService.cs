@@ -114,14 +114,14 @@ namespace Service
                 if (item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32" || item.PropertyType.ToString() == "System.String")
                 {
                     eparam[num] = new MySqlParameter("@" + item.Name.ToString(), item.GetValue(objEmployeeNew));
+                    if (num == 0)
+                        eqlw += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
+                    if (num == eparam.Length - 1)
+                        eql += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
+                    else
+                        eql += item.Name.ToString() + "=" + "@" + item.Name.ToString() + ",";
+                    num++;
                 }
-                if (num == 0)
-                    eqlw += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
-                if (num == pparam.Length - 1)
-                    eql += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
-                else
-                    eql += item.Name.ToString() + "=" + "@" + item.Name.ToString()+","; 
-                num++;
             }
             num = 0;
             foreach (PropertyInfo item in Ppros)
@@ -129,22 +129,24 @@ namespace Service
                 if (item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32" || item.PropertyType.ToString() == "System.String")
                 {
                     pparam[num] = new MySqlParameter("@" + item.Name.ToString(), item.GetValue(objEmployeeNew.position));
+                    if (num == 0)
+                        pqlw += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
+                    if (num == pparam.Length - 1)
+                        pql += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
+                    else
+                        pql += item.Name.ToString() + "=" + "@" + item.Name.ToString() + ",";
+                    num++;
                 }
-                if (num == 0)
-                    pqlw += item.Name.ToString() + "=" + "@" + item.Name.ToString()+" ";
-                if(num==pparam.Length-1)
-                    pql += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
-                else
-                    pql += item.Name.ToString() + "=" + "@" + item.Name.ToString()+",";
-                num++;
             }
             
-
+            
             string sql1 = "Update salary.employee set "+eql+" where "+eqlw;
             string sql2 = "Update salary.position set "+ pql + " where " + pqlw;
             //Sservice.UpdateByProcedure(sql1,eparam);
-            //Sservice.UpdateByProcedure(sql1, eparam);
-            return Sservice.UpdateByProcedure(sql1, eparam)+ Sservice.UpdateByProcedure(sql1, eparam);
+            //Sservice.UpdateByProcedure(sql1, pparam);
+            //Console.WriteLine(sql1);
+            //Console.WriteLine(sql2);
+            return Sservice.Update(sql1, eparam)+ Sservice.Update(sql2, pparam);
         }
         /// <summary>
         /// 获取Employee 属性字典
