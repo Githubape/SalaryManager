@@ -56,7 +56,7 @@ namespace SalaryManager
                 if (item.Name.Split('_').Length==3&&item.Name.Split('_')[0] == "EditEF"&& item.Name.Split('_')[2]=="TextBox")
                 {
                     //Console.WriteLine(item.Name);
-                    Console.WriteLine(item.Name.Split('_')[1]);
+                    //Console.WriteLine(item.Name.Split('_')[1]);
                     Object obj =item.GetValue(this);
                     MaterialSkin.Controls.MaterialTextBox obj2=(MaterialSkin.Controls.MaterialTextBox)obj;
                     obj2.Text =edic[item.Name.Split('_')[1]].ToString();

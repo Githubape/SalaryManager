@@ -626,8 +626,10 @@
             this.Controls.Add(this.EditEF_Cancel_Button);
             this.Controls.Add(this.EditEF_Save_Button);
             this.Name = "EditEmpyeeForm";
+            this.ShowInTaskbar = false;
             this.Text = "EditEmpyeeForm";
             this.Load += new System.EventHandler(this.EditEmpyeeForm_Load);
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
