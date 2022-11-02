@@ -34,9 +34,8 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.rsgl_Tab = new MaterialSkin.Controls.MaterialTabControl();
             this.jsjdgl = new System.Windows.Forms.TabPage();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.bhss = new MaterialSkin.Controls.MaterialTextBox();
+            this.Add_Btn = new MaterialSkin.Controls.MaterialButton();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,6 +49,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gzgl = new System.Windows.Forms.TabPage();
             this.cgsz = new System.Windows.Forms.TabPage();
+            this.xmss = new MaterialSkin.Controls.MaterialTextBox();
+            this.Search_Btn = new MaterialSkin.Controls.MaterialButton();
+            this.gzss = new MaterialSkin.Controls.MaterialTextBox();
             this.TabControl_Top.SuspendLayout();
             this.rsgl.SuspendLayout();
             this.rsgl_Tab.SuspendLayout();
@@ -92,7 +94,7 @@
             this.materialTabSelector1.BaseTabControl = this.rsgl_Tab;
             this.materialTabSelector1.Depth = 0;
             this.materialTabSelector1.Font = new System.Drawing.Font("思源黑体 CN Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTabSelector1.Location = new System.Drawing.Point(-13, -4);
+            this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
             this.materialTabSelector1.Size = new System.Drawing.Size(1219, 32);
@@ -116,9 +118,11 @@
             // 
             // jsjdgl
             // 
-            this.jsjdgl.Controls.Add(this.materialTextBox2);
-            this.jsjdgl.Controls.Add(this.materialButton2);
-            this.jsjdgl.Controls.Add(this.materialButton1);
+            this.jsjdgl.Controls.Add(this.gzss);
+            this.jsjdgl.Controls.Add(this.Search_Btn);
+            this.jsjdgl.Controls.Add(this.xmss);
+            this.jsjdgl.Controls.Add(this.bhss);
+            this.jsjdgl.Controls.Add(this.Add_Btn);
             this.jsjdgl.Controls.Add(this.materialListView1);
             this.jsjdgl.Location = new System.Drawing.Point(4, 26);
             this.jsjdgl.Name = "jsjdgl";
@@ -126,72 +130,48 @@
             this.jsjdgl.Size = new System.Drawing.Size(1199, 547);
             this.jsjdgl.TabIndex = 0;
             this.jsjdgl.Text = "人员信息";
-            this.jsjdgl.UseVisualStyleBackColor = true;
             // 
-            // materialTextBox2
+            // bhss
             // 
-            this.materialTextBox2.BackColor = System.Drawing.SystemColors.Window;
-           // this.materialTextBox2.Size = new System.Drawing.Size(100, 30);
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(340, 12);
-            this.materialTextBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTextBox2.MaxLength = 100;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(164, 50);
-            this.materialTextBox2.TabIndex = 3;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.TrailingIcon = null;
-            this.materialTextBox2.UseTallSize = false;
-            this.materialTextBox2.TextChanged += new System.EventHandler(this.materialTextBox2_TextChanged);
+            this.bhss.BackColor = System.Drawing.SystemColors.Window;
+            this.bhss.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bhss.Depth = 0;
+            this.bhss.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.bhss.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bhss.LeadingIcon = null;
+            this.bhss.Location = new System.Drawing.Point(157, 26);
+            this.bhss.MaxLength = 100;
+            this.bhss.MouseState = MaterialSkin.MouseState.OUT;
+            this.bhss.Multiline = false;
+            this.bhss.Name = "bhss";
+            this.bhss.Size = new System.Drawing.Size(230, 36);
+            this.bhss.TabIndex = 3;
+            this.bhss.Text = "";
+            this.bhss.TrailingIcon = null;
+            this.bhss.UseTallSize = false;
+            this.bhss.TextChanged += new System.EventHandler(this.materialTextBox2_TextChanged);
             // 
-            // materialButton2
+            // Add_Btn
             // 
-            this.materialButton2.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(681, 6);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(162, 36);
-            this.materialButton2.TabIndex = 2;
-            this.materialButton2.Text = "materialButton2";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
-            // 
-            // materialButton1
-            // 
-            this.materialButton1.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(528, 26);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(93, 36);
-            this.materialButton1.TabIndex = 1;
-            this.materialButton1.Text = "按编号搜索";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            this.Add_Btn.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
+            this.Add_Btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Add_Btn.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
+            this.Add_Btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Add_Btn.Depth = 0;
+            this.Add_Btn.HighEmphasis = true;
+            this.Add_Btn.Icon = null;
+            this.Add_Btn.Location = new System.Drawing.Point(66, 27);
+            this.Add_Btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Add_Btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Add_Btn.Name = "Add_Btn";
+            this.Add_Btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Add_Btn.Size = new System.Drawing.Size(64, 36);
+            this.Add_Btn.TabIndex = 1;
+            this.Add_Btn.Text = "添加";
+            this.Add_Btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Add_Btn.UseAccentColor = false;
+            this.Add_Btn.UseVisualStyleBackColor = true;
+            this.Add_Btn.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // materialListView1
             // 
@@ -209,13 +189,13 @@
             this.materialListView1.Depth = 0;
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(15, 94);
+            this.materialListView1.Location = new System.Drawing.Point(6, 138);
             this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(1178, 100);
+            this.materialListView1.Size = new System.Drawing.Size(1161, 100);
             this.materialListView1.TabIndex = 0;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
@@ -314,6 +294,67 @@
             this.cgsz.Text = "常规设置";
             this.cgsz.UseVisualStyleBackColor = true;
             // 
+            // xmss
+            // 
+            this.xmss.BackColor = System.Drawing.SystemColors.Window;
+            this.xmss.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.xmss.Depth = 0;
+            this.xmss.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.xmss.ForeColor = System.Drawing.SystemColors.Window;
+            this.xmss.LeadingIcon = null;
+            this.xmss.Location = new System.Drawing.Point(651, 27);
+            this.xmss.Margin = new System.Windows.Forms.Padding(0);
+            this.xmss.MaxLength = 100;
+            this.xmss.MouseState = MaterialSkin.MouseState.OUT;
+            this.xmss.Multiline = false;
+            this.xmss.Name = "xmss";
+            this.xmss.Size = new System.Drawing.Size(164, 36);
+            this.xmss.TabIndex = 4;
+            this.xmss.Text = "";
+            this.xmss.TrailingIcon = null;
+            this.xmss.UseTallSize = false;
+            // 
+            // Search_Btn
+            // 
+            this.Search_Btn.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
+            this.Search_Btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Search_Btn.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
+            this.Search_Btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Search_Btn.Depth = 0;
+            this.Search_Btn.HighEmphasis = true;
+            this.Search_Btn.Icon = null;
+            this.Search_Btn.Location = new System.Drawing.Point(848, 26);
+            this.Search_Btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Search_Btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Search_Btn.Name = "Search_Btn";
+            this.Search_Btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Search_Btn.Size = new System.Drawing.Size(64, 36);
+            this.Search_Btn.TabIndex = 5;
+            this.Search_Btn.Text = "搜索";
+            this.Search_Btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Search_Btn.UseAccentColor = false;
+            this.Search_Btn.UseVisualStyleBackColor = true;
+            // 
+            // gzss
+            // 
+            this.gzss.BackColor = System.Drawing.SystemColors.Window;
+            this.gzss.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gzss.Depth = 0;
+            this.gzss.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.gzss.ForeColor = System.Drawing.SystemColors.Window;
+            this.gzss.LeadingIcon = null;
+            this.gzss.Location = new System.Drawing.Point(419, 26);
+            this.gzss.Margin = new System.Windows.Forms.Padding(0);
+            this.gzss.MaxLength = 100;
+            this.gzss.MouseState = MaterialSkin.MouseState.OUT;
+            this.gzss.Multiline = false;
+            this.gzss.Name = "gzss";
+            this.gzss.Size = new System.Drawing.Size(203, 36);
+            this.gzss.TabIndex = 6;
+            this.gzss.Text = "";
+            this.gzss.TrailingIcon = null;
+            this.gzss.UseTallSize = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -357,8 +398,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialTextBox bhss;
+        private MaterialSkin.Controls.MaterialButton Add_Btn;
+        private MaterialSkin.Controls.MaterialTextBox xmss;
+        private MaterialSkin.Controls.MaterialButton Search_Btn;
+        private MaterialSkin.Controls.MaterialTextBox gzss;
     }
 }
