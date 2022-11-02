@@ -97,15 +97,20 @@ namespace Service
             Type Ptype = typeof(Position);
             PropertyInfo[] Epros = Etype.GetProperties();
             PropertyInfo[] Ppros = Ptype.GetProperties();
+            MySqlParameter[] eparam = new MySqlParameter[Epros.GetLength(0)];
+            MySqlParameter[] pparam = new MySqlParameter[Ppros.GetLength(0)];
+
 
             MySqlParameter[] param = new MySqlParameter[]
            {
                 new MySqlParameter("@EId",objEmployeeOld.E_id),
-
-
            };
-
-         return new SqlService().UpdateByProcedure("update 表名 set 字段1=@var [where E_id=@EId]", param);
+            string sql1 = "update";
+            string sql2 = "set";
+            string sql3 = "[where";
+            string sql4 = "]";
+            string sql = sql1 + "salary.employee" + sql2 + sql3 + sql4;
+         return new SqlService().UpdateByProcedure("update salary.employee set 字段1=@var [where E_id=@EId]", param);
         }
     }
 
