@@ -56,7 +56,18 @@ namespace SalaryManager
         public EditEmpyeeForm()
         {
             InitializeComponent();
+            this.EditEF_Eid_TextBox.Text = EditEF_Eid;
         }
+
+        /// <summary>
+        /// 获取信息
+        /// </summary>
+        /// <param name="Eid"></param>
+        public void GetInfo(string Eid)
+        {
+            this.EditEF_Eid = Eid;
+        }
+
 
         public void GetItemID(string item)
         {
