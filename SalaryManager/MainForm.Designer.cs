@@ -40,6 +40,7 @@
             this.bhss = new MaterialSkin.Controls.MaterialTextBox();
             this.Add_Btn = new MaterialSkin.Controls.MaterialButton();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
+
             this.List1Header_Eid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_Sex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -71,7 +72,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gzgl = new System.Windows.Forms.TabPage();
             this.cgsz = new System.Windows.Forms.TabPage();
+
             this.Edit_Button = new MaterialSkin.Controls.MaterialButton();
+
             this.TabControl_Top.SuspendLayout();
             this.rsgl.SuspendLayout();
             this.rsgl_Tab.SuspendLayout();
@@ -291,6 +294,7 @@
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HideSelection = false;
             this.materialListView1.Location = new System.Drawing.Point(6, 85);
+
             this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
@@ -302,9 +306,10 @@
             this.materialListView1.View = System.Windows.Forms.View.Details;
             this.materialListView1.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged);
             // 
-            // List1Header_Eid
+            // List1Header_Name
             // 
             this.List1Header_Eid.Text = "编号";
+            this.List1Header_Eid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // List1Header_Name
             // 
@@ -492,6 +497,7 @@
             this.Edit_Button.UseAccentColor = false;
             this.Edit_Button.UseVisualStyleBackColor = true;
             this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
+
             // 
             // MainForm
             // 
@@ -529,43 +535,44 @@
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private System.Windows.Forms.TabPage tabPage1;
         private MaterialSkin.Controls.MaterialListView materialListView1;
-        private System.Windows.Forms.ColumnHeader List1Header_Eid;
-        private System.Windows.Forms.ColumnHeader List1Header_Name;
-        private System.Windows.Forms.ColumnHeader List1Header_Sex;
-        private System.Windows.Forms.ColumnHeader List1Header_BankAccount;
-        private System.Windows.Forms.ColumnHeader List1Header_Egroup;
-        private System.Windows.Forms.ColumnHeader List1Header_Etype;
-        private System.Windows.Forms.ColumnHeader List1Header_EntryTime;
+        
         private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ColumnHeader List1Header_WorkType;
-        private System.Windows.Forms.ColumnHeader List1Header_Post;
-        private System.Windows.Forms.ColumnHeader List1Header_PostOrder;
-        private System.Windows.Forms.ColumnHeader List1Header_PostLevel;
-        private System.Windows.Forms.ColumnHeader List1Header_QualificationLevel;
-        private System.Windows.Forms.ColumnHeader List1Header_DutyTime;
-        private System.Windows.Forms.ColumnHeader List1Header_ServiceLength;
-        private System.Windows.Forms.ColumnHeader List1Header_OnlyChild;
-        private System.Windows.Forms.ColumnHeader List1Header_OnlychildAllowance;
-        private System.Windows.Forms.ColumnHeader List1Header_IsHard;
-        private System.Windows.Forms.ColumnHeader List1Header_HardshipAllowance;
-        private System.Windows.Forms.ColumnHeader List1Header_IsEdge;
-        private System.Windows.Forms.ColumnHeader List1Header_EdgeAllowance;
-        private System.Windows.Forms.ColumnHeader List1Header_MealAllowance;
-        private System.Windows.Forms.ColumnHeader List1Header_PostWage;
-        private System.Windows.Forms.ColumnHeader List1Header_PostBonus;
-        private System.Windows.Forms.ColumnHeader List1Header_PostTransportation;
-        private System.Windows.Forms.ColumnHeader List1Header_HousingAllowance;
-        private System.Windows.Forms.ColumnHeader List1Header_HeatingAllowance;
         private MaterialSkin.Controls.MaterialTextBox bhss;
         private MaterialSkin.Controls.MaterialButton Add_Btn;
         private MaterialSkin.Controls.MaterialTextBox xmss;
         private MaterialSkin.Controls.MaterialButton Search_Btn;
         private MaterialSkin.Controls.MaterialTextBox gzss;
         private MaterialSkin.Controls.MaterialButton Edit_Button;
+        public System.Windows.Forms.ColumnHeader List1Header_Eid { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Name { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Sex { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_BankAccount { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Egroup { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Etype { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_EntryTime { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_WorkType { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_Post { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostOrder { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostLevel { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_QualificationLevel { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_DutyTime { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_ServiceLength { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_OnlyChild { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_OnlychildAllowance { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_IsHard { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_HardshipAllowance { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_IsEdge { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_EdgeAllowance { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_MealAllowance { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostWage { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostBonus { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_PostTransportation { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_HousingAllowance { get; set; }
+        public System.Windows.Forms.ColumnHeader List1Header_HeatingAllowance { get; set; }
     }
 }

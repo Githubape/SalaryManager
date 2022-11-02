@@ -120,7 +120,9 @@ namespace Service
         public Dictionary<String,Object> GetProDic(Employee Emp)
         {
             Dictionary<String, Object> dic = ClassTools.GetProDic(Emp);
-            return dic;
+            Dictionary<String, Object> pdic = ClassTools.GetProDic(Emp.position);
+            Dictionary<String, Object> Fdic = dic.Union(pdic).ToDictionary(k => k.Key, v => v.Value);
+            return Fdic;
         }
     }
 

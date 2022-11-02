@@ -13,6 +13,7 @@ using Manager;
 using Model;
 using System.Reflection;
 
+
 namespace SalaryManager
 {
     public partial class MainForm : MaterialForm
@@ -31,23 +32,49 @@ namespace SalaryManager
             InitializeComponent();
             List<Employee> Elist = new List<Employee>();
             Elist = Emanager.GetEmployeeInformation();
-            LoadData(Elist);
+            LoadData("List1Header", Elist);
         }
         /// <summary>
         /// 加载列表数据
         /// </summary>
-        private void LoadData(List<Employee> Elist)
+        private void LoadData(String list,List<Employee> Elist)
         {
-            List<string[]> Lists = ElTranSl(Elist);
-            foreach (string[] item in Lists)
+            //List<string[]> Lists = ElTranSl(Elist);
+            Type FormType =typeof(MainForm);
+            PropertyInfo[] Fpros = FormType.GetProperties();
+           // FieldInfo[] Ffiel = GetDeclaredFields();
+            //foreach (FieldInfo item in Ffiel)
+            //{
+            //    Console.WriteLine(item.Name);
+            //}
+            List<String> Fprolst = new List<String>();
+            foreach(PropertyInfo item in Fpros)
             {
-                var Li = new ListViewItem(item);
-                materialListView1.Items.Add(Li);
-
-                //Button button = new Button();
-                //button.Text = "编辑";
-               
+                if (item.Name.Split('_')[0]== list)
+                {
+                    Fprolst.Add(item.Name.Split('_')[1]);
+                }
             }
+
+
+            foreach(Employee Emp in Elist)
+            {
+                Dictionary<String, object> edic = Emanager.GetProDic(Emp);
+                string[] ldata = new string[Fprolst.ToArray().Length];
+                for (int i=0;i<ldata.Length;i++)
+                {
+                    ldata[i] = edic[Fprolst[i]].ToString();
+                }
+                var Li = new ListViewItem(ldata);
+                materialListView1.Items.Add(Li);
+            }
+
+            //foreach (string[] item in Lists)
+            //{
+            //    var Li = new ListViewItem(item);
+            //    materialListView1.Items.Add(Li);    
+            //}
+
             //throw new NotImplementedException();
         }
 
@@ -180,7 +207,8 @@ namespace SalaryManager
             }
             else
             {
-                MessageBox.Show("请选择其中一位员工");
+                MaterialSnackBar SnackBarMessage = new MaterialSnackBar("请选择一名员工", "OK", true);
+                SnackBarMessage.Show(this);
             }
         }
     }
