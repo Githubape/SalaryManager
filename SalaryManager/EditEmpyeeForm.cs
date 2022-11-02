@@ -25,34 +25,7 @@ namespace SalaryManager
         /// 接收员工编号
         /// </summary>
         public Employee Eedit;
-        private string itemID;
-        private string EditEF_Eid;
-        private string EditEF_Name;
-        private string EditEF_Sex;
-        private string EditEF_BankAccount;
-        private string EditEF_Egroup;
-        private string EditEF_Etype;
-        private string EditEF_EntryTime;
-        private string EditEF_WorkType;
-        private string EditEF_Post;
-        private string EditEF_PostOrder;
-        private string EditEF_PostLevel;
-        private string EditEF_QualificationLevel;
-        private string EditEF_DutyTime;
-        private string EditEF_ServiceLength;
-        private string EditEF_OnlyChild;
-        private string EditEF_OnlychildAllowance;
-        private string EditEF_IsHard;
-        private string EditEF_HardshipAllowance;
-        private string EditEF_IsEdge;
-        private string EditEF_EdgeAllowance;
-        private string EditEF_MealAllowance;
-        private string EditEF_PostWage;
-        private string EditEF_PostBomus;
-        private string EditEF_PostTransportation;
-        private string EditEF_HousingAllowance;
-        private string EditEF_HeatingAllowance;
-
+        public EmployeeManager Emanager=new EmployeeManager();
         #endregion
 
 
@@ -66,19 +39,30 @@ namespace SalaryManager
             });
             Dusheng_ComboBox.Text = "11";
             Eedit = Emp;
-            this.itemID_TextBox.Text = "ww";
-            //Console.WriteLine(Eedit.Name);
+            LoadData();
         }
-
-        /// <summary>
-        /// 获取信息
-        /// </summary>
-        /// <param name="Eid"></param>
-        public void GetInfo(string Eid)
+        //加载预览数值
+        private void LoadData()
         {
-            this.EditEF_Eid = Eid;
+            Type FormType = this.GetType();
+            FieldInfo[] Fpros = FormType.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
+            //foreach (FieldInfo item in Fpros)
+            //{
+            //    Console.WriteLine(item.Name);
+            //}
+            Dictionary<String, object> edic = Emanager.GetProDic(Eedit);
+            foreach (FieldInfo item in Fpros)
+            {     
+                if (item.Name.Split('_').Length==3&&item.Name.Split('_')[0] == "EditEF"&& item.Name.Split('_')[2]=="TextBox")
+                {
+                    //Console.WriteLine(item.Name);
+                    Console.WriteLine(item.Name.Split('_')[1]);
+                    Object obj =item.GetValue(this);
+                    MaterialSkin.Controls.MaterialTextBox obj2=(MaterialSkin.Controls.MaterialTextBox)obj;
+                    obj2.Text =edic[item.Name.Split('_')[1]].ToString();
+                }
+            }
         }
-
 
         //public void GetItemID(string item)
         //{
@@ -87,7 +71,7 @@ namespace SalaryManager
 
         private void EditEF_Save_Button_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("员工ID" + itemID);
+            //MessageBox.Show("员工ID" + itemID);
 
         }
 
@@ -106,6 +90,16 @@ namespace SalaryManager
             
             //string tmp = sender.Text;
             //Console.WriteLine(tmp); 
+        }
+
+        private void EditEmpyeeForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditEF_BankAccount_TextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

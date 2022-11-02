@@ -14,6 +14,11 @@ namespace Service
     /// </summary>
     public static class ClassTools
     {
+        /// <summary>
+        /// 获得成员字典
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static Dictionary<String,Object> GetProDic(Object obj)
         {
             Dictionary<String, Object> dic = new Dictionary<string, object>();
@@ -21,7 +26,7 @@ namespace Service
             PropertyInfo[] Opros= Otype.GetProperties();
             foreach (PropertyInfo item in Opros)
             {
-                dic.Add(item.Name,Otype.GetProperty(item.Name).GetValue(obj));
+                dic.Add(item.Name,item.GetValue(obj));
             }
             return dic;
         }

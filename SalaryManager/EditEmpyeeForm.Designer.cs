@@ -33,7 +33,7 @@
             this.EditEF_Eid_TextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.EditEF_HousingAllowance_TextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.EditEF_PostTransportation_TextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.EditEF_PostBomus_TextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.EditEF_PostBonus_TextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.EditEF_PostWage_TextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.EditEF_MealAllowance_TextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.EditEF_EdgeAllowance_TextBox = new MaterialSkin.Controls.MaterialTextBox();
@@ -156,22 +156,22 @@
             this.EditEF_PostTransportation_TextBox.Text = "";
             this.EditEF_PostTransportation_TextBox.TrailingIcon = null;
             // 
-            // EditEF_PostBomus_TextBox
+            // EditEF_PostBonus_TextBox
             // 
-            this.EditEF_PostBomus_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EditEF_PostBomus_TextBox.Depth = 0;
-            this.EditEF_PostBomus_TextBox.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.EditEF_PostBomus_TextBox.Hint = "职位奖金";
-            this.EditEF_PostBomus_TextBox.LeadingIcon = null;
-            this.EditEF_PostBomus_TextBox.Location = new System.Drawing.Point(311, 440);
-            this.EditEF_PostBomus_TextBox.MaxLength = 50;
-            this.EditEF_PostBomus_TextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.EditEF_PostBomus_TextBox.Multiline = false;
-            this.EditEF_PostBomus_TextBox.Name = "EditEF_PostBomus_TextBox";
-            this.EditEF_PostBomus_TextBox.Size = new System.Drawing.Size(138, 50);
-            this.EditEF_PostBomus_TextBox.TabIndex = 5;
-            this.EditEF_PostBomus_TextBox.Text = "";
-            this.EditEF_PostBomus_TextBox.TrailingIcon = null;
+            this.EditEF_PostBonus_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EditEF_PostBonus_TextBox.Depth = 0;
+            this.EditEF_PostBonus_TextBox.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EditEF_PostBonus_TextBox.Hint = "职位奖金";
+            this.EditEF_PostBonus_TextBox.LeadingIcon = null;
+            this.EditEF_PostBonus_TextBox.Location = new System.Drawing.Point(311, 440);
+            this.EditEF_PostBonus_TextBox.MaxLength = 50;
+            this.EditEF_PostBonus_TextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.EditEF_PostBonus_TextBox.Multiline = false;
+            this.EditEF_PostBonus_TextBox.Name = "EditEF_PostBonus_TextBox";
+            this.EditEF_PostBonus_TextBox.Size = new System.Drawing.Size(138, 50);
+            this.EditEF_PostBonus_TextBox.TabIndex = 5;
+            this.EditEF_PostBonus_TextBox.Text = "";
+            this.EditEF_PostBonus_TextBox.TrailingIcon = null;
             // 
             // EditEF_PostWage_TextBox
             // 
@@ -348,7 +348,6 @@
             this.EditEF_QualificationLevel_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EditEF_QualificationLevel_TextBox.Depth = 0;
             this.EditEF_QualificationLevel_TextBox.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-
             this.EditEF_QualificationLevel_TextBox.Hint = "资格等级";
             this.EditEF_QualificationLevel_TextBox.LeadingIcon = null;
             this.EditEF_QualificationLevel_TextBox.Location = new System.Drawing.Point(413, 221);
@@ -496,6 +495,7 @@
             this.EditEF_BankAccount_TextBox.TabIndex = 24;
             this.EditEF_BankAccount_TextBox.Text = "";
             this.EditEF_BankAccount_TextBox.TrailingIcon = null;
+            this.EditEF_BankAccount_TextBox.TextChanged += new System.EventHandler(this.EditEF_BankAccount_TextBox_TextChanged);
             // 
             // EditEF_Sex_TextBox
             // 
@@ -619,7 +619,7 @@
             this.Controls.Add(this.EditEF_EdgeAllowance_TextBox);
             this.Controls.Add(this.EditEF_MealAllowance_TextBox);
             this.Controls.Add(this.EditEF_PostWage_TextBox);
-            this.Controls.Add(this.EditEF_PostBomus_TextBox);
+            this.Controls.Add(this.EditEF_PostBonus_TextBox);
             this.Controls.Add(this.EditEF_PostTransportation_TextBox);
             this.Controls.Add(this.EditEF_HousingAllowance_TextBox);
             this.Controls.Add(this.EditEF_Eid_TextBox);
@@ -627,6 +627,7 @@
             this.Controls.Add(this.EditEF_Save_Button);
             this.Name = "EditEmpyeeForm";
             this.Text = "EditEmpyeeForm";
+            this.Load += new System.EventHandler(this.EditEmpyeeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,7 +640,7 @@
         private MaterialSkin.Controls.MaterialTextBox EditEF_Eid_TextBox;
         private MaterialSkin.Controls.MaterialTextBox EditEF_HousingAllowance_TextBox;
         private MaterialSkin.Controls.MaterialTextBox EditEF_PostTransportation_TextBox;
-        private MaterialSkin.Controls.MaterialTextBox EditEF_PostBomus_TextBox;
+        private MaterialSkin.Controls.MaterialTextBox EditEF_PostBonus_TextBox;
         private MaterialSkin.Controls.MaterialTextBox EditEF_PostWage_TextBox;
         private MaterialSkin.Controls.MaterialTextBox EditEF_MealAllowance_TextBox;
         private MaterialSkin.Controls.MaterialTextBox EditEF_EdgeAllowance_TextBox;

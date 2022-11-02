@@ -46,30 +46,30 @@ namespace Service
                 {
                     if (item.PropertyType.ToString() == "System.Int32")
                     {
-                        Etype.GetProperty(item.Name).SetValue(etem, Convert.ToInt32(objReader[item.Name]));
+                        item.SetValue(etem, Convert.ToInt32(objReader[item.Name]));
                     }
                     if (item.PropertyType.ToString() == "System.String")
                     {
-                        Etype.GetProperty(item.Name).SetValue(etem, objReader[item.Name].ToString());
+                        item.SetValue(etem, objReader[item.Name].ToString());
                     }
                     if (item.PropertyType.ToString() == "System.Double")
                     {
-                        Etype.GetProperty(item.Name).SetValue(etem, Convert.ToDouble(objReader[item.Name]));
+                        item.SetValue(etem, Convert.ToDouble(objReader[item.Name]));
                     }
                 }
                 foreach (PropertyInfo item in Ppros)
                 {
                     if (item.PropertyType.ToString() == "System.Int32")
                     {
-                        Ptype.GetProperty(item.Name).SetValue(epos,Convert.ToInt32(objReader[item.Name]));
+                        item.SetValue(epos,Convert.ToInt32(objReader[item.Name]));
                     }
                     if (item.PropertyType.ToString() == "System.String")
                     {
-                        Ptype.GetProperty(item.Name).SetValue(epos, objReader[item.Name].ToString());
+                        item.SetValue(epos, objReader[item.Name].ToString());
                     }
                     if (item.PropertyType.ToString() == "System.Double")
                     {
-                        Ptype.GetProperty(item.Name).SetValue(epos, Convert.ToDouble(objReader[item.Name]));
+                        item.SetValue(epos, Convert.ToDouble(objReader[item.Name]));
                     }
                 }
                 etem.position = epos;
@@ -113,7 +113,7 @@ namespace Service
             {
                 if (item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32" || item.PropertyType.ToString() == "System.String")
                 {
-                    eparam[num] = new MySqlParameter("@" + item.Name.ToString(), Etype.GetProperty(item.Name).GetValue(objEmployeeNew));
+                    eparam[num] = new MySqlParameter("@" + item.Name.ToString(), item.GetValue(objEmployeeNew));
                 }
                 if (num == 0)
                     eqlw += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
@@ -128,7 +128,7 @@ namespace Service
             {
                 if (item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32" || item.PropertyType.ToString() == "System.String")
                 {
-                    pparam[num] = new MySqlParameter("@" + item.Name.ToString(), Ptype.GetProperty(item.Name).GetValue(objEmployeeNew.position));
+                    pparam[num] = new MySqlParameter("@" + item.Name.ToString(), item.GetValue(objEmployeeNew.position));
                 }
                 if (num == 0)
                     pqlw += item.Name.ToString() + "=" + "@" + item.Name.ToString()+" ";
