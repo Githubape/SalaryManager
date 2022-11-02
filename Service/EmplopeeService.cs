@@ -19,7 +19,7 @@ namespace Service
     {
         private SqlService Sservice = new SqlService();
         /// <summary>
-        /// Service查询员工列表       !!!!!!!!!!!!!!!!!!!!!!!!!!!这里没写完只做样例!!!!!!!!!!!!!!!!!!!!!!!
+        /// Service查询员工列表   
         /// </summary>
         /// <returns></returns>
         public List<Employee> QueryEmployeeListInfo()
@@ -93,14 +93,24 @@ namespace Service
         /// <returns></returns>
         public int UpdateEmployeeInformation(Employee objEmployeeNew, Employee objEmployeeOld)
         {
+            Type Etype = typeof(Employee);
+            Type Ptype = typeof(Position);
+            PropertyInfo[] Epros = Etype.GetProperties();
+            PropertyInfo[] Ppros = Ptype.GetProperties();
+            MySqlParameter[] eparam = new MySqlParameter[Epros.GetLength(0)];
+            MySqlParameter[] pparam = new MySqlParameter[Ppros.GetLength(0)];
+
+
             MySqlParameter[] param = new MySqlParameter[]
            {
                 new MySqlParameter("@EId",objEmployeeOld.E_id),
-
-
            };
-
-         return new SqlService().UpdateByProcedure("update 表名 set 字段1=@var [where E_id=@EId]", param);
+            string sql1 = "update";
+            string sql2 = "set";
+            string sql3 = "[where";
+            string sql4 = "]";
+            string sql = sql1 + "salary.employee" + sql2 + sql3 + sql4;
+         return new SqlService().UpdateByProcedure("update salary.employee set 字段1=@var [where E_id=@EId]", param);
         }
     }
 
