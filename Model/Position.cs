@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
+
 
 namespace Model
 {
@@ -11,6 +13,22 @@ namespace Model
     /// </summary>
     public class Position
     {
+        public Position()
+        {
+            Type Mytype = this.GetType();
+            PropertyInfo[] Mypro = Mytype.GetProperties();
+            foreach (PropertyInfo item in Mypro)
+            {
+                if (item.PropertyType.ToString() == "System.String")
+                {
+                    item.SetValue(this, "");
+                }
+                else if (item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32")
+                {
+                    item.SetValue(this, 0);
+                }
+            }
+        }
         /// <summary>
         ///主键  位置第一个不得更改
         /// </summary>
@@ -50,7 +68,7 @@ namespace Model
         /// <summary>
         /// 独生子女费
         /// </summary>
-        public string OnlychildAllowance { get; set; }
+        public double OnlychildAllowance { get; set; }
         /// <summary>
         /// 是否艰苦岗位[一，二，三，四，否]
         /// </summary>

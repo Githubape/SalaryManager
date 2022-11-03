@@ -29,9 +29,9 @@ namespace Manager
         /// <param name="objEmployeeNew"></param>
         /// <param name="objEmployeeOld"></param>
         /// <returns></returns>
-        public int SetEmployeeInformation(Employee objEmployeeNew)
+        public int SetEmployeeInformation(Employee objEmployeeNew,bool ifinsert)
         {
-            return objService.UpdateEmployeeInformation(objEmployeeNew);
+            return objService.UpdateEmployeeInformation(objEmployeeNew,ifinsert);
         }
 
         /// <summary>
