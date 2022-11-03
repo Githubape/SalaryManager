@@ -252,7 +252,7 @@ namespace SalaryManager
 
         private void Search_Btn_Click(object sender, EventArgs e)
         {
-
+        
         }
     }
 }

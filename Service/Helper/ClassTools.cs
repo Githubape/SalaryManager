@@ -28,6 +28,8 @@ namespace Service
             {
                 dic.Add(item.Name,item.GetValue(obj));
             }
+
+       
             return dic;
         }
     }
