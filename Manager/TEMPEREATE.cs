@@ -10,6 +10,9 @@ using MySql.Data.MySqlClient;
 
 namespace Manager
 {
+    /// <summary>
+    /// 测试模块
+    /// </summary>
     public class TEMPEREATE
     {
 
