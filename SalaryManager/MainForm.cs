@@ -244,7 +244,7 @@ namespace SalaryManager
         {
             foreach(Employee item in Elist)
             {
-                if (item.Eid.ToString() == Eid)
+                if (item.data.Eid.ToString() == Eid)
                     return item;
             }
             return null; 

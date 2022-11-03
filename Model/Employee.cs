@@ -27,15 +27,30 @@ namespace Model
         public Employee()
         {
             position = new Position();
-            Type Mytype=this.GetType();
+            data = new Employee_Data();
+        }
+
+        public Employee_Data data;
+        /// <summary>
+        /// 职位  位置最后一个不得更改
+        /// </summary>
+        public Position position { get; set; }
+
+    }
+
+    public class Employee_Data
+    {
+        public Employee_Data()
+        {
+            Type Mytype = this.GetType();
             PropertyInfo[] Mypro = Mytype.GetProperties();
-            foreach(PropertyInfo item in Mypro)
+            foreach (PropertyInfo item in Mypro)
             {
-                if(item.PropertyType.ToString()=="System.String")
+                if (item.PropertyType.ToString() == "System.String")
                 {
                     item.SetValue(this, "");
                 }
-                else if(item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32")
+                else if (item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32")
                 {
                     item.SetValue(this, 0);
                 }
@@ -73,9 +88,5 @@ namespace Model
         /// 入职时间
         /// </summary>
         public string EntryTime { get; set; }
-        /// <summary>
-        /// 职位  位置最后一个不得更改
-        /// </summary>
-        public Position position { get; set; }
     }
 }

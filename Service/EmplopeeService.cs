@@ -27,8 +27,8 @@ namespace Service
             string sql = "SELECT *  FROM salary.employee Left Join salary.position on salary.employee.Id=salary.position.Eid where salary.position.Abolish=0";
             MySqlDataReader objReader = Sservice.GetReader(sql);
             List<Employee> EList = new List<Employee>();
-            Type Etype = typeof(Employee);
-            Type Ptype = typeof(Position);
+            Type Etype = typeof(Employee_Data);
+            Type Ptype = typeof(Position_Data);
             PropertyInfo[] Epros= Etype.GetProperties();
             PropertyInfo[] Ppros = Ptype.GetProperties();
             //foreach(PropertyInfo item in Ppros)
@@ -46,30 +46,30 @@ namespace Service
                 {
                     if (item.PropertyType.ToString() == "System.Int32")
                     {
-                        item.SetValue(etem, Convert.ToInt32(objReader[item.Name]));
+                        item.SetValue(etem.data, Convert.ToInt32(objReader[item.Name]));
                     }
                     if (item.PropertyType.ToString() == "System.String")
                     {
-                        item.SetValue(etem, objReader[item.Name].ToString());
+                        item.SetValue(etem.data, objReader[item.Name].ToString());
                     }
                     if (item.PropertyType.ToString() == "System.Double")
                     {
-                        item.SetValue(etem, Convert.ToDouble(objReader[item.Name]));
+                        item.SetValue(etem.data, Convert.ToDouble(objReader[item.Name]));
                     }
                 }
                 foreach (PropertyInfo item in Ppros)
                 {
                     if (item.PropertyType.ToString() == "System.Int32")
                     {
-                        item.SetValue(epos,Convert.ToInt32(objReader[item.Name]));
+                        item.SetValue(epos.data,Convert.ToInt32(objReader[item.Name]));
                     }
                     if (item.PropertyType.ToString() == "System.String")
                     {
-                        item.SetValue(epos, objReader[item.Name].ToString());
+                        item.SetValue(epos.data, objReader[item.Name].ToString());
                     }
                     if (item.PropertyType.ToString() == "System.Double")
                     {
-                        item.SetValue(epos, Convert.ToDouble(objReader[item.Name]));
+                        item.SetValue(epos.data, Convert.ToDouble(objReader[item.Name]));
                     }
                 }
                 etem.position = epos;
@@ -94,24 +94,24 @@ namespace Service
         {
             if(ifinsert)
             {
-                objEmployeeNew.Id = Sservice.InsertNl("insert into salary.employee() values()", null);
-                objEmployeeNew.position.PId=Sservice.InsertNl("insert into salary.position (Eid) values(@Eid)", new MySqlParameter[]
+                objEmployeeNew.data.Id = Sservice.InsertNl("insert into salary.employee() values()", null);
+                objEmployeeNew.position.data.PId=Sservice.InsertNl("insert into salary.position (Eid) values(@Eid)", new MySqlParameter[]
                     {
-                        new MySqlParameter("@Eid",objEmployeeNew.Id)
+                        new MySqlParameter("@Eid",objEmployeeNew.data.Id)
                         //new MySqlParameter("@Abolish",0)
                 });
-                Console.WriteLine(objEmployeeNew.Id);
-                Console.WriteLine(objEmployeeNew.position.PId);
+                Console.WriteLine(objEmployeeNew.data.Id);
+                Console.WriteLine(objEmployeeNew.position.data.PId);
             }
 
 
 
-            Type Etype = typeof(Employee);
-            Type Ptype = typeof(Position);
+            Type Etype = typeof(Employee_Data);
+            Type Ptype = typeof(Position_Data);
             PropertyInfo[] Epros = Etype.GetProperties();
             PropertyInfo[] Ppros = Ptype.GetProperties();
 
-            MySqlParameter[] eparam = new MySqlParameter[Epros.GetLength(0)-1];
+            MySqlParameter[] eparam = new MySqlParameter[Epros.GetLength(0)];
             MySqlParameter[] pparam = new MySqlParameter[Ppros.GetLength(0)];
 
             string eqlw = "";
@@ -126,7 +126,7 @@ namespace Service
             {
                 if (item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32" || item.PropertyType.ToString() == "System.String")
                 {
-                    eparam[num] = new MySqlParameter("@" + item.Name.ToString(), item.GetValue(objEmployeeNew));
+                    eparam[num] = new MySqlParameter("@" + item.Name.ToString(), item.GetValue(objEmployeeNew.data));
                     if (num == 0)
                         eqlw += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
                     if (num == eparam.Length - 1)
@@ -141,7 +141,7 @@ namespace Service
             {
                 if (item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32" || item.PropertyType.ToString() == "System.String")
                 {
-                    pparam[num] = new MySqlParameter("@" + item.Name.ToString(), item.GetValue(objEmployeeNew.position));
+                    pparam[num] = new MySqlParameter("@" + item.Name.ToString(), item.GetValue(objEmployeeNew.position.data));
                     if (num == 0)
                         pqlw += item.Name.ToString() + "=" + "@" + item.Name.ToString() + " ";
                     if (num == pparam.Length - 1)
@@ -168,8 +168,8 @@ namespace Service
         /// <returns></returns>
         public Dictionary<String,Object> GetProDic(Employee Emp)
         {
-            Dictionary<String, Object> dic = ClassTools.GetProDic(Emp);
-            Dictionary<String, Object> pdic = ClassTools.GetProDic(Emp.position);
+            Dictionary<String, Object> dic = ClassTools.GetProDic(Emp.data);
+            Dictionary<String, Object> pdic = ClassTools.GetProDic(Emp.position.data);
             Dictionary<String, Object> Fdic = dic.Union(pdic).ToDictionary(k => k.Key, v => v.Value);
             return Fdic;
         }
