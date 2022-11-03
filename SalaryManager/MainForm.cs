@@ -21,7 +21,7 @@ namespace SalaryManager
         EmployeeManager Emanager = new EmployeeManager();
         List<Employee> Elist;// = new List<Employee>();
         /// <summary>
-        /// 定义变量
+        /// 定义变量是拿到员工编号
         /// </summary>
         /// ItemID 是拿到员工编号
         string ItemID;
@@ -193,18 +193,38 @@ namespace SalaryManager
         {
             
         }
-
+        /// <summary>
+        /// 
+        /// 添加按钮回调
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void materialButton1_Click(object sender, EventArgs e)
         {
+                //Console.WriteLine("创建" + ItemID + "的编辑界面");
+                EditEmpyeeForm editEmFrom = new EditEmpyeeForm(new Employee(), true);
+                //editEmFrom.GetItemID(ItemID);
+
+                if (DialogResult.OK == editEmFrom.ShowDialog())
+                {
+                    MaterialSnackBar SnackBarMessage = new MaterialSnackBar("保存成功", "OK", true);
+                    SnackBarMessage.Show(this);
+                    Elist = Emanager.GetEmployeeInformation();
+                    LoadData("List1Header", Elist);
+                }
 
         }
-
+        /// <summary>
+        /// 编辑按钮回调
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Edit_Button_Click(object sender, EventArgs e)
         {
             if(ItemID != null)
             {
                 //Console.WriteLine("创建" + ItemID + "的编辑界面");
-                EditEmpyeeForm editEmFrom = new EditEmpyeeForm(GetEmpFromList(ItemID));
+                EditEmpyeeForm editEmFrom = new EditEmpyeeForm(GetEmpFromList(ItemID),false);
                 //editEmFrom.GetItemID(ItemID);
                 
                 if (DialogResult.OK == editEmFrom.ShowDialog())
@@ -232,18 +252,7 @@ namespace SalaryManager
 
         private void Search_Btn_Click(object sender, EventArgs e)
         {
-            List<Employee> employee = new List<Employee>();
-            int id = Convert.ToInt32(bhss.Text);
-            string name = xmss.Text;
-            string post = gzss.Text;
-
-            foreach (Employee item in Elist)
-            {
-                bool gin = false;
-                //if()
-            }
-
-            LoadData("List1Header", employee);
+        
         }
     }
 }

@@ -24,12 +24,13 @@ namespace SalaryManager
         /// <summary>
         /// 接收员工编号
         /// </summary>
-        public Employee Eedit;
-        public EmployeeManager Emanager=new EmployeeManager();
+        private Employee Eedit;
+        private bool ifinsert=false;
+        private EmployeeManager Emanager=new EmployeeManager();
         #endregion
 
 
-        public EditEmpyeeForm(Employee Emp)
+        public EditEmpyeeForm(Employee Emp,bool insert)
         {
             InitializeComponent();
             Dusheng_ComboBox.Items.AddRange(new object[]
@@ -39,7 +40,9 @@ namespace SalaryManager
             });
             Dusheng_ComboBox.Text = "11";
             Eedit = Emp;
-            LoadData();
+            ifinsert = insert;
+            if(!ifinsert)
+                LoadData();
         }
         //加载预览数值
         private void LoadData()
@@ -87,7 +90,7 @@ namespace SalaryManager
                         MaterialSkin.Controls.MaterialTextBox obj2 = (MaterialSkin.Controls.MaterialTextBox)obj;
                         foreach (PropertyInfo eitem in Epros)
                         {
-                            if (eitem.Name == item.Name.Split('_')[1])
+                            if (eitem.Name == item.Name.Split('_')[1]&&obj2.Text!="")
                             {
                                 eitem.SetValue(Eedit, Convert.ChangeType(obj2.Text, eitem.PropertyType));
                             }
@@ -95,7 +98,7 @@ namespace SalaryManager
                         }
                         foreach (PropertyInfo eitem in Ppros)
                         {
-                            if (eitem.Name == item.Name.Split('_')[1])
+                            if (eitem.Name == item.Name.Split('_')[1] && obj2.Text != "")
                             {
                                 eitem.SetValue(Eedit.position, Convert.ChangeType(obj2.Text, eitem.PropertyType));
                             }
@@ -109,7 +112,7 @@ namespace SalaryManager
                 SnackBarMessage.Show(this);
                 return;
             }
-            Console.WriteLine( Emanager.SetEmployeeInformation(Eedit));
+            Console.WriteLine( Emanager.SetEmployeeInformation(Eedit,ifinsert));
             this.DialogResult = DialogResult.OK;
             //MessageBox.Show("员工ID" + itemID);
 

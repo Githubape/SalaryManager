@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Model
 {
@@ -23,6 +24,23 @@ namespace Model
     /// </summary>
     public class Employee
     {
+        public Employee()
+        {
+            position = new Position();
+            Type Mytype=this.GetType();
+            PropertyInfo[] Mypro = Mytype.GetProperties();
+            foreach(PropertyInfo item in Mypro)
+            {
+                if(item.PropertyType.ToString()=="System.String")
+                {
+                    item.SetValue(this, "");
+                }
+                else if(item.PropertyType.ToString() == "System.Double" || item.PropertyType.ToString() == "System.Int32")
+                {
+                    item.SetValue(this, 0);
+                }
+            }
+        }
         /// <summary>
         /// 数据库主键  位置第一个不得更改
         /// </summary>

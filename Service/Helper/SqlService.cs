@@ -231,6 +231,30 @@ namespace Service
                 conn.Close();
             }
         }
+        public int InsertNl(string sql,MySqlParameter[] param)
+        {
+            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlCommand cmdback = new MySqlCommand("select LAST_INSERT_ID()",conn);
+            if (param != null)
+                cmd.Parameters.AddRange(param);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                return Convert.ToInt32(cmdback.ExecuteScalar());
+            }
+            catch (System.Exception ex)
+            {
+                //将错误信息写入日志文件
+                LogService.WriteErrorLog(ex.Message);
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         /// <summary>
         /// 获取单一结果
         /// </summary>

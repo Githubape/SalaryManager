@@ -90,9 +90,22 @@ namespace Service
         /// </summary>
         /// <param name="objEmployeeNew"></param>
         /// <returns></returns>
-        public int UpdateEmployeeInformation(Employee objEmployeeNew)
+        public int UpdateEmployeeInformation(Employee objEmployeeNew,bool ifinsert)
         {
-            
+            if(ifinsert)
+            {
+                objEmployeeNew.Id = Sservice.InsertNl("insert into salary.employee() values()", null);
+                objEmployeeNew.position.PId=Sservice.InsertNl("insert into salary.position (Eid) values(@Eid)", new MySqlParameter[]
+                    {
+                        new MySqlParameter("@Eid",objEmployeeNew.Id)
+                        //new MySqlParameter("@Abolish",0)
+                });
+                Console.WriteLine(objEmployeeNew.Id);
+                Console.WriteLine(objEmployeeNew.position.PId);
+            }
+
+
+
             Type Etype = typeof(Employee);
             Type Ptype = typeof(Position);
             PropertyInfo[] Epros = Etype.GetProperties();
