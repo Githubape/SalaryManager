@@ -31,7 +31,7 @@ namespace SalaryManager
         {
             InitializeComponent();
             //List<Employee> Elist = new List<Employee>();
-            Elist = Elist = Emanager.GetEmployeeInformation();
+            Elist = Emanager.GetEmployeeInformation();
             LoadData("List1Header",Elist);
         }
         /// <summary>
@@ -228,6 +228,22 @@ namespace SalaryManager
                     return item;
             }
             return null; 
+        }
+
+        private void Search_Btn_Click(object sender, EventArgs e)
+        {
+            List<Employee> employee = new List<Employee>();
+            int id = Convert.ToInt32(bhss.Text);
+            string name = xmss.Text;
+            string post = gzss.Text;
+
+            foreach (Employee item in Elist)
+            {
+                bool gin = false;
+                //if()
+            }
+
+            LoadData("List1Header", employee);
         }
     }
 }

@@ -214,6 +214,7 @@
             this.Search_Btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Search_Btn.UseAccentColor = false;
             this.Search_Btn.UseVisualStyleBackColor = true;
+            this.Search_Btn.Click += new System.EventHandler(this.Search_Btn_Click);
             // 
             // xmss
             // 
