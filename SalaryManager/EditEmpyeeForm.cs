@@ -14,6 +14,7 @@ using Model;
 using System.Reflection;
 
 using Model;
+using Service;
 
 namespace SalaryManager
 {
@@ -120,6 +121,11 @@ namespace SalaryManager
 
         private void EditEF_Cancel_Button_Click(object sender, EventArgs e)
         {
+            SqliteHelper sqliteHelper = SqliteHelper.Instance;
+            Admin admin = new Admin();
+            admin.UserName = "wzy";
+            admin.Password = "123456";
+            sqliteHelper.Add(admin);
             this.Close();
         }
 
