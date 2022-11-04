@@ -16,6 +16,15 @@ namespace Model
     {
         public Position()
         {
+            data = new Position_Data();
+        }
+        public Position_Data data;
+
+    }
+    public class Position_Data
+    {
+        public Position_Data()
+        {
             Type Mytype = this.GetType();
             PropertyInfo[] Mypro = Mytype.GetProperties();
             foreach (PropertyInfo item in Mypro)

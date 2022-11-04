@@ -30,6 +30,22 @@ namespace Model
         {
             position = new Position();
             Type Mytype = this.GetType();
+            data = new Employee_Data();
+        }
+
+        public Employee_Data data;
+        /// <summary>
+        /// 职位  位置最后一个不得更改
+        /// </summary>
+        public Position position { get; set; }
+
+    }
+
+    public class Employee_Data
+    {
+        public Employee_Data()
+        {
+            Type Mytype = this.GetType();
             PropertyInfo[] Mypro = Mytype.GetProperties();
             foreach (PropertyInfo item in Mypro)
             {

@@ -74,9 +74,9 @@ namespace SalaryManager
 
             Type FormType = this.GetType();
             FieldInfo[] Fpros = FormType.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
-            Type Etype = typeof(Employee);
+            Type Etype = typeof(Employee_Data);
             PropertyInfo[] Epros = Etype.GetProperties();
-            Type Ptype = typeof(Position);
+            Type Ptype = typeof(Position_Data);
             PropertyInfo[] Ppros = Ptype.GetProperties();
             try
             {
@@ -93,7 +93,7 @@ namespace SalaryManager
                         {
                             if (eitem.Name == item.Name.Split('_')[1]&&obj2.Text!="")
                             {
-                                eitem.SetValue(Eedit, Convert.ChangeType(obj2.Text, eitem.PropertyType));
+                                eitem.SetValue(Eedit.data, Convert.ChangeType(obj2.Text, eitem.PropertyType));
                             }
 
                         }
@@ -101,7 +101,7 @@ namespace SalaryManager
                         {
                             if (eitem.Name == item.Name.Split('_')[1] && obj2.Text != "")
                             {
-                                eitem.SetValue(Eedit.position, Convert.ChangeType(obj2.Text, eitem.PropertyType));
+                                eitem.SetValue(Eedit.position.data, Convert.ChangeType(obj2.Text, eitem.PropertyType));
                             }
                         }
                     }
