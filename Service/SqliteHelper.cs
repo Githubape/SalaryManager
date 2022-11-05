@@ -31,8 +31,8 @@ namespace Service
         {
             db = new SQLiteConnection(new SQLiteConnectionString(DbPath, true, key: Password));
             db.CreateTable<Admin>();//表已存在不会重复创建
-            db.CreateTable<Position>();
-            db.CreateTable<Employee>();
+            db.CreateTable<Position_Data>();
+            db.CreateTable<Employee_Data>();
         }
 
         /// <summary>
@@ -43,8 +43,8 @@ namespace Service
         {
             db = new SQLiteConnection(DbPath);
             db.CreateTable<Admin>();//表已存在不会重复创建
-            db.CreateTable<Position>();
-            db.CreateTable<Employee>();
+            db.CreateTable<Position_Data>();
+            db.CreateTable<Employee_Data>();
         }
 
         private static readonly Lazy<SqliteHelper> sqliteHelper = new Lazy<SqliteHelper>(() => new SqliteHelper());

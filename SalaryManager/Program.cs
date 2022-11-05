@@ -41,17 +41,17 @@ namespace SalaryManager
             //TEMPEREATE.Logtest("tst");//Log 测试 测试完毕
             ///new TEMPEREATE().Sqltest();//Sql测试 测试完毕
             //new TEMPEREATE().Sqlupdatetest();
-            string fileName = "D:\\Pengzhen\\salartManagerbiao\\salary.xls";
-            DataTable mydata = TEMPEREATE.ExcelToTable(fileName);
-            foreach(DataRow dt in mydata.Rows)
-            {
-                for(int i = 0; i < dt.ItemArray.Length;i++)
-                {
-                    Console.WriteLine(dt[i]);
-                }
-                Console.WriteLine(dt[0]);
-            }
-            Console.WriteLine(mydata.Rows);
+            //string fileName = "D:\\Pengzhen\\salartManagerbiao\\salary.xls";
+            //DataTable mydata = TEMPEREATE.ExcelToTable(fileName);
+            //foreach(DataRow dt in mydata.Rows)
+            //{
+            //    for(int i = 0; i < dt.ItemArray.Length;i++)
+            //    {
+            //        Console.WriteLine(dt[i]);
+            //    }
+            //    Console.WriteLine(dt[0]);
+            //}
+            //Console.WriteLine(mydata.Rows);
             //////////////////////////////////////////////////////////////
 
             ///登录窗体
