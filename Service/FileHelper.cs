@@ -48,7 +48,7 @@ namespace Service
         /// <param name="file">导入路径(包含文件名与扩展名)</param>
         /// <param name="i">传入表头行数</param>
         /// <returns></returns>
-        public DataTable ExcelToTable(string file)
+        private DataTable ExcelToTable(string file)
         {
 
             DataTable dt = new DataTable();
@@ -105,6 +105,48 @@ namespace Service
                 }
             }
             return dt;
+        }
+
+        /// <summary>
+        /// 匹配字典函数
+        /// </summary>
+        /// <param name="columnName">原字典名</param>
+        /// <param name="excelToList">字典</param>
+        /// <returns></returns>
+        private string MatchColumnName(string columnName, Dictionary<string, string> excelToList)
+        {
+            string tmpName;
+            if (excelToList.ContainsKey(columnName))
+            {
+                tmpName = excelToList[columnName];
+            }
+            else
+            {
+                tmpName = columnName;
+            }
+            return tmpName;
+        }
+
+        /// <summary>
+        /// 获取Excel中的值并转换成List
+        /// </summary>
+        /// <param name="fileName">文件路径</param>
+        /// <param name="excelToList">匹配字典</param>
+        /// <returns></returns>
+        public List<Dictionary<string, object>> GetExcelDataToList(string fileName,Dictionary<string,string> excelToList)
+        {
+            DataTable dt = ExcelToTable(fileName);
+            List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
+            foreach (DataRow dr in dt.Rows)//每一行信息，新建一个Dictionary<string,object>,将该行的每列信息加入到字典
+            {
+                Dictionary<string, object> result = new Dictionary<string, object>();
+                foreach (DataColumn dc in dt.Columns)
+                {
+                    result.Add(MatchColumnName(dc.ColumnName,excelToList), dr[dc].ToString());
+                }
+                list.Add(result);
+            }
+            return list;
         }
     }
 }

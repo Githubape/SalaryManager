@@ -82,6 +82,7 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeData.cs" />
+    <Compile Include="ExclHead.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="PositionData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

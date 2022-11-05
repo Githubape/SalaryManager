@@ -21,7 +21,6 @@ namespace SalaryManager
     {
 
         string fileName;
-        DataTable employeeInfo;
         public ImportExcelDataForm()
         {
             InitializeComponent();
@@ -30,17 +29,15 @@ namespace SalaryManager
         public void GetFileName(string name)
         {
             this.fileName = name;
-            employeeInfo = new TEMPEREATE().ExcelToTable(this.fileName);
-            List<Dictionary<string, object>> importInfo = new TEMPEREATE().DataTableToList(employeeInfo);
-            foreach(Dictionary<string,object> item in importInfo)
+            List<Dictionary<string, object>> employeeInfo = new FileHelper().GetExcelDataToList(this.fileName,ExclHead.Salaryexl);
+            foreach(Dictionary<string,object> item in employeeInfo)
             {
                 foreach(var idtem in item)
                 {
                     Console.WriteLine($"key={idtem.Key},value={idtem.Value}");
                 }
             }
-            Console.WriteLine(importInfo);
-            Console.WriteLine(employeeInfo.Columns[0]);
+            Console.WriteLine(employeeInfo);
         }
 
         private void importExcelData_ListView_SelectedIndexChanged(object sender, EventArgs e)

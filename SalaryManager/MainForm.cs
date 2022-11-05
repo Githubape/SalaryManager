@@ -47,7 +47,6 @@ namespace SalaryManager
                 Console.WriteLine("数据库连接失败");
                 throw e;
             }
-
             InitializeComponent();
             //List<Employee> Elist = new List<Employee>();
             Elist = Emanager.GetEmployeeInformation();
