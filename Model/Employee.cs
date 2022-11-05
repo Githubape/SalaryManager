@@ -32,7 +32,12 @@ namespace Model
             Type Mytype = this.GetType();
             data = new Employee_Data();
         }
-
+        public Employee(Employee_Data edata,Position_Data pdata)
+        {
+            position = new Position(pdata);
+            Type Mytype = this.GetType();
+            data = edata;
+        }
         public Employee_Data data;
         /// <summary>
         /// 职位  位置最后一个不得更改

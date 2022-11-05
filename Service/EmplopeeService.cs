@@ -18,6 +18,31 @@ namespace Service
     public class EmplopeeService
     {
         private SqlService Sservice = new SqlService();
+        SqliteHelper Sqlhelper = SqliteHelper.Instance;
+
+        /// <summary>
+        /// Sqlite 查询员工列表
+        /// </summary>
+        /// <returns></returns>
+        public List<Employee> QueryEmployeeListInfoSQlite()
+        {
+            List <Employee_Data> Ledata=Sqlhelper.Query<Employee_Data>("select * from employee");
+            List<Position_Data> Lpdata = Sqlhelper.Query<Position_Data>("select * from position");
+            List<Employee> Ldata = new List<Employee>();
+            foreach(Employee_Data eitem in Ledata)
+            {
+                
+                foreach(Position_Data pitem in Lpdata)
+                {
+                    if (pitem.EId == eitem.Eid)
+                    {
+                        Ldata.Add(new Employee(eitem, pitem));
+                        break;
+                    }
+                }
+            }
+            return Ldata;
+        }
         /// <summary>
         /// Service查询员工列表   
         /// </summary>
@@ -84,6 +109,21 @@ namespace Service
             }
             objReader.Close();
             return EList;
+        }
+        /// <summary>
+        /// Sllite 更新员工信息
+        /// </summary>
+        /// <returns></returns>
+        public int UpdateEmploeeInformationSqlite(Employee objEmployeenew,bool ifinsert)
+        {
+            if(ifinsert)
+            {
+                return Sqlhelper.Add<Employee_Data>(objEmployeenew.data)+Sqlhelper.Add<Position_Data>(objEmployeenew.position.data);
+            }
+            else
+            {
+                return Sqlhelper.Update<Employee_Data>(objEmployeenew.data) + Sqlhelper.Update<Position_Data>(objEmployeenew.position.data);
+            }
         }
         /// <summary>
         /// 更新员工信息 ！！！！！！！！！！！！！！！！！！！！！芝士举例，内具体容代填！！！！！！！！！！！！！！！！！！！！！！！

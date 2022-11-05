@@ -32,17 +32,26 @@ namespace SalaryManager
 
         public MainForm()
         {
+            try
+            {
+                // 使用了单例模式
+                sqliteHelper = SqliteHelper.Instance;
+                // 数据库加密
+                //sqliteHelper.Init(Path.Combine(Environment.CurrentDirectory, "salary.db"), "123456");
+                // 先用未加密的开发
+                sqliteHelper.Init(Path.Combine(Environment.CurrentDirectory, "salary.db"));
+            }
+            catch(SQLite.SQLiteException e)
+            {
+                LogService.WriteErrorLog(e.Message);
+                Console.WriteLine("数据库连接失败");
+                throw e;
+            }
             InitializeComponent();
             //List<Employee> Elist = new List<Employee>();
             Elist = Emanager.GetEmployeeInformation();
             LoadData("List1Header", Elist);
-            
-            // 使用了单例模式
-            sqliteHelper = SqliteHelper.Instance;
-            // 数据库加密
-            //sqliteHelper.Init(Path.Combine(Environment.CurrentDirectory, "salary.db"), "123456");
-            // 先用未加密的开发
-            sqliteHelper.Init(Path.Combine(Environment.CurrentDirectory, "salary.db"));
+           
         }
         /// <summary>
         /// 加载列表数据
