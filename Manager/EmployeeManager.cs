@@ -21,7 +21,8 @@ namespace Manager
         /// <returns></returns>
         public  List<Employee> GetEmployeeInformation()
         {
-            return objService.QueryEmployeeListInfo();
+            //return objService.QueryEmployeeListInfo();
+            return objService.QueryEmployeeListInfoSQlite();
         }
         /// <summary>
         /// 修改员工信息
@@ -31,7 +32,8 @@ namespace Manager
         /// <returns></returns>
         public int SetEmployeeInformation(Employee objEmployeeNew,bool ifinsert)
         {
-            return objService.UpdateEmployeeInformation(objEmployeeNew,ifinsert);
+            return objService.UpdateEmploeeInformationSqlite(objEmployeeNew, ifinsert);
+            //return objService.UpdateEmployeeInformation(objEmployeeNew,ifinsert);
         }
 
         /// <summary>

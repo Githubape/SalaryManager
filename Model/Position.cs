@@ -18,6 +18,10 @@ namespace Model
         {
             data = new Position_Data();
         }
+        public Position(Position_Data pdata)
+        {
+            data = pdata;
+        }
         public Position_Data data;
 
     }

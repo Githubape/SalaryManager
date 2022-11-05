@@ -30,7 +30,7 @@ namespace Model
         /// <summary>
         /// 数据库主键  位置第一个不得更改
         /// </summary>
-        [Column("id")]
+        [Column("id")][PrimaryKey,AutoIncrement]
         public int Id { get; set; }
         /// <summary>
         /// Emplopee id

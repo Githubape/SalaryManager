@@ -30,8 +30,13 @@ namespace Model
         /// <summary>
         ///主键  位置第一个不得更改
         /// </summary>
-        [Column("p_id")]
+        [Column("p_id")][PrimaryKey,AutoIncrement]
         public int PId { get; set; }
+        /// <summary>
+        /// 外键
+        /// </summary>
+        [Column("e_id")]
+        public int EId { get; set; }
         /// <summary>
         /// 工种[操作，服务，管理，专业技术]
         /// </summary>

@@ -8,16 +8,17 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Service
 {
+    
     public class SqliteHelper
     {
         /// <summary>
         /// 数据库连接
         /// </summary>
         public SQLiteConnection db;
-
         private SqliteHelper()
         {
         }
