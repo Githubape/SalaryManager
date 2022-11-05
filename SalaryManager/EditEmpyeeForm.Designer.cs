@@ -58,6 +58,7 @@
             this.itemID_TextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.EditEF_HeatingAllowance_TextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.Dusheng_ComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.import_Employee_Info = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // EditEF_Save_Button
@@ -539,7 +540,7 @@
             this.itemID_TextBox.Font = new System.Drawing.Font("思源黑体 CN Regular", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.itemID_TextBox.Hint = "Item ID测试";
             this.itemID_TextBox.LeadingIcon = null;
-            this.itemID_TextBox.Location = new System.Drawing.Point(83, 606);
+            this.itemID_TextBox.Location = new System.Drawing.Point(33, 606);
             this.itemID_TextBox.MaxLength = 50;
             this.itemID_TextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.itemID_TextBox.Multiline = false;
@@ -582,7 +583,7 @@
             this.Dusheng_ComboBox.Hint = "下拉框";
             this.Dusheng_ComboBox.IntegralHeight = false;
             this.Dusheng_ComboBox.ItemHeight = 43;
-            this.Dusheng_ComboBox.Location = new System.Drawing.Point(268, 606);
+            this.Dusheng_ComboBox.Location = new System.Drawing.Point(197, 606);
             this.Dusheng_ComboBox.MaxDropDownItems = 4;
             this.Dusheng_ComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.Dusheng_ComboBox.Name = "Dusheng_ComboBox";
@@ -590,11 +591,34 @@
             this.Dusheng_ComboBox.StartIndex = 0;
             this.Dusheng_ComboBox.TabIndex = 30;
             // 
+            // import_Employee_Info
+            // 
+            this.import_Employee_Info.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
+            this.import_Employee_Info.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.import_Employee_Info.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
+            this.import_Employee_Info.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.import_Employee_Info.Depth = 0;
+            this.import_Employee_Info.HighEmphasis = true;
+            this.import_Employee_Info.Icon = null;
+            this.import_Employee_Info.Location = new System.Drawing.Point(325, 642);
+            this.import_Employee_Info.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.import_Employee_Info.MouseState = MaterialSkin.MouseState.HOVER;
+            this.import_Employee_Info.Name = "import_Employee_Info";
+            this.import_Employee_Info.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.import_Employee_Info.Size = new System.Drawing.Size(123, 36);
+            this.import_Employee_Info.TabIndex = 31;
+            this.import_Employee_Info.Text = "从Excel中导入";
+            this.import_Employee_Info.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.import_Employee_Info.UseAccentColor = false;
+            this.import_Employee_Info.UseVisualStyleBackColor = true;
+            this.import_Employee_Info.Click += new System.EventHandler(this.import_Employee_Info_Click);
+            // 
             // EditEmpyeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(652, 703);
+            this.Controls.Add(this.import_Employee_Info);
             this.Controls.Add(this.Dusheng_ComboBox);
             this.Controls.Add(this.EditEF_HeatingAllowance_TextBox);
             this.Controls.Add(this.itemID_TextBox);
@@ -666,6 +690,6 @@
         private MaterialSkin.Controls.MaterialTextBox itemID_TextBox;
         private MaterialSkin.Controls.MaterialTextBox EditEF_HeatingAllowance_TextBox;
         private MaterialSkin.Controls.MaterialComboBox Dusheng_ComboBox;
-
+        private MaterialSkin.Controls.MaterialButton import_Employee_Info;
     }
 }

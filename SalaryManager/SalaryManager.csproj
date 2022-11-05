@@ -183,6 +183,12 @@
     <Compile Include="EditEmpyeeForm.Designer.cs">
       <DependentUpon>EditEmpyeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImportExcelDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportExcelDataForm.Designer.cs">
+      <DependentUpon>ImportExcelDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EditEmpyeeForm.resx">
       <DependentUpon>EditEmpyeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportExcelDataForm.resx">
+      <DependentUpon>ImportExcelDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

@@ -14,6 +14,7 @@ using NPOI.XSSF.UserModel;
 using NPOI.HSSF.UserModel;
 using System.Data;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Manager
 {
@@ -67,7 +68,7 @@ namespace Manager
         /// </summary>
         /// <param name="cell">目标单元格</param>
         /// <returns></returns>
-        private static object GetValueType(ICell cell)
+        private object GetValueType(ICell cell)
         {
             if (cell == null)
                 return null;
@@ -95,7 +96,7 @@ namespace Manager
         /// <param name="file">导入路径(包含文件名与扩展名)</param>
         /// <param name="i">传入表头行数</param>
         /// <returns></returns>
-        public static DataTable ExcelToTable(string file)
+        public DataTable ExcelToTable(string file)
         {
             
             DataTable dt = new DataTable();
@@ -103,7 +104,15 @@ namespace Manager
             string fileExt = Path.GetExtension(file).ToLower();
             using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
             {
-                if (fileExt == ".xlsx") { workbook = new XSSFWorkbook(fs); } else if (fileExt == ".xls") { workbook = new HSSFWorkbook(fs); } else { workbook = null; }
+                if (fileExt == ".xlsx")
+                {
+                    workbook = new XSSFWorkbook(fs); }
+                else if (fileExt == ".xls")
+                {
+                    workbook = new HSSFWorkbook(fs); } else
+                {
+                    workbook = null;
+                }
                 if (workbook == null) { return null; }
                 ISheet sheet = workbook.GetSheetAt(0);
 
@@ -144,12 +153,47 @@ namespace Manager
         }
 
         ///<summary>
+        ///DataTable转List
+        /// </summary>
+        public List<Dictionary<string, object>> DataTableToList(DataTable dt)
+        {
+
+            List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
+            foreach (DataRow dr in dt.Rows)//每一行信息，新建一个Dictionary<string,object>,将该行的每列信息加入到字典
+            {
+                Dictionary<string, object> result = new Dictionary<string, object>();
+                foreach (DataColumn dc in dt.Columns)
+                {
+                    result.Add(dc.ColumnName, dr[dc].ToString());
+                }
+                list.Add(result);
+            }
+            return list;
+        }
+
+        ///<summary>
+        ///打开资源管理器并获取文件名称及路径
+        /// </summary>
+        public string OpenFile()
+        {
+            //打开文件
+            OpenFileDialog file = new OpenFileDialog();
+            file.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            if (file.ShowDialog() == DialogResult.Cancel)
+            {
+                return null;
+            }
+            var path = file.FileName;
+            return path;
+        }
+
+        ///<summary>
         ///文件读取测试
         /// </summary>
         public void GetDataTest()
         {
             string fileName = "D:\\Pengzhen\\salartManagerbiao\\salary.xls";
-            DataTable mydata = TEMPEREATE.ExcelToTable(fileName);
+            DataTable mydata = new TEMPEREATE().ExcelToTable(fileName);
             foreach (DataRow dt in mydata.Rows)
             {
                 for (int i = 0; i < dt.ItemArray.Length; i++)

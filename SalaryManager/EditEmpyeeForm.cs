@@ -12,6 +12,7 @@ using MaterialSkin.Controls;
 using Manager;
 using Model;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 using Model;
 using Service;
@@ -153,6 +154,15 @@ namespace SalaryManager
         private void EditEF_BankAccount_TextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void import_Employee_Info_Click(object sender, EventArgs e)
+        {
+            string fileName = new TEMPEREATE().OpenFile();
+            Console.WriteLine(fileName);
+            ImportExcelDataForm importExcelDataForm = new ImportExcelDataForm();
+            importExcelDataForm.GetFileName(fileName);
+            importExcelDataForm.ShowDialog();
         }
     }
 }

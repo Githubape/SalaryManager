@@ -40,7 +40,7 @@ namespace SalaryManager
             //TEMPEREATE.Logtest("tst");//Log 测试 测试完毕
             ///new TEMPEREATE().Sqltest();//Sql测试 测试完毕
             //new TEMPEREATE().Sqlupdatetest();
-            new TEMPEREATE().GetDataTest();
+            //new TEMPEREATE().GetDataTest();
             //////////////////////////////////////////////////////////////
 
             ///登录窗体
