@@ -142,5 +142,23 @@ namespace Manager
             }
             return dt;
         }
+
+        ///<summary>
+        ///文件读取测试
+        /// </summary>
+        public void GetDataTest()
+        {
+            string fileName = "D:\\Pengzhen\\salartManagerbiao\\salary.xls";
+            DataTable mydata = TEMPEREATE.ExcelToTable(fileName);
+            foreach (DataRow dt in mydata.Rows)
+            {
+                for (int i = 0; i < dt.ItemArray.Length; i++)
+                {
+                    Console.WriteLine(dt[i]);
+                }
+                Console.WriteLine(dt[0]);
+            }
+            Console.WriteLine(mydata.Rows);
+        }
     }
 }
