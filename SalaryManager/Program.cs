@@ -48,8 +48,8 @@ namespace SalaryManager
 
 
 
-            Application.Run(new MainForm());
-            return;
+            //Application.Run(new MainForm());
+            //return;
             //Application.Run(new LoginForm());
             LoginForm LogF = new LoginForm();
             if(DialogResult.OK==LogF.ShowDialog())

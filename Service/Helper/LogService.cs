@@ -22,13 +22,13 @@ namespace Service
         /// <summary>
         /// 获取数据库服务器时间
         /// </summary>
-        public static DateTime ServerTime
-        {
-            get
-            {
-                return new SqlService().GetServerTime();
-            }
-        }
+        //public static DateTime ServerTime
+        //{
+        //    //get
+        //    //{
+        //        //return new SqlService().GetServerTime();
+        //    //}
+        //}
 
         /// <summary>
         /// 写日志

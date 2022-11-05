@@ -12,16 +12,32 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using Manager;
 using Model;
-
+using Service;
+using System.IO;
 namespace SalaryManager
 {
     public partial class LoginForm : MaterialForm
     {
         AdminManager Adminmgr = new AdminManager();
+        SqliteHelper sqliteHelper;
         public LoginForm()
         {
             InitializeComponent();
-
+            try
+            {
+                // 使用了单例模式
+                sqliteHelper = SqliteHelper.Instance;
+                // 数据库加密
+                //sqliteHelper.Init(Path.Combine(Environment.CurrentDirectory, "salary.db"), "123456");
+                // 先用未加密的开发
+                sqliteHelper.Init(Path.Combine(Environment.CurrentDirectory, "salary.db"));
+            }
+            catch (SQLite.SQLiteException e)
+            {
+                LogService.WriteErrorLog(e.Message);
+                Console.WriteLine("数据库连接失败");
+                throw e;
+            }
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -60,6 +76,7 @@ namespace SalaryManager
             }
             catch(System.Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 MaterialSnackBar SnackBarMessage = new MaterialSnackBar("请检查数据库连接", "OK", true);
                 SnackBarMessage.Show(this);
                 return;

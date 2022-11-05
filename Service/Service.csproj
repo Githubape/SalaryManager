@@ -142,11 +142,9 @@
     <Compile Include="FileHelper.cs" />
     <Compile Include="Helper\ClassTools.cs" />
     <Compile Include="Helper\LogService.cs" />
-    <Compile Include="Helper\SqliteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryService.cs" />
     <Compile Include="Helper\ExpectionService.cs" />
-    <Compile Include="Helper\SqlService.cs" />
     <Compile Include="SqliteHelper.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

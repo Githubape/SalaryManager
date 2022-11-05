@@ -14,7 +14,7 @@ namespace Manager
     /// </summary>
     class SqlManager
     {
-        SqlService service;
+        //SqlService service;
 
     }
 }
