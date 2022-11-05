@@ -12,7 +12,8 @@ using MaterialSkin.Controls;
 using Manager;
 using Model;
 using System.Reflection;
-
+using Service;
+using System.IO;
 
 namespace SalaryManager
 {
@@ -25,23 +26,32 @@ namespace SalaryManager
         /// </summary>
         /// ItemID 是拿到员工编号
         string ItemID;
- 
+
+        SqliteHelper sqliteHelper;
+
 
         public MainForm()
         {
             InitializeComponent();
             //List<Employee> Elist = new List<Employee>();
             Elist = Emanager.GetEmployeeInformation();
-            LoadData("List1Header",Elist);
+            LoadData("List1Header", Elist);
+            
+            // 使用了单例模式
+            sqliteHelper = SqliteHelper.Instance;
+            // 数据库加密
+            //sqliteHelper.Init(Path.Combine(Environment.CurrentDirectory, "salary.db"), "123456");
+            // 先用未加密的开发
+            sqliteHelper.Init(Path.Combine(Environment.CurrentDirectory, "salary.db"));
         }
         /// <summary>
         /// 加载列表数据
         /// </summary>
-        private void LoadData(String list,List<Employee> Elist)
+        private void LoadData(String list, List<Employee> Elist)
         {
             materialListView1.Items.Clear();
             //List<string[]> Lists = ElTranSl(Elist);
-            Type FormType =typeof(MainForm);
+            Type FormType = typeof(MainForm);
             //PropertyInfo[] Fpros = FormType.GetProperties();
             FieldInfo[] Fpros = FormType.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
             //foreach (FieldInfo item in Ffiel)
@@ -49,18 +59,18 @@ namespace SalaryManager
             //    Console.WriteLine(item.Name);
             //}
             List<String> Fprolst = new List<String>();
-            foreach(FieldInfo item in Fpros)
+            foreach (FieldInfo item in Fpros)
             {
-                if (item.Name.Split('_')[0]== list)
+                if (item.Name.Split('_')[0] == list)
                 {
                     Fprolst.Add(item.Name.Split('_')[1]);
                 }
             }
-            foreach(Employee Emp in Elist)
+            foreach (Employee Emp in Elist)
             {
                 Dictionary<String, object> edic = Emanager.GetProDic(Emp);
                 string[] ldata = new string[Fprolst.ToArray().Length];
-                for (int i=0;i<ldata.Length;i++)
+                for (int i = 0; i < ldata.Length; i++)
                 {
                     ldata[i] = edic[Fprolst[i]].ToString();
                 }
@@ -90,20 +100,20 @@ namespace SalaryManager
             //Console.WriteLine(Epros.GetLength(0));
             //Console.WriteLine(Ppros.GetLength(0));
             List<string[]> Lists = new List<string[]>();
-            
+
             foreach (Employee item in Elist)
             {
                 string[] ldata = new string[Epros.GetLength(0) - 2 + Ppros.GetLength(0) - 1];
                 //Emplopee 第一项最后一项不用
-                for (int i=1;i<Epros.GetLength(0)-1;i++)
+                for (int i = 1; i < Epros.GetLength(0) - 1; i++)
                 {
                     ldata[i - 1] = Etype.GetProperty(Epros[i].Name).GetValue(item).ToString();
                 }
                 //Position第一项不用
                 for (int i = Epros.GetLength(0) - 1; i <= ldata.GetLength(0); i++)
                 {
-     
-                    ldata[i - 1] = Ptype.GetProperty(Ppros[i- Epros.GetLength(0)+2].Name).GetValue(item.position).ToString();
+
+                    ldata[i - 1] = Ptype.GetProperty(Ppros[i - Epros.GetLength(0) + 2].Name).GetValue(item.position).ToString();
                     //Console.WriteLine((i - 1).ToString() + "      " + ldata[i - 1]);
                 }
                 //ldata[0] = item.E_id.ToString();
@@ -131,7 +141,7 @@ namespace SalaryManager
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -184,14 +194,14 @@ namespace SalaryManager
             }
         }
 
-            private void materialTabSelector1_Click_2(object sender, EventArgs e)
+        private void materialTabSelector1_Click_2(object sender, EventArgs e)
         {
 
         }
 
         private void materialTextBox2_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
         /// <summary>
         /// 
@@ -201,17 +211,18 @@ namespace SalaryManager
         /// <param name="e"></param>
         private void materialButton1_Click(object sender, EventArgs e)
         {
-                //Console.WriteLine("创建" + ItemID + "的编辑界面");
-                EditEmpyeeForm editEmFrom = new EditEmpyeeForm(new Employee(), true);
-                //editEmFrom.GetItemID(ItemID);
 
-                if (DialogResult.OK == editEmFrom.ShowDialog())
-                {
-                    MaterialSnackBar SnackBarMessage = new MaterialSnackBar("保存成功", "OK", true);
-                    SnackBarMessage.Show(this);
-                    Elist = Emanager.GetEmployeeInformation();
-                    LoadData("List1Header", Elist);
-                }
+            //Console.WriteLine("创建" + ItemID + "的编辑界面");
+            EditEmpyeeForm editEmFrom = new EditEmpyeeForm(new Employee(), true);
+            //editEmFrom.GetItemID(ItemID);
+
+            if (DialogResult.OK == editEmFrom.ShowDialog())
+            {
+                MaterialSnackBar SnackBarMessage = new MaterialSnackBar("保存成功", "OK", true);
+                SnackBarMessage.Show(this);
+                Elist = Emanager.GetEmployeeInformation();
+                LoadData("List1Header", Elist);
+            }
 
         }
         /// <summary>
@@ -221,17 +232,17 @@ namespace SalaryManager
         /// <param name="e"></param>
         private void Edit_Button_Click(object sender, EventArgs e)
         {
-            if(ItemID != null)
+            if (ItemID != null)
             {
                 //Console.WriteLine("创建" + ItemID + "的编辑界面");
-                EditEmpyeeForm editEmFrom = new EditEmpyeeForm(GetEmpFromList(ItemID),false);
+                EditEmpyeeForm editEmFrom = new EditEmpyeeForm(GetEmpFromList(ItemID), false);
                 //editEmFrom.GetItemID(ItemID);
-                
+
                 if (DialogResult.OK == editEmFrom.ShowDialog())
                 {
                     MaterialSnackBar SnackBarMessage = new MaterialSnackBar("保存成功", "OK", true);
                     SnackBarMessage.Show(this);
-                    LoadData("List1Header",Elist);
+                    LoadData("List1Header", Elist);
                 }
             }
             else
@@ -242,17 +253,17 @@ namespace SalaryManager
         }
         private Employee GetEmpFromList(string Eid)
         {
-            foreach(Employee item in Elist)
+            foreach (Employee item in Elist)
             {
                 if (item.data.Eid.ToString() == Eid)
                     return item;
             }
-            return null; 
+            return null;
         }
 
         private void Search_Btn_Click(object sender, EventArgs e)
         {
-        
+
         }
     }
 }
