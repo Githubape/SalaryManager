@@ -67,7 +67,11 @@ namespace SalaryManager
         //{
         //    this.itemID = item;
         //}
-
+        /// <summary>
+        /// 保存按钮回调
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditEF_Save_Button_Click(object sender, EventArgs e)
         {
 
