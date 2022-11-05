@@ -32,6 +32,13 @@ namespace SalaryManager
             this.fileName = name;
             employeeInfo = new TEMPEREATE().ExcelToTable(this.fileName);
             List<Dictionary<string, object>> importInfo = new TEMPEREATE().DataTableToList(employeeInfo);
+            foreach(Dictionary<string,object> item in importInfo)
+            {
+                foreach(var idtem in item)
+                {
+                    Console.WriteLine($"key={idtem.Key},value={idtem.Value}");
+                }
+            }
             Console.WriteLine(importInfo);
             Console.WriteLine(employeeInfo.Columns[0]);
         }
