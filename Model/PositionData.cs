@@ -27,6 +27,8 @@ namespace Model
                 }
             }
         }
+
+ 
         /// <summary>
         ///主键  位置第一个不得更改
         /// </summary>
@@ -37,16 +39,20 @@ namespace Model
         /// </summary>
         [Column("e_id")]
         public int EId { get; set; }
+        #region 基础职位信息
         /// <summary>
-        /// 工种[操作，服务，管理，专业技术]
+        /// 工种
         /// </summary>
         [Column("work_type")]
         public string WorkType { get; set; }
         /// <summary>
-        /// 职位
+        /// 科室
         /// </summary>
-        [Column("post")]
-        public string Post { get; set; }
+        public string Department { get; set; }
+        /// <summary>
+        /// 序列
+        /// </summary>
+        public string Squence { get; set; }      
         /// <summary>
         /// 岗序
         /// </summary>
@@ -67,66 +73,78 @@ namespace Model
         /// </summary>
         [Column("duty_time")]
         public string DutyTime { get; set; }
+
         /// <summary>
-        /// 工龄 手动输入与入职时间无瓜
+        /// 工龄 手动输入与入职时间无瓜:根据日期计算
         /// </summary>
         [Column("service_length")]
         public int ServiceLength { get; set; }
-        /// <summary>
-        /// 是否独生子女[是，否]
-        /// </summary>
-        [Column("only_child")]
-        public string OnlyChild { get; set; }
+        #endregion
+
+        #region 带截止日期工资信息
         /// <summary>
         /// 独生子女费
         /// </summary>
         [Column("only_child_allowance")]
         public double OnlychildAllowance { get; set; }
         /// <summary>
-        /// 是否艰苦岗位[一，二，三，四，否]
+        /// 独生子女截止日期
         /// </summary>
-        [Column("is_hard")]
-        public string IsHard { get; set; }
+        [Column("oc_expiration")]
+        public DateTime OcaExpiration { get; set; }
+
         /// <summary>
-        /// 艰难岗位津贴
-        /// </summary>
-        [Column("hardship_allowance")]
-        public double HardshipAllowance { get; set; }
-        /// <summary>
-        /// 是否艰苦边远地区[是，否]                                                       ！！！！！！！！！！！待解决！！！！！！！！！！
-        /// </summary>
-        [Column("is_edge")]
-        public string IsEdge { get; set; }
-        /// <summary>
-        /// 边远地区津贴
+        /// 边远津贴
         /// </summary>
         [Column("edge_allowance")]
         public double EdgeAllowance { get; set; }
         /// <summary>
-        /// 餐饮补助
+        /// 边远津贴截止日期
         /// </summary>
-        [Column("meal_allowance")]
-        public double MealAllowance { get; set; }
+        [Column("eda_expiration")]
+        public double EdaExpiration { get; set; }
+
         /// <summary>
-        /// 职位基础工资
+        /// 技术补贴
         /// </summary>
-        [Column("post_wage")]
-        public double PostWage { get; set; }
+        [Column("tec_allowance")]
+        public double TecAllowance { get; set; }
         /// <summary>
-        /// 职位奖金
+        /// 技术津贴截止日期
         /// </summary>
-        [Column("post_bonus")]
-        public double PostBonus { get; set; }
+        [Column("tec_expiration")]
+        public double TecExpiration { get; set; }
+
         /// <summary>
-        /// 职位交通费
+        /// 生活补贴
         /// </summary>
-        [Column("post_transportation")]
-        public double PostTransportation { get; set; }
+        [Column("life_allowance")]
+        public double LifeAllowance { get; set; }
         /// <summary>
-        /// 住房补贴
+        /// 生活津贴截止日期
         /// </summary>
-        [Column("housing_allowance")]
-        public double HousingAllowance { get; set; }
+        [Column("life_expiration")]
+        public double LifeExpiration { get; set; }
+        
+        /// <summary>
+        /// 考勤扣款
+        /// </summary>
+        [Column("attend_deduction")]
+        public double AttendDeduction { get; set; }
+        /// <summary>
+        /// 考勤扣款截止日期
+        /// </summary>
+        [Column("attendduc_expiration")]
+        public double AttendDucExpiration { get; set; }
+
+        /// <summary>
+        /// 无住房补贴
+        /// </summary>
+        [Column("nohouse_allowance")]
+        public double NohouseAllowance { get; set; }
+        #endregion
+
+        #region 一次输入不变
         /// <summary>
         /// 取暖补贴
         /// </summary>
@@ -137,5 +155,6 @@ namespace Model
         /// </summary>
         [Column("abolish")]
         public int Abolish { get; set; }
+        #endregion
     }
 }

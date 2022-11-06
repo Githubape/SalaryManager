@@ -83,10 +83,17 @@
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeData.cs" />
     <Compile Include="ExclHead.cs" />
+    <Compile Include="Exl\ManagerWage.cs" />
+    <Compile Include="Exl\Mealexl.cs" />
+    <Compile Include="Exl\OnpostExl.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="PositionData.cs" />
+    <Compile Include="Exl\Pricexl.cs" />
+    <Compile Include="Exl\ProfessionalWage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalaryModel.cs" />
+    <Compile Include="SalaryData.cs" />
+    <Compile Include="Exl\ServiceWage.cs" />
+    <Compile Include="Exl\Transportexl.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

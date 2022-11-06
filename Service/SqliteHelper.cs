@@ -34,6 +34,14 @@ namespace Service
             db.CreateTable<Admin>();//表已存在不会重复创建
             db.CreateTable<Position_Data>();
             db.CreateTable<Employee_Data>();
+            db.CreateTable<SalaryData>();
+            db.CreateTable<ManagerWage>();
+            db.CreateTable<Mealexl>();
+            db.CreateTable<OnpostExl>();
+            db.CreateTable<Pricexl>();
+            db.CreateTable<ProfessionalWage>();
+            db.CreateTable<ServiceWage>();
+            db.CreateTable<Transportexl>();
         }
 
         /// <summary>
@@ -46,6 +54,15 @@ namespace Service
             db.CreateTable<Admin>();//表已存在不会重复创建
             db.CreateTable<Position_Data>();
             db.CreateTable<Employee_Data>();
+            db.CreateTable<SalaryData>();
+            db.CreateTable<ManagerWage>();
+            db.CreateTable<Mealexl>();
+            db.CreateTable<OnpostExl>();
+            db.CreateTable<Pricexl>();
+            db.CreateTable<ProfessionalWage>();
+            db.CreateTable<ServiceWage>();
+            db.CreateTable<Transportexl>();
+
         }
 
         private static readonly Lazy<SqliteHelper> sqliteHelper = new Lazy<SqliteHelper>(() => new SqliteHelper());

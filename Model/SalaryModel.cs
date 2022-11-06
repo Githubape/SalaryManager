@@ -56,7 +56,7 @@ namespace Model
         /// </summary>
         public double LivingAllowance { get; set; }
         /// <summary>
-        /// 通讯补贴                                                         ！！！！！！！！！！！！！！！！待解决！！！！！！！！！！！！！！！！！
+        /// 通讯补贴                                                        
         /// </summary>
         public double CommunicateAllowance { get; set; }
         /// <summary>

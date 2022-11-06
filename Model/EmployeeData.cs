@@ -57,11 +57,7 @@ namespace Model
         /// </summary>
         [Column("e_group")]
         public string Egroup { get; set; }
-        /// <summary>
-        /// 工种
-        /// </summary>
-        [Column("e_type")]
-        public string Etype { get; set; }
+
         /// <summary>
         /// 入职时间
         /// </summary>
