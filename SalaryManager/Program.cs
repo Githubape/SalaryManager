@@ -41,6 +41,7 @@ namespace SalaryManager
             ///new TEMPEREATE().Sqltest();//Sql测试 测试完毕
             //new TEMPEREATE().Sqlupdatetest();
             //new TEMPEREATE().GetDataTest();
+            new TEMPEREATE().InitExl();
             //////////////////////////////////////////////////////////////
 
             ///登录窗体
