@@ -51,8 +51,12 @@ namespace SalaryManager
             //List<Employee> Elist = new List<Employee>();
             Elist = Emanager.GetEmployeeInformation();
             LoadData("List1Header", Elist);
-           
+            MaterialCard materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            Note_Manager.Controls.Add(materialCard3);
+
+
         }
+
         /// <summary>
         /// 加载列表数据
         /// </summary>
@@ -222,6 +226,12 @@ namespace SalaryManager
         private void Search_Btn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UpdateHeader_Button_Click(object sender, EventArgs e)
+        {
+            UpdateForm updateForm = new UpdateForm();
+            updateForm.ShowDialog();
         }
     }
 }

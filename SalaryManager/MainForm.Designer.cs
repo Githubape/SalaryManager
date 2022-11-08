@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.TabControl_Top = new MaterialSkin.Controls.MaterialTabControl();
-            this.rsgl = new System.Windows.Forms.TabPage();
+            this.Personnel_Manager = new System.Windows.Forms.TabPage();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.rsgl_Tab = new MaterialSkin.Controls.MaterialTabControl();
+            this.UpdatePost_Tab = new MaterialSkin.Controls.MaterialTabControl();
             this.jsjdgl = new System.Windows.Forms.TabPage();
             this.Edit_Button = new MaterialSkin.Controls.MaterialButton();
             this.gzss = new MaterialSkin.Controls.MaterialTextBox();
@@ -59,21 +59,45 @@
             this.bdls = new System.Windows.Forms.TabPage();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.gzgl = new System.Windows.Forms.TabPage();
-            this.cgsz = new System.Windows.Forms.TabPage();
+            this.Wages_Manager = new System.Windows.Forms.TabPage();
+            this.Normal_Manager = new System.Windows.Forms.TabPage();
+            this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
+            this.UpdateHeader_Eid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_Sex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_Egroup = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_Etype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_EntryTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_WorkType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_Post = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_PostOrder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_PostLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_QualificationLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_DutyTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_ServiceLength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UpdateHeader_Button = new MaterialSkin.Controls.MaterialButton();
+            this.Note_Manager = new System.Windows.Forms.TabPage();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.TabControl_Top.SuspendLayout();
-            this.rsgl.SuspendLayout();
-            this.rsgl_Tab.SuspendLayout();
+            this.Personnel_Manager.SuspendLayout();
+            this.UpdatePost_Tab.SuspendLayout();
             this.jsjdgl.SuspendLayout();
             this.bdls.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.Note_Manager.SuspendLayout();
+            this.materialCard1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl_Top
             // 
             this.TabControl_Top.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.TabControl_Top.Controls.Add(this.rsgl);
-            this.TabControl_Top.Controls.Add(this.gzgl);
-            this.TabControl_Top.Controls.Add(this.cgsz);
+            this.TabControl_Top.Controls.Add(this.Personnel_Manager);
+            this.TabControl_Top.Controls.Add(this.Wages_Manager);
+            this.TabControl_Top.Controls.Add(this.Note_Manager);
+            this.TabControl_Top.Controls.Add(this.Normal_Manager);
             this.TabControl_Top.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TabControl_Top.Depth = 0;
             this.TabControl_Top.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -85,21 +109,24 @@
             this.TabControl_Top.Size = new System.Drawing.Size(1214, 637);
             this.TabControl_Top.TabIndex = 0;
             // 
-            // rsgl
+            // Personnel_Manager
             // 
-            this.rsgl.Controls.Add(this.materialTabSelector1);
-            this.rsgl.Controls.Add(this.rsgl_Tab);
-            this.rsgl.Location = new System.Drawing.Point(4, 4);
-            this.rsgl.Name = "rsgl";
-            this.rsgl.Padding = new System.Windows.Forms.Padding(3);
-            this.rsgl.Size = new System.Drawing.Size(1206, 607);
-            this.rsgl.TabIndex = 0;
-            this.rsgl.Text = "人事管理";
-            this.rsgl.UseVisualStyleBackColor = true;
+
+            this.Personnel_Manager.Controls.Add(this.materialTabSelector1);
+            this.Personnel_Manager.Controls.Add(this.UpdatePost_Tab);
+            this.Personnel_Manager.Location = new System.Drawing.Point(4, 4);
+            this.Personnel_Manager.Name = "Personnel_Manager";
+            this.Personnel_Manager.Padding = new System.Windows.Forms.Padding(3);
+            this.Personnel_Manager.Size = new System.Drawing.Size(1206, 607);
+            this.Personnel_Manager.TabIndex = 0;
+            this.Personnel_Manager.Text = "人事管理";
+            this.Personnel_Manager.UseVisualStyleBackColor = true;
+
+
             // 
             // materialTabSelector1
             // 
-            this.materialTabSelector1.BaseTabControl = this.rsgl_Tab;
+            this.materialTabSelector1.BaseTabControl = this.UpdatePost_Tab;
             this.materialTabSelector1.Depth = 0;
             this.materialTabSelector1.Font = new System.Drawing.Font("思源黑体 CN Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
@@ -109,19 +136,19 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
-            // rsgl_Tab
+            // UpdatePost_Tab
             // 
-            this.rsgl_Tab.Controls.Add(this.jsjdgl);
-            this.rsgl_Tab.Controls.Add(this.bdls);
-            this.rsgl_Tab.Controls.Add(this.tabPage1);
-            this.rsgl_Tab.Depth = 0;
-            this.rsgl_Tab.Location = new System.Drawing.Point(3, 34);
-            this.rsgl_Tab.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rsgl_Tab.Multiline = true;
-            this.rsgl_Tab.Name = "rsgl_Tab";
-            this.rsgl_Tab.SelectedIndex = 0;
-            this.rsgl_Tab.Size = new System.Drawing.Size(1207, 577);
-            this.rsgl_Tab.TabIndex = 0;
+            this.UpdatePost_Tab.Controls.Add(this.jsjdgl);
+            this.UpdatePost_Tab.Controls.Add(this.bdls);
+            this.UpdatePost_Tab.Controls.Add(this.tabPage1);
+            this.UpdatePost_Tab.Depth = 0;
+            this.UpdatePost_Tab.Location = new System.Drawing.Point(3, 34);
+            this.UpdatePost_Tab.MouseState = MaterialSkin.MouseState.HOVER;
+            this.UpdatePost_Tab.Multiline = true;
+            this.UpdatePost_Tab.Name = "UpdatePost_Tab";
+            this.UpdatePost_Tab.SelectedIndex = 0;
+            this.UpdatePost_Tab.Size = new System.Drawing.Size(1207, 577);
+            this.UpdatePost_Tab.TabIndex = 0;
             // 
             // jsjdgl
             // 
@@ -402,34 +429,247 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.UpdateHeader_Button);
+            this.tabPage1.Controls.Add(this.materialListView2);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1199, 547);
             this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "晋档管理";
+            this.tabPage1.Text = " 晋档管理";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // gzgl
+            // Wages_Manager
             // 
-            this.gzgl.Location = new System.Drawing.Point(4, 4);
-            this.gzgl.Name = "gzgl";
-            this.gzgl.Padding = new System.Windows.Forms.Padding(3);
-            this.gzgl.Size = new System.Drawing.Size(1206, 607);
-            this.gzgl.TabIndex = 2;
-            this.gzgl.Text = "工资管理";
-            this.gzgl.UseVisualStyleBackColor = true;
-            this.gzgl.Click += new System.EventHandler(this.tabPage3_Click);
+            this.Wages_Manager.Location = new System.Drawing.Point(4, 4);
+            this.Wages_Manager.Name = "Wages_Manager";
+            this.Wages_Manager.Padding = new System.Windows.Forms.Padding(3);
+            this.Wages_Manager.Size = new System.Drawing.Size(1206, 607);
+            this.Wages_Manager.TabIndex = 2;
+            this.Wages_Manager.Text = "工资管理";
+            this.Wages_Manager.UseVisualStyleBackColor = true;
+            this.Wages_Manager.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // cgsz
+            // Normal_Manager
             // 
-            this.cgsz.Location = new System.Drawing.Point(4, 4);
-            this.cgsz.Name = "cgsz";
-            this.cgsz.Padding = new System.Windows.Forms.Padding(3);
-            this.cgsz.Size = new System.Drawing.Size(1206, 607);
-            this.cgsz.TabIndex = 3;
-            this.cgsz.Text = "常规设置";
-            this.cgsz.UseVisualStyleBackColor = true;
+            this.Normal_Manager.Location = new System.Drawing.Point(4, 4);
+            this.Normal_Manager.Name = "Normal_Manager";
+            this.Normal_Manager.Padding = new System.Windows.Forms.Padding(3);
+            this.Normal_Manager.Size = new System.Drawing.Size(1206, 607);
+            this.Normal_Manager.TabIndex = 3;
+            this.Normal_Manager.Text = "常规设置";
+            this.Normal_Manager.UseVisualStyleBackColor = true;
+            // 
+            // materialListView2
+            // 
+            this.materialListView2.AutoSizeTable = false;
+            this.materialListView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.UpdateHeader_Eid,
+            this.UpdateHeader_Name,
+            this.UpdateHeader_Sex,
+            this.UpdateHeader_Egroup,
+            this.UpdateHeader_Etype,
+            this.UpdateHeader_EntryTime,
+            this.UpdateHeader_WorkType,
+            this.UpdateHeader_Post,
+            this.UpdateHeader_PostOrder,
+            this.UpdateHeader_PostLevel,
+            this.UpdateHeader_QualificationLevel,
+            this.UpdateHeader_DutyTime,
+            this.UpdateHeader_ServiceLength});
+            this.materialListView2.Depth = 0;
+            this.materialListView2.FullRowSelect = true;
+            this.materialListView2.HideSelection = false;
+            this.materialListView2.Location = new System.Drawing.Point(15, 15);
+            this.materialListView2.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView2.Name = "materialListView2";
+            this.materialListView2.OwnerDraw = true;
+            this.materialListView2.Size = new System.Drawing.Size(1168, 447);
+            this.materialListView2.TabIndex = 0;
+            this.materialListView2.UseCompatibleStateImageBehavior = false;
+            this.materialListView2.View = System.Windows.Forms.View.Details;
+            // 
+            // UpdateHeader_Eid
+            // 
+            this.UpdateHeader_Eid.Text = "人员编号";
+            this.UpdateHeader_Eid.Width = 100;
+            // 
+            // UpdateHeader_Name
+            // 
+            this.UpdateHeader_Name.Text = "姓名";
+            this.UpdateHeader_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpdateHeader_Name.Width = 80;
+            // 
+            // UpdateHeader_Sex
+            // 
+            this.UpdateHeader_Sex.Text = "性别";
+            this.UpdateHeader_Sex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // UpdateHeader_Egroup
+            // 
+            this.UpdateHeader_Egroup.Text = "组";
+            this.UpdateHeader_Egroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpdateHeader_Egroup.Width = 80;
+            // 
+            // UpdateHeader_Etype
+            // 
+            this.UpdateHeader_Etype.Text = "工种";
+            this.UpdateHeader_Etype.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpdateHeader_Etype.Width = 80;
+            // 
+            // UpdateHeader_EntryTime
+            // 
+            this.UpdateHeader_EntryTime.Text = "入职时间";
+            this.UpdateHeader_EntryTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpdateHeader_EntryTime.Width = 80;
+            // 
+            // UpdateHeader_WorkType
+            // 
+            this.UpdateHeader_WorkType.Text = "工种";
+            this.UpdateHeader_WorkType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpdateHeader_WorkType.Width = 80;
+            // 
+            // UpdateHeader_Post
+            // 
+            this.UpdateHeader_Post.Text = "职位";
+            this.UpdateHeader_Post.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpdateHeader_Post.Width = 80;
+            // 
+            // UpdateHeader_PostOrder
+            // 
+            this.UpdateHeader_PostOrder.Text = "岗序";
+            this.UpdateHeader_PostOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpdateHeader_PostOrder.Width = 80;
+            // 
+            // UpdateHeader_PostLevel
+            // 
+            this.UpdateHeader_PostLevel.Text = "岗级";
+            this.UpdateHeader_PostLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpdateHeader_PostLevel.Width = 80;
+            // 
+            // UpdateHeader_QualificationLevel
+            // 
+            this.UpdateHeader_QualificationLevel.Text = "资格等级";
+            this.UpdateHeader_QualificationLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpdateHeader_QualificationLevel.Width = 100;
+            // 
+            // UpdateHeader_DutyTime
+            // 
+            this.UpdateHeader_DutyTime.Text = "入岗时间";
+            this.UpdateHeader_DutyTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpdateHeader_DutyTime.Width = 120;
+            // 
+            // UpdateHeader_ServiceLength
+            // 
+            this.UpdateHeader_ServiceLength.Text = "工龄";
+            this.UpdateHeader_ServiceLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // UpdateHeader_Button
+            // 
+            this.UpdateHeader_Button.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
+            this.UpdateHeader_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.UpdateHeader_Button.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
+            this.UpdateHeader_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.UpdateHeader_Button.Depth = 0;
+            this.UpdateHeader_Button.HighEmphasis = true;
+            this.UpdateHeader_Button.Icon = null;
+            this.UpdateHeader_Button.Location = new System.Drawing.Point(965, 489);
+            this.UpdateHeader_Button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.UpdateHeader_Button.MouseState = MaterialSkin.MouseState.HOVER;
+            this.UpdateHeader_Button.Name = "UpdateHeader_Button";
+            this.UpdateHeader_Button.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.UpdateHeader_Button.Size = new System.Drawing.Size(64, 36);
+            this.UpdateHeader_Button.TabIndex = 1;
+            this.UpdateHeader_Button.Text = "编辑";
+            this.UpdateHeader_Button.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.UpdateHeader_Button.UseAccentColor = false;
+            this.UpdateHeader_Button.UseVisualStyleBackColor = true;
+            this.UpdateHeader_Button.Click += new System.EventHandler(this.UpdateHeader_Button_Click);
+            // 
+            // Note_Manager
+            // 
+            this.Note_Manager.Controls.Add(this.materialCard1);
+            this.Note_Manager.Location = new System.Drawing.Point(4, 4);
+            this.Note_Manager.Name = "Note_Manager";
+            this.Note_Manager.Padding = new System.Windows.Forms.Padding(3);
+            this.Note_Manager.Size = new System.Drawing.Size(1206, 607);
+            this.Note_Manager.TabIndex = 4;
+            this.Note_Manager.Text = "通知管理";
+            this.Note_Manager.UseVisualStyleBackColor = true;
+            // 
+            // materialCard1
+            // 
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.materialLabel1);
+            this.materialCard1.Controls.Add(this.materialButton4);
+            this.materialCard1.Controls.Add(this.materialButton3);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(116, 69);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(1048, 132);
+            this.materialCard1.TabIndex = 0;
+            // 
+            // materialButton3
+            // 
+            this.materialButton3.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
+            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
+            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton3.Depth = 0;
+            this.materialButton3.HighEmphasis = true;
+            this.materialButton3.Icon = null;
+            this.materialButton3.Location = new System.Drawing.Point(832, 76);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton3.Name = "materialButton3";
+            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton3.Size = new System.Drawing.Size(79, 36);
+            this.materialButton3.TabIndex = 0;
+            this.materialButton3.Text = "同意晋档";
+            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseVisualStyleBackColor = true;
+            // 
+            // materialButton4
+            // 
+            this.materialButton4.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
+            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton4.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
+            this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton4.Depth = 0;
+            this.materialButton4.HighEmphasis = true;
+            this.materialButton4.Icon = null;
+            this.materialButton4.Location = new System.Drawing.Point(937, 76);
+            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton4.Name = "materialButton4";
+            this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton4.Size = new System.Drawing.Size(79, 36);
+            this.materialButton4.TabIndex = 1;
+            this.materialButton4.Text = "取消晋档";
+            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton4.UseAccentColor = false;
+            this.materialButton4.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("思源黑体 CN Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(108, 37);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(229, 23);
+            this.materialLabel1.TabIndex = 2;
+            this.materialLabel1.Text = "{姓名}将于{时间}晋升为{档位}，";
             // 
             // MainForm
             // 
@@ -445,21 +685,26 @@
             this.Name = "MainForm";
             this.Text = "工资结算助手";
             this.TabControl_Top.ResumeLayout(false);
-            this.rsgl.ResumeLayout(false);
-            this.rsgl_Tab.ResumeLayout(false);
+            this.Personnel_Manager.ResumeLayout(false);
+            this.UpdatePost_Tab.ResumeLayout(false);
             this.jsjdgl.ResumeLayout(false);
             this.jsjdgl.PerformLayout();
             this.bdls.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.Note_Manager.ResumeLayout(false);
+            this.materialCard1.ResumeLayout(false);
+            this.materialCard1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.TabPage rsgl;
-        private System.Windows.Forms.TabPage gzgl;
-        private System.Windows.Forms.TabPage cgsz;
+        private System.Windows.Forms.TabPage Personnel_Manager;
+        private System.Windows.Forms.TabPage Wages_Manager;
+        private System.Windows.Forms.TabPage Normal_Manager;
         private MaterialSkin.Controls.MaterialTabControl TabControl_Top;
-        private MaterialSkin.Controls.MaterialTabControl rsgl_Tab;
+        private MaterialSkin.Controls.MaterialTabControl UpdatePost_Tab;
         private System.Windows.Forms.TabPage jsjdgl;
         private System.Windows.Forms.TabPage bdls;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
@@ -494,5 +739,25 @@
         public System.Windows.Forms.ColumnHeader List1Header_OnlychildAllowance;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_EdgeAllowance;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_HeatingAllowance;// { get; set; }
+        private MaterialSkin.Controls.MaterialButton UpdateHeader_Button;
+        private MaterialSkin.Controls.MaterialListView materialListView2;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_Eid;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_Name;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_Sex;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_Egroup;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_Etype;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_EntryTime;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_WorkType;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_Post;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_PostOrder;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_PostLevel;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_QualificationLevel;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_DutyTime;
+        private System.Windows.Forms.ColumnHeader UpdateHeader_ServiceLength;
+        private System.Windows.Forms.TabPage Note_Manager;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
+        private MaterialSkin.Controls.MaterialButton materialButton3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialButton materialButton4;
     }
 }
