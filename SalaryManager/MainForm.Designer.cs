@@ -59,8 +59,7 @@
             this.bdls = new System.Windows.Forms.TabPage();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.Wages_Manager = new System.Windows.Forms.TabPage();
-            this.Normal_Manager = new System.Windows.Forms.TabPage();
+            this.UpdateHeader_Button = new MaterialSkin.Controls.MaterialButton();
             this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
             this.UpdateHeader_Eid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UpdateHeader_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -75,18 +74,23 @@
             this.UpdateHeader_QualificationLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UpdateHeader_DutyTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UpdateHeader_ServiceLength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.UpdateHeader_Button = new MaterialSkin.Controls.MaterialButton();
+            this.Wages_Manager = new System.Windows.Forms.TabPage();
             this.Note_Manager = new System.Windows.Forms.TabPage();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.Normal_Manager = new System.Windows.Forms.TabPage();
+            this.SalaryManager_ListView = new MaterialSkin.Controls.MaterialListView();
+            this.SalaryUI_Eid_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SalaryUI_Name_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TabControl_Top.SuspendLayout();
             this.Personnel_Manager.SuspendLayout();
             this.UpdatePost_Tab.SuspendLayout();
             this.jsjdgl.SuspendLayout();
             this.bdls.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.Wages_Manager.SuspendLayout();
             this.Note_Manager.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.SuspendLayout();
@@ -111,7 +115,6 @@
             // 
             // Personnel_Manager
             // 
-
             this.Personnel_Manager.Controls.Add(this.materialTabSelector1);
             this.Personnel_Manager.Controls.Add(this.UpdatePost_Tab);
             this.Personnel_Manager.Location = new System.Drawing.Point(4, 4);
@@ -121,8 +124,6 @@
             this.Personnel_Manager.TabIndex = 0;
             this.Personnel_Manager.Text = "人事管理";
             this.Personnel_Manager.UseVisualStyleBackColor = true;
-
-
             // 
             // materialTabSelector1
             // 
@@ -439,26 +440,27 @@
             this.tabPage1.Text = " 晋档管理";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // Wages_Manager
+            // UpdateHeader_Button
             // 
-            this.Wages_Manager.Location = new System.Drawing.Point(4, 4);
-            this.Wages_Manager.Name = "Wages_Manager";
-            this.Wages_Manager.Padding = new System.Windows.Forms.Padding(3);
-            this.Wages_Manager.Size = new System.Drawing.Size(1206, 607);
-            this.Wages_Manager.TabIndex = 2;
-            this.Wages_Manager.Text = "工资管理";
-            this.Wages_Manager.UseVisualStyleBackColor = true;
-            this.Wages_Manager.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // Normal_Manager
-            // 
-            this.Normal_Manager.Location = new System.Drawing.Point(4, 4);
-            this.Normal_Manager.Name = "Normal_Manager";
-            this.Normal_Manager.Padding = new System.Windows.Forms.Padding(3);
-            this.Normal_Manager.Size = new System.Drawing.Size(1206, 607);
-            this.Normal_Manager.TabIndex = 3;
-            this.Normal_Manager.Text = "常规设置";
-            this.Normal_Manager.UseVisualStyleBackColor = true;
+            this.UpdateHeader_Button.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
+            this.UpdateHeader_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.UpdateHeader_Button.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
+            this.UpdateHeader_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.UpdateHeader_Button.Depth = 0;
+            this.UpdateHeader_Button.HighEmphasis = true;
+            this.UpdateHeader_Button.Icon = null;
+            this.UpdateHeader_Button.Location = new System.Drawing.Point(965, 489);
+            this.UpdateHeader_Button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.UpdateHeader_Button.MouseState = MaterialSkin.MouseState.HOVER;
+            this.UpdateHeader_Button.Name = "UpdateHeader_Button";
+            this.UpdateHeader_Button.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.UpdateHeader_Button.Size = new System.Drawing.Size(64, 36);
+            this.UpdateHeader_Button.TabIndex = 1;
+            this.UpdateHeader_Button.Text = "编辑";
+            this.UpdateHeader_Button.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.UpdateHeader_Button.UseAccentColor = false;
+            this.UpdateHeader_Button.UseVisualStyleBackColor = true;
+            this.UpdateHeader_Button.Click += new System.EventHandler(this.UpdateHeader_Button_Click);
             // 
             // materialListView2
             // 
@@ -568,27 +570,17 @@
             this.UpdateHeader_ServiceLength.Text = "工龄";
             this.UpdateHeader_ServiceLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // UpdateHeader_Button
+            // Wages_Manager
             // 
-            this.UpdateHeader_Button.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
-            this.UpdateHeader_Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.UpdateHeader_Button.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
-            this.UpdateHeader_Button.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.UpdateHeader_Button.Depth = 0;
-            this.UpdateHeader_Button.HighEmphasis = true;
-            this.UpdateHeader_Button.Icon = null;
-            this.UpdateHeader_Button.Location = new System.Drawing.Point(965, 489);
-            this.UpdateHeader_Button.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.UpdateHeader_Button.MouseState = MaterialSkin.MouseState.HOVER;
-            this.UpdateHeader_Button.Name = "UpdateHeader_Button";
-            this.UpdateHeader_Button.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.UpdateHeader_Button.Size = new System.Drawing.Size(64, 36);
-            this.UpdateHeader_Button.TabIndex = 1;
-            this.UpdateHeader_Button.Text = "编辑";
-            this.UpdateHeader_Button.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.UpdateHeader_Button.UseAccentColor = false;
-            this.UpdateHeader_Button.UseVisualStyleBackColor = true;
-            this.UpdateHeader_Button.Click += new System.EventHandler(this.UpdateHeader_Button_Click);
+            this.Wages_Manager.Controls.Add(this.SalaryManager_ListView);
+            this.Wages_Manager.Location = new System.Drawing.Point(4, 4);
+            this.Wages_Manager.Name = "Wages_Manager";
+            this.Wages_Manager.Padding = new System.Windows.Forms.Padding(3);
+            this.Wages_Manager.Size = new System.Drawing.Size(1206, 607);
+            this.Wages_Manager.TabIndex = 2;
+            this.Wages_Manager.Text = "工资管理";
+            this.Wages_Manager.UseVisualStyleBackColor = true;
+            this.Wages_Manager.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // Note_Manager
             // 
@@ -617,26 +609,17 @@
             this.materialCard1.Size = new System.Drawing.Size(1048, 132);
             this.materialCard1.TabIndex = 0;
             // 
-            // materialButton3
+            // materialLabel1
             // 
-            this.materialButton3.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(832, 76);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(79, 36);
-            this.materialButton3.TabIndex = 0;
-            this.materialButton3.Text = "同意晋档";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("思源黑体 CN Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(108, 37);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(229, 23);
+            this.materialLabel1.TabIndex = 2;
+            this.materialLabel1.Text = "{姓名}将于{时间}晋升为{档位}，";
             // 
             // materialButton4
             // 
@@ -659,17 +642,70 @@
             this.materialButton4.UseAccentColor = false;
             this.materialButton4.UseVisualStyleBackColor = true;
             // 
-            // materialLabel1
+            // materialButton3
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("思源黑体 CN Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(108, 37);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(229, 23);
-            this.materialLabel1.TabIndex = 2;
-            this.materialLabel1.Text = "{姓名}将于{时间}晋升为{档位}，";
+            this.materialButton3.AccentTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(129)))));
+            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Normal;
+            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton3.Depth = 0;
+            this.materialButton3.HighEmphasis = true;
+            this.materialButton3.Icon = null;
+            this.materialButton3.Location = new System.Drawing.Point(832, 76);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton3.Name = "materialButton3";
+            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton3.Size = new System.Drawing.Size(79, 36);
+            this.materialButton3.TabIndex = 0;
+            this.materialButton3.Text = "同意晋档";
+            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseVisualStyleBackColor = true;
+            // 
+            // Normal_Manager
+            // 
+            this.Normal_Manager.Location = new System.Drawing.Point(4, 4);
+            this.Normal_Manager.Name = "Normal_Manager";
+            this.Normal_Manager.Padding = new System.Windows.Forms.Padding(3);
+            this.Normal_Manager.Size = new System.Drawing.Size(1206, 607);
+            this.Normal_Manager.TabIndex = 3;
+            this.Normal_Manager.Text = "常规设置";
+            this.Normal_Manager.UseVisualStyleBackColor = true;
+            // 
+            // SalaryManager_ListView
+            // 
+            this.SalaryManager_ListView.AutoSizeTable = false;
+            this.SalaryManager_ListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.SalaryManager_ListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SalaryManager_ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.SalaryUI_Eid_header,
+            this.SalaryUI_Name_header});
+            this.SalaryManager_ListView.Depth = 0;
+            this.SalaryManager_ListView.FullRowSelect = true;
+            this.SalaryManager_ListView.HideSelection = false;
+            this.SalaryManager_ListView.Location = new System.Drawing.Point(6, 26);
+            this.SalaryManager_ListView.MinimumSize = new System.Drawing.Size(200, 100);
+            this.SalaryManager_ListView.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.SalaryManager_ListView.MouseState = MaterialSkin.MouseState.OUT;
+            this.SalaryManager_ListView.Name = "SalaryManager_ListView";
+            this.SalaryManager_ListView.OwnerDraw = true;
+            this.SalaryManager_ListView.Size = new System.Drawing.Size(1194, 450);
+            this.SalaryManager_ListView.TabIndex = 0;
+            this.SalaryManager_ListView.UseCompatibleStateImageBehavior = false;
+            this.SalaryManager_ListView.View = System.Windows.Forms.View.Details;
+            // 
+            // SalaryUI_Eid_header
+            // 
+            this.SalaryUI_Eid_header.Text = "员工编号";
+            this.SalaryUI_Eid_header.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SalaryUI_Eid_header.Width = 100;
+            // 
+            // SalaryUI_Name_header
+            // 
+            this.SalaryUI_Name_header.Text = "姓名";
+            this.SalaryUI_Name_header.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SalaryUI_Name_header.Width = 80;
             // 
             // MainForm
             // 
@@ -692,6 +728,7 @@
             this.bdls.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.Wages_Manager.ResumeLayout(false);
             this.Note_Manager.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
@@ -759,5 +796,9 @@
         private MaterialSkin.Controls.MaterialButton materialButton3;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialButton materialButton4;
+        private MaterialSkin.Controls.MaterialListView SalaryManager_ListView;
+        private System.Windows.Forms.ColumnHeader SalaryUI_Eid_header;
+        private System.Windows.Forms.ColumnHeader SalaryUI_Name_header;
+        
     }
 }
