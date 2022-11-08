@@ -1,5 +1,4 @@
 ﻿using Model;
-using MySqlX.XDevAPI.Common;
 using SQLite;
 using System;
 using System.Collections;
@@ -78,7 +77,10 @@ namespace Service
 
         public int Add<T>(T model)
         {
-            return db.Insert(model);
+            db.Insert(model);
+            int z= db.ExecuteScalar<Int32>("SELECT last_insert_rowid()");
+            Console.WriteLine(z);
+            return z;// db.ExecuteScalar<Int32>("SELECT last_insert_rowid()");
         }
 
         public int Update<T>(T model)

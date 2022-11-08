@@ -81,6 +81,7 @@ namespace SalaryManager
                 string[] ldata = new string[Fprolst.ToArray().Length];
                 for (int i = 0; i < ldata.Length; i++)
                 {
+                    //Console.WriteLine(Fprolst[i]);
                     ldata[i] = edic[Fprolst[i]].ToString();
                 }
                 var Li = new ListViewItem(ldata);
@@ -143,50 +144,7 @@ namespace SalaryManager
 
         }
 
-        private void materialTabControl2_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialTabSelector1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialListBox1_SelectedIndexChanged(object sender, MaterialListBoxItem selectedItem)
-        {
-
-        }
-
-        private void rsgl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialTabSelector1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -201,16 +159,6 @@ namespace SalaryManager
                 Console.WriteLine("当前员工编号" + ItemID);
 
             }
-        }
-
-        private void materialTabSelector1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
         /// <summary>
         /// 
@@ -229,6 +177,7 @@ namespace SalaryManager
             {
                 MaterialSnackBar SnackBarMessage = new MaterialSnackBar("保存成功", "OK", true);
                 SnackBarMessage.Show(this);
+
                 Elist = Emanager.GetEmployeeInformation();
                 LoadData("List1Header", Elist);
             }

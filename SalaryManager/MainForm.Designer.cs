@@ -46,26 +46,15 @@
             this.List1Header_Sex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_BankAccount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_Egroup = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.List1Header_Etype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_EntryTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_WorkType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.List1Header_Post = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_PostOrder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_PostLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_QualificationLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_DutyTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_ServiceLength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.List1Header_OnlyChild = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_OnlychildAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.List1Header_IsHard = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.List1Header_HardshipAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.List1Header_IsEdge = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_EdgeAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.List1Header_MealAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.List1Header_PostWage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.List1Header_PostBonus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.List1Header_PostTransportation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.List1Header_HousingAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.List1Header_HeatingAllowance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bdls = new System.Windows.Forms.TabPage();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
@@ -107,7 +96,6 @@
             this.rsgl.TabIndex = 0;
             this.rsgl.Text = "人事管理";
             this.rsgl.UseVisualStyleBackColor = true;
-            this.rsgl.Click += new System.EventHandler(this.rsgl_Click);
             // 
             // materialTabSelector1
             // 
@@ -120,7 +108,6 @@
             this.materialTabSelector1.Size = new System.Drawing.Size(1219, 32);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click_2);
             // 
             // rsgl_Tab
             // 
@@ -254,7 +241,6 @@
             this.bhss.Text = "";
             this.bhss.TrailingIcon = null;
             this.bhss.UseTallSize = false;
-            this.bhss.TextChanged += new System.EventHandler(this.materialTextBox2_TextChanged);
             // 
             // Add_Btn
             // 
@@ -289,26 +275,15 @@
             this.List1Header_Sex,
             this.List1Header_BankAccount,
             this.List1Header_Egroup,
-            this.List1Header_Etype,
             this.List1Header_EntryTime,
             this.List1Header_WorkType,
-            this.List1Header_Post,
             this.List1Header_PostOrder,
             this.List1Header_PostLevel,
             this.List1Header_QualificationLevel,
             this.List1Header_DutyTime,
             this.List1Header_ServiceLength,
-            this.List1Header_OnlyChild,
             this.List1Header_OnlychildAllowance,
-            this.List1Header_IsHard,
-            this.List1Header_HardshipAllowance,
-            this.List1Header_IsEdge,
             this.List1Header_EdgeAllowance,
-            this.List1Header_MealAllowance,
-            this.List1Header_PostWage,
-            this.List1Header_PostBonus,
-            this.List1Header_PostTransportation,
-            this.List1Header_HousingAllowance,
             this.List1Header_HeatingAllowance});
             this.materialListView1.Depth = 0;
             this.materialListView1.FullRowSelect = true;
@@ -351,11 +326,6 @@
             this.List1Header_Egroup.Text = "组";
             this.List1Header_Egroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // List1Header_Etype
-            // 
-            this.List1Header_Etype.Text = "工种";
-            this.List1Header_Etype.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // List1Header_EntryTime
             // 
             this.List1Header_EntryTime.Text = "入职时间";
@@ -365,10 +335,6 @@
             // List1Header_WorkType
             // 
             this.List1Header_WorkType.Text = "工种";
-            // 
-            // List1Header_Post
-            // 
-            this.List1Header_Post.Text = "职位";
             // 
             // List1Header_PostOrder
             // 
@@ -392,60 +358,15 @@
             // 
             this.List1Header_ServiceLength.Text = "工龄";
             // 
-            // List1Header_OnlyChild
-            // 
-            this.List1Header_OnlyChild.Text = "独生子女";
-            this.List1Header_OnlyChild.Width = 120;
-            // 
             // List1Header_OnlychildAllowance
             // 
             this.List1Header_OnlychildAllowance.Text = "独生子女津贴";
             this.List1Header_OnlychildAllowance.Width = 120;
             // 
-            // List1Header_IsHard
-            // 
-            this.List1Header_IsHard.Text = "艰难岗位";
-            this.List1Header_IsHard.Width = 120;
-            // 
-            // List1Header_HardshipAllowance
-            // 
-            this.List1Header_HardshipAllowance.Text = "艰难岗位津贴";
-            this.List1Header_HardshipAllowance.Width = 120;
-            // 
-            // List1Header_IsEdge
-            // 
-            this.List1Header_IsEdge.Text = "边缘地区";
-            this.List1Header_IsEdge.Width = 120;
-            // 
             // List1Header_EdgeAllowance
             // 
             this.List1Header_EdgeAllowance.Text = "边缘地区津贴";
             this.List1Header_EdgeAllowance.Width = 120;
-            // 
-            // List1Header_MealAllowance
-            // 
-            this.List1Header_MealAllowance.Text = "餐饮补助";
-            this.List1Header_MealAllowance.Width = 120;
-            // 
-            // List1Header_PostWage
-            // 
-            this.List1Header_PostWage.Text = "基础工资";
-            this.List1Header_PostWage.Width = 120;
-            // 
-            // List1Header_PostBonus
-            // 
-            this.List1Header_PostBonus.Text = "职位奖金";
-            this.List1Header_PostBonus.Width = 120;
-            // 
-            // List1Header_PostTransportation
-            // 
-            this.List1Header_PostTransportation.Text = "交通费";
-            this.List1Header_PostTransportation.Width = 120;
-            // 
-            // List1Header_HousingAllowance
-            // 
-            this.List1Header_HousingAllowance.Text = "住房补贴";
-            this.List1Header_HousingAllowance.Width = 120;
             // 
             // List1Header_HeatingAllowance
             // 
@@ -523,7 +444,6 @@
             this.Location = new System.Drawing.Point(100, 50);
             this.Name = "MainForm";
             this.Text = "工资结算助手";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.TabControl_Top.ResumeLayout(false);
             this.rsgl.ResumeLayout(false);
             this.rsgl_Tab.ResumeLayout(false);
@@ -564,26 +484,15 @@
         public System.Windows.Forms.ColumnHeader List1Header_Sex;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_BankAccount;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_Egroup;// { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_Etype;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_EntryTime;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_WorkType;// { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_Post;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_PostOrder;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_PostLevel;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_QualificationLevel;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_DutyTime;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_ServiceLength;// { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_OnlyChild;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_OnlychildAllowance;// { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_IsHard;// { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_HardshipAllowance;// { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_IsEdge;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_EdgeAllowance;// { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_MealAllowance;// { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_PostWage;// { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_PostBonus;// { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_PostTransportation;// { get; set; }
-        public System.Windows.Forms.ColumnHeader List1Header_HousingAllowance;// { get; set; }
         public System.Windows.Forms.ColumnHeader List1Header_HeatingAllowance;// { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace Manager
         /// </summary>
         private EmplopeeService objService=new EmplopeeService();
         /// <summary>
-        /// 伪查询员工列表
+        /// 查询员工列表
         /// </summary>
         /// <returns></returns>
         public  List<Employee> GetEmployeeInformation()
