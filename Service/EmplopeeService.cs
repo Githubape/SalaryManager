@@ -25,7 +25,7 @@ namespace Service
         /// <returns></returns>
         public List<Employee> QueryEmployeeListInfoSQlite()
         {
-            List <Employee_Data> Ledata=Sqlhelper.Query<Employee_Data>("select * from employee");
+            List <Employee_Data> Ledata=Sqlhelper.Query<Employee_Data>("select * from employee order by e_id");
             List<Position_Data> Lpdata = Sqlhelper.Query<Position_Data>("select * from position");
             List<Employee> Ldata = new List<Employee>();
             foreach(Employee_Data eitem in Ledata)
