@@ -42,16 +42,13 @@ namespace Model
         /// </summary>
         [Column("name")]
         public string Name { get; set; }
-        /// <summary>
-        /// 性别
-        /// </summary>
-        [Column("sex")]
-        public string Sex { get; set; }
+
         /// <summary>
         /// Employee bankaccount
         /// </summary>
         [Column("bank_account")]
         public string BankAccount { get; set; }
+
         /// <summary>
         /// 员工组
         /// </summary>
@@ -59,16 +56,36 @@ namespace Model
         public string Egroup { get; set; }
 
         /// <summary>
-        /// 入职时间
+        /// 企业特定员工分类
         /// </summary>
-        [Column("entry_time")]
-        public string EntryTime { get; set; }
+        [Column("classfy")]
+        public string Classfy { get; set; }
+
+        #region 税务表内容
+        /// <summary>
+        /// 身份证号
+        /// </summary>
+        [Column("id_cardnum")]
+        public string IdcardNum { get; set; }
 
         /// <summary>
-        /// 职位  位置最后一个不得更改
+        /// 所属二级单位
         /// </summary>
-        [Ignore]
-        public Position position { get; set; }
+        [Column("second_company")]
+        public string SecondCompany { get; set; }
+
+        /// <summary>
+        /// 组织单元文本
+        /// </summary>
+        [Column("org_text")]
+        public string OrganizeText { get; set; }
+
+        /// <summary>
+        /// 工资范围编码
+        /// </summary>
+        [Column("wage_scope")]
+        public string WageScope { get; set; }
+        #endregion
     }
-    
+
 }

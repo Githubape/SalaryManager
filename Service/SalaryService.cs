@@ -13,7 +13,7 @@ namespace Service
         SqliteHelper Sqlhelper = SqliteHelper.Instance;
 
         /// <summary>
-        /// Sqlite 查询员工列表
+        /// Sqlite 查询工资列表
         /// </summary>
         /// <returns></returns>
         public List<SalaryData> QuerySalaryListInfo()
@@ -23,7 +23,7 @@ namespace Service
         }
 
         /// <summary>
-        /// Sllite 更工资工信息
+        /// Sllite 更工信息
         /// </summary>
         /// <returns></returns>
         public int UpdateSalaryInformationSqlite(SalaryData objSalaryDatanew, bool ifinsert)
@@ -37,6 +37,8 @@ namespace Service
                 return Sqlhelper.Update<SalaryData>(objSalaryDatanew);
             }
         }
+
+
 
         /// <summary>
         /// 获取Salary 属性字典

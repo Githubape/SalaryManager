@@ -9,6 +9,9 @@ using Service;
 
 namespace Manager
 {
+    /// <summary>
+    /// Salary工具包 直接被UI调用
+    /// </summary>
     public class SalaryDataManager
     {
         /// <summary>
@@ -46,6 +49,16 @@ namespace Manager
         {
             Dictionary<String, Object> dic = objService.GetProDic(Sal);
             return dic;
+        }
+
+        /// <summary>
+        /// 工资计算模块
+        /// </summary>
+        /// <param name="Salin"></param>
+        /// <returns></returns>
+        public SalaryData CountSalary(SalaryData Salin)
+        {
+            return null;
         }
     }
 }

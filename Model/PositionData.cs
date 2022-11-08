@@ -11,6 +11,9 @@ namespace Model
     [Table("position")]
     public class Position_Data
     {
+        /// <summary>
+        /// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!没有考虑到日期
+        /// </summary>
         public Position_Data()
         {
             Type Mytype = this.GetType();
@@ -60,12 +63,25 @@ namespace Model
         /// 岗序
         /// </summary>
         [Column("post_order")]
-        public string PostOrder { get; set; }
+        public int PostOrder { get; set; }
         /// <summary>
         /// 岗级
         /// </summary>
         [Column("post_level")]
-        public string PostLevel { get; set; }
+        public int PostLevel { get; set; }
+
+        /// <summary>
+        /// 晋档起始时间
+        /// </summary>     
+        [Column("posttime_in")]
+        public DateTime PostTimein { get; set; }
+
+        /// <summary>
+        /// 晋档起薪时间
+        /// </summary>     
+        [Column("posttime_out")]
+        public DateTime PostTimeout { get; set; }
+
         /// <summary>
         /// 职业资格等级[初级工，中级工，高级工，技师，高级技师]
         /// </summary>
@@ -89,7 +105,21 @@ namespace Model
         /// 独生子女费
         /// </summary>
         [Column("only_child_allowance")]
-        public double OnlychildAllowance { get; set; }
+        public double OnlychildAllowance
+        {
+            get
+            {
+                DateTime now = DateTime.Now;
+                if (now <= OcaExpiration)
+                    return OnlychildAllowance;
+                else
+                    return 0;
+            }
+            set
+            {
+                OnlychildAllowance = value;
+            }
+        }
         /// <summary>
         /// 独生子女截止日期
         /// </summary>
@@ -100,7 +130,21 @@ namespace Model
         /// 边远津贴
         /// </summary>
         [Column("edge_allowance")]
-        public double EdgeAllowance { get; set; }
+        public double EdgeAllowance
+        {
+            get
+            {
+                DateTime now = DateTime.Now;
+                if (now <= EdaExpiration)
+                    return EdgeAllowance;
+                else
+                    return 0;
+            }
+            set
+            {
+                EdgeAllowance = value;
+            }
+        }
         /// <summary>
         /// 边远津贴截止日期
         /// </summary>
@@ -111,7 +155,21 @@ namespace Model
         /// 技术补贴
         /// </summary>
         [Column("tec_allowance")]
-        public double TecAllowance { get; set; }
+        public double TecAllowance
+        {
+            get
+            {
+                DateTime now = DateTime.Now;
+                if (now <= TecExpiration)
+                    return TecAllowance;
+                else
+                    return 0;
+            }
+            set
+            {
+                TecAllowance = value;
+            }
+        }
         /// <summary>
         /// 技术津贴截止日期
         /// </summary>
@@ -122,7 +180,21 @@ namespace Model
         /// 生活补贴
         /// </summary>
         [Column("life_allowance")]
-        public double LifeAllowance { get; set; }
+        public double LifeAllowance
+        {
+            get
+            {
+                DateTime now = DateTime.Now;
+                if (now <= LifeExpiration)
+                    return LifeAllowance;
+                else
+                    return 0;
+            }
+            set
+            {
+                LifeAllowance = value;
+            }
+        }
         /// <summary>
         /// 生活津贴截止日期
         /// </summary>
@@ -133,7 +205,21 @@ namespace Model
         /// 考勤扣款
         /// </summary>
         [Column("attend_deduction")]
-        public double AttendDeduction { get; set; }
+        public double AttendDeduction
+        {
+            get
+            {
+                DateTime now = DateTime.Now;
+                if (now <= AttendDucExpiration)
+                    return AttendDeduction;
+                else
+                    return 0;
+            }
+            set
+            {
+                AttendDeduction = value;
+            }
+        }
         /// <summary>
         /// 考勤扣款截止日期
         /// </summary>

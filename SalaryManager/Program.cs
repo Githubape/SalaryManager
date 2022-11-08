@@ -46,9 +46,6 @@ namespace SalaryManager
 
             ///登录窗体
 
-
-
-
             Application.Run(new MainForm());
             return;
             //Application.Run(new LoginForm());
