@@ -51,10 +51,15 @@ namespace SalaryManager
             //List<Employee> Elist = new List<Employee>();
             Elist = Emanager.GetEmployeeInformation();
             LoadData("List1Header", Elist);
-            MaterialCard materialCard3 = new MaterialSkin.Controls.MaterialCard();
-            Note_Manager.Controls.Add(materialCard3);
+            CreateMaterialCard("3");
+            MaterialCard materialCardName = new MaterialSkin.Controls.MaterialCard();
+            Note_Manager.Controls.Add(materialCardName);
 
+        }
 
+        public void CreateMaterialCard(string ID)
+        {
+            string materialCardName = "materialCard" + "ID";
         }
 
         /// <summary>
