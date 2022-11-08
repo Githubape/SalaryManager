@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using Model;
 using System.Data;
 //using System.Data.SqlClient;
-using MySql.Data.MySqlClient;
 
 namespace Service
 {
@@ -34,7 +33,7 @@ namespace Service
                 
                 foreach(Position_Data pitem in Lpdata)
                 {
-                    if (pitem.EId == eitem.Eid)
+                    if (pitem.EId == eitem.Id)
                     {
                         Ldata.Add(new Employee(eitem, pitem));
                         break;
@@ -43,6 +42,42 @@ namespace Service
             }
             return Ldata;
         }
+       
+        /// <summary>
+        /// Sllite 更新员工信息
+        /// </summary>
+        /// <returns></returns>
+        public int UpdateEmploeeInformationSqlite(Employee objEmployeenew,bool ifinsert)
+        {
+            if(ifinsert)
+            {
+                objEmployeenew.position.data.EId = Sqlhelper.Add<Employee_Data>(objEmployeenew.data);
+                return Sqlhelper.Add<Position_Data>(objEmployeenew.position.data);
+
+                //return Sqlhelper.Add<Employee_Data>(objEmployeenew.data)+Sqlhelper.Add<Position_Data>(objEmployeenew.position.data);
+            }
+            else
+            {
+                return Sqlhelper.Update<Employee_Data>(objEmployeenew.data) + Sqlhelper.Update<Position_Data>(objEmployeenew.position.data);
+            }
+        }
+       
+        /// <summary>
+        /// 获取Employee 属性字典
+        /// </summary>
+        /// <param name="Emp"></param>
+        /// <returns></returns>
+        public Dictionary<String,Object> GetProDic(Employee Emp)
+        {
+            Dictionary<String, Object> dic = ClassTools.GetProDic(Emp.data);
+            Dictionary<String, Object> pdic = ClassTools.GetProDic(Emp.position.data);
+            Dictionary<String, Object> Fdic = dic.Union(pdic).ToDictionary(k => k.Key, v => v.Value);
+            return Fdic;
+        }
+
+
+        #region 弃用
+
         /// <summary>
         /// Service查询员工列表   弃用 
         /// </summary>
@@ -60,8 +95,8 @@ namespace Service
         //    //{
         //    //    Console.WriteLine(item.Name+" "+item.PropertyType);
         //    //}
-            
-            
+
+
         //    while (objReader.Read())
         //    {               
         //        Employee etem = new Employee();
@@ -102,29 +137,15 @@ namespace Service
         //        //{
 
         //        //        Console.WriteLine( Etype.GetProperty(item.Name).GetValue(etem));
-   
+
         //        //}
         //        EList.Add(etem);
-                
+
         //    }
         //    objReader.Close();
         //    return EList;
         //}
-        /// <summary>
-        /// Sllite 更新员工信息
-        /// </summary>
-        /// <returns></returns>
-        public int UpdateEmploeeInformationSqlite(Employee objEmployeenew,bool ifinsert)
-        {
-            if(ifinsert)
-            {
-                return Sqlhelper.Add<Employee_Data>(objEmployeenew.data)+Sqlhelper.Add<Position_Data>(objEmployeenew.position.data);
-            }
-            else
-            {
-                return Sqlhelper.Update<Employee_Data>(objEmployeenew.data) + Sqlhelper.Update<Position_Data>(objEmployeenew.position.data);
-            }
-        }
+
         /// <summary>
         /// 更新员工信息 弃用
         /// </summary>
@@ -191,8 +212,8 @@ namespace Service
         //            num++;
         //        }
         //    }
-            
-            
+
+
         //    string sql1 = "Update salary.employee set "+eql+" where "+eqlw;
         //    string sql2 = "Update salary.position set "+ pql + " where " + pqlw;
         //    //Sservice.UpdateByProcedure(sql1,eparam);
@@ -201,18 +222,8 @@ namespace Service
         //    Console.WriteLine(sql2);
         //    return Sservice.Update(sql1, eparam)+ Sservice.Update(sql2, pparam);
         //}
-        /// <summary>
-        /// 获取Employee 属性字典
-        /// </summary>
-        /// <param name="Emp"></param>
-        /// <returns></returns>
-        public Dictionary<String,Object> GetProDic(Employee Emp)
-        {
-            Dictionary<String, Object> dic = ClassTools.GetProDic(Emp.data);
-            Dictionary<String, Object> pdic = ClassTools.GetProDic(Emp.position.data);
-            Dictionary<String, Object> Fdic = dic.Union(pdic).ToDictionary(k => k.Key, v => v.Value);
-            return Fdic;
-        }
+
+        #endregion
     }
 
 

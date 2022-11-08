@@ -39,6 +39,7 @@ namespace Model
         /// </summary>
         [Column("e_id")]
         public int EId { get; set; }
+
         #region 基础职位信息
         /// <summary>
         /// 工种
@@ -48,10 +49,12 @@ namespace Model
         /// <summary>
         /// 科室
         /// </summary>
+        [Column("department")]
         public string Department { get; set; }
         /// <summary>
         /// 序列
         /// </summary>
+        [Column("Squence")]
         public string Squence { get; set; }      
         /// <summary>
         /// 岗序
@@ -102,7 +105,7 @@ namespace Model
         /// 边远津贴截止日期
         /// </summary>
         [Column("eda_expiration")]
-        public double EdaExpiration { get; set; }
+        public DateTime EdaExpiration { get; set; }
 
         /// <summary>
         /// 技术补贴
@@ -113,7 +116,7 @@ namespace Model
         /// 技术津贴截止日期
         /// </summary>
         [Column("tec_expiration")]
-        public double TecExpiration { get; set; }
+        public DateTime TecExpiration { get; set; }
 
         /// <summary>
         /// 生活补贴
@@ -124,7 +127,7 @@ namespace Model
         /// 生活津贴截止日期
         /// </summary>
         [Column("life_expiration")]
-        public double LifeExpiration { get; set; }
+        public DateTime LifeExpiration { get; set; }
         
         /// <summary>
         /// 考勤扣款
@@ -135,26 +138,30 @@ namespace Model
         /// 考勤扣款截止日期
         /// </summary>
         [Column("attendduc_expiration")]
-        public double AttendDucExpiration { get; set; }
+        public DateTime AttendDucExpiration { get; set; }
+
+
+        #endregion
+
+        #region 一次输入不变
 
         /// <summary>
         /// 无住房补贴
         /// </summary>
         [Column("nohouse_allowance")]
         public double NohouseAllowance { get; set; }
-        #endregion
 
-        #region 一次输入不变
         /// <summary>
         /// 取暖补贴
         /// </summary>
         [Column("heating_allowance")]
         public double HeatingAllowance { get; set; }
+
+        #endregion
         /// <summary>
         /// 抛弃
         /// </summary>
         [Column("abolish")]
         public int Abolish { get; set; }
-        #endregion
     }
 }

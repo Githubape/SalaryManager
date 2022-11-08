@@ -118,7 +118,7 @@ namespace SalaryManager
                 SnackBarMessage.Show(this);
                 return;
             }
-            Console.WriteLine( Emanager.SetEmployeeInformation(Eedit,ifinsert));
+            Emanager.SetEmployeeInformation(Eedit,ifinsert);
             this.DialogResult = DialogResult.OK;
             //MessageBox.Show("员工ID" + itemID);
 
